@@ -1,0 +1,358 @@
+{
+  "template_info": {
+    "name": "E-commerce + Autenticación",
+    "version": "1.0.0",
+    "description": "Template avanzado de tienda online con sistema de login/registro, perfil de usuario, historial de pedidos y todas las funciones del e-commerce estándar",
+    "ideal_for": [
+      "Tiendas medianas/grandes que necesitan gestión de clientes",
+      "Negocios con clientes recurrentes",
+      "Tiendas que quieren fidelizar clientes",
+      "E-commerce con programa de beneficios",
+      "Negocios que ofrecen descuentos a miembros"
+    ],
+    "features": [
+      "Todo del Template 2 (E-commerce Completo)",
+      "Sistema de login/registro",
+      "Perfil de usuario editable",
+      "Historial de pedidos personalizado",
+      "Persistencia de datos con LocalStorage",
+      "Gestión de direcciones de envío",
+      "Área privada de usuario",
+      "Dropdown menu con avatar",
+      "Modales responsive para auth",
+      "Notificaciones visuales"
+    ],
+    "inheritance": "Este template extiende 'ecommerce-completo' añadiendo autenticación. Todas las variables del Template 2 están incluidas aquí."
+  },
+  
+  "variables": {
+    "branding": {
+      "BRAND_NAME": {
+        "type": "string",
+        "default": "Mi Tienda Premium",
+        "description": "Nombre de la tienda",
+        "ai_extraction": "Extraer del nombre del negocio proporcionado por el cliente"
+      },
+      "LOGO_EMOJI": {
+        "type": "emoji",
+        "default": "🛍️",
+        "description": "Emoji o ícono representativo",
+        "ai_extraction": "Sugerir emoji relevante al tipo de productos"
+      },
+      "STORE_TAGLINE": {
+        "type": "string",
+        "default": "Tu tienda online premium",
+        "description": "Eslogan de la tienda",
+        "ai_extraction": "Generar basado en el tipo de productos y audiencia premium"
+      }
+    },
+    
+    "colors": {
+      "COLOR_PRIMARY": {
+        "type": "color_hex",
+        "default": "#667eea",
+        "description": "Color principal de la marca",
+        "ai_extraction": "Extraer del análisis de imagen con GPT-4o Vision"
+      },
+      "COLOR_SECONDARY": {
+        "type": "color_hex",
+        "default": "#764ba2",
+        "description": "Color secundario complementario",
+        "ai_extraction": "Segundo color dominante"
+      },
+      "COLOR_ACCENT": {
+        "type": "color_hex",
+        "default": "#f093fb",
+        "description": "Color de acento",
+        "ai_extraction": "Tercer color o variante más clara"
+      }
+    },
+    
+    "hero_section": {
+      "HERO_TITLE": {
+        "type": "string",
+        "default": "Tu Tienda Online Premium",
+        "description": "Título principal del hero",
+        "ai_extraction": "Generar título que enfatice la experiencia personalizada. Ejemplos: 'Compra con Tu Cuenta Personal', 'Tu Tienda, Tu Perfil'"
+      },
+      "HERO_SUBTITLE": {
+        "type": "string",
+        "default": "Crea tu cuenta y disfruta de beneficios exclusivos",
+        "description": "Subtítulo que incentive el registro",
+        "ai_extraction": "Generar mensaje que incentive crear cuenta. Mencionar beneficios como: seguimiento de pedidos, historial, ofertas exclusivas"
+      }
+    },
+    
+    "categories": {
+      "CATEGORY_1_ID": {
+        "type": "string",
+        "default": "cat1",
+        "description": "ID de categoría 1",
+        "ai_extraction": "Generar ID único basado en el nombre de categoría"
+      },
+      "CATEGORY_1_NAME": {
+        "type": "string",
+        "default": "Categoría 1",
+        "description": "Nombre de categoría 1",
+        "ai_extraction": "Identificar del análisis de imagen y descripción"
+      },
+      "CATEGORY_1_ICON": {
+        "type": "emoji",
+        "default": "📦",
+        "description": "Ícono de categoría 1",
+        "ai_extraction": "Emoji representativo"
+      },
+      "CATEGORY_2_ID": {"type": "string", "default": "cat2"},
+      "CATEGORY_2_NAME": {"type": "string", "default": "Categoría 2"},
+      "CATEGORY_2_ICON": {"type": "emoji", "default": "📦"},
+      "CATEGORY_3_ID": {"type": "string", "default": "cat3"},
+      "CATEGORY_3_NAME": {"type": "string", "default": "Categoría 3"},
+      "CATEGORY_3_ICON": {"type": "emoji", "default": "📦"}
+    },
+    
+    "products": {
+      "note": "Los productos heredan la misma estructura del Template 2 (6-12 productos)",
+      
+      "PRODUCT_1_NAME": {"type": "string", "default": "Producto 1"},
+      "PRODUCT_1_DESCRIPTION": {"type": "string", "default": "Descripción del producto"},
+      "PRODUCT_1_PRICE": {"type": "number", "default": 0},
+      "PRODUCT_1_IMAGE": {"type": "url", "default": "https://via.placeholder.com/300"},
+      "PRODUCT_1_CATEGORY": {"type": "string", "default": "cat1"},
+      "PRODUCT_1_BADGE": {"type": "string", "default": ""},
+      
+      "PRODUCT_2_NAME": {"type": "string", "default": "Producto 2"},
+      "PRODUCT_2_DESCRIPTION": {"type": "string", "default": "Descripción del producto"},
+      "PRODUCT_2_PRICE": {"type": "number", "default": 0},
+      "PRODUCT_2_IMAGE": {"type": "url", "default": "https://via.placeholder.com/300"},
+      "PRODUCT_2_CATEGORY": {"type": "string", "default": "cat1"},
+      "PRODUCT_2_BADGE": {"type": "string", "default": ""},
+      
+      "PRODUCT_3_NAME": {"type": "string", "default": "Producto 3"},
+      "PRODUCT_3_DESCRIPTION": {"type": "string", "default": "Descripción del producto"},
+      "PRODUCT_3_PRICE": {"type": "number", "default": 0},
+      "PRODUCT_3_IMAGE": {"type": "url", "default": "https://via.placeholder.com/300"},
+      "PRODUCT_3_CATEGORY": {"type": "string", "default": "cat2"},
+      "PRODUCT_3_BADGE": {"type": "string", "default": ""},
+      
+      "PRODUCT_4_NAME": {"type": "string", "default": "Producto 4"},
+      "PRODUCT_4_DESCRIPTION": {"type": "string", "default": "Descripción del producto"},
+      "PRODUCT_4_PRICE": {"type": "number", "default": 0},
+      "PRODUCT_4_IMAGE": {"type": "url", "default": "https://via.placeholder.com/300"},
+      "PRODUCT_4_CATEGORY": {"type": "string", "default": "cat2"},
+      "PRODUCT_4_BADGE": {"type": "string", "default": ""},
+      
+      "PRODUCT_5_NAME": {"type": "string", "default": "Producto 5"},
+      "PRODUCT_5_DESCRIPTION": {"type": "string", "default": "Descripción del producto"},
+      "PRODUCT_5_PRICE": {"type": "number", "default": 0},
+      "PRODUCT_5_IMAGE": {"type": "url", "default": "https://via.placeholder.com/300"},
+      "PRODUCT_5_CATEGORY": {"type": "string", "default": "cat3"},
+      "PRODUCT_5_BADGE": {"type": "string", "default": ""},
+      
+      "PRODUCT_6_NAME": {"type": "string", "default": "Producto 6"},
+      "PRODUCT_6_DESCRIPTION": {"type": "string", "default": "Descripción del producto"},
+      "PRODUCT_6_PRICE": {"type": "number", "default": 0},
+      "PRODUCT_6_IMAGE": {"type": "url", "default": "https://via.placeholder.com/300"},
+      "PRODUCT_6_CATEGORY": {"type": "string", "default": "cat3"},
+      "PRODUCT_6_BADGE": {"type": "string", "default": ""}
+    },
+    
+    "promo_banner": {
+      "PROMO_TITLE": {
+        "type": "string",
+        "default": "Beneficios Exclusivos para Miembros",
+        "description": "Título del banner promocional",
+        "ai_extraction": "Generar CTA que incentive crear cuenta. Ejemplos: 'Crea tu cuenta y obtén 10% OFF', 'Beneficios Exclusivos para Miembros'"
+      },
+      "PROMO_DESCRIPTION": {
+        "type": "string",
+        "default": "Registrate gratis y accede a ofertas especiales y seguimiento de pedidos",
+        "description": "Descripción de beneficios"
+      },
+      "PROMO_CTA": {
+        "type": "string",
+        "default": "Crear Cuenta Gratis",
+        "description": "Texto del botón"
+      }
+    },
+    
+    "benefits": {
+      "BENEFIT_1_TITLE": {
+        "type": "string",
+        "default": "Envío Gratis",
+        "description": "Título del beneficio 1"
+      },
+      "BENEFIT_1_DESCRIPTION": {
+        "type": "string",
+        "default": "En compras mayores a $5000",
+        "description": "Descripción del beneficio"
+      },
+      "BENEFIT_2_TITLE": {
+        "type": "string",
+        "default": "Pago Seguro",
+        "description": "Título del beneficio 2"
+      },
+      "BENEFIT_2_DESCRIPTION": {
+        "type": "string",
+        "default": "Múltiples medios de pago",
+        "description": "Descripción"
+      },
+      "BENEFIT_3_TITLE": {
+        "type": "string",
+        "default": "Compra Segura",
+        "description": "Título del beneficio 3"
+      },
+      "BENEFIT_3_DESCRIPTION": {
+        "type": "string",
+        "default": "Tus datos protegidos",
+        "description": "Descripción"
+      },
+      "note": "El beneficio 4 es fijo: 'Cuenta Personal' con descripción de historial de pedidos"
+    },
+    
+    "contact": {
+      "CONTACT_EMAIL": {
+        "type": "email",
+        "default": "info@tienda.com",
+        "description": "Email de contacto",
+        "ai_extraction": "Usar el email proporcionado por el cliente"
+      },
+      "CONTACT_PHONE": {
+        "type": "phone",
+        "default": "+54 9 11 1234-5678",
+        "description": "Teléfono de contacto",
+        "ai_extraction": "Usar el teléfono del formulario"
+      },
+      "CONTACT_ADDRESS": {
+        "type": "string",
+        "default": "Dirección de la tienda",
+        "description": "Dirección física",
+        "ai_extraction": "Usar dirección del formulario"
+      },
+      "WHATSAPP_NUMBER": {
+        "type": "string",
+        "default": "5491112345678",
+        "description": "Número de WhatsApp (formato internacional)",
+        "ai_extraction": "Convertir teléfono a formato WhatsApp"
+      },
+      "SCHEDULE": {
+        "type": "string",
+        "default": "Lun-Vie: 9-18hs",
+        "description": "Horario de atención",
+        "ai_extraction": "Usar horario del formulario"
+      }
+    },
+    
+    "social_media": {
+      "INSTAGRAM_URL": {
+        "type": "url",
+        "default": "https://instagram.com/tienda",
+        "description": "URL de Instagram",
+        "ai_extraction": "Construir desde username"
+      },
+      "FACEBOOK_URL": {
+        "type": "url",
+        "default": "https://facebook.com/tienda",
+        "description": "URL de Facebook",
+        "ai_extraction": "Construir desde nombre de página"
+      }
+    },
+    
+    "seo": {
+      "META_DESCRIPTION": {
+        "type": "string",
+        "default": "Tienda online con registro de usuarios, seguimiento de pedidos y productos de calidad",
+        "description": "Meta description para SEO (150-160 caracteres)",
+        "ai_extraction": "Generar descripción SEO que mencione: productos + funcionalidad de cuenta + ubicación + beneficio"
+      },
+      "KEYWORDS": {
+        "type": "string",
+        "default": "tienda online, registro, cuenta personal, seguimiento de pedidos",
+        "description": "Keywords separadas por comas",
+        "ai_extraction": "Incluir keywords de productos + 'cuenta personal', 'historial de pedidos', 'tienda online'"
+      }
+    },
+    
+    "footer": {
+      "FOOTER_DESCRIPTION": {
+        "type": "string",
+        "default": "Tu tienda online de confianza con seguimiento personalizado",
+        "description": "Descripción breve en el footer",
+        "ai_extraction": "Resumen del negocio mencionando la ventaja del sistema de usuarios"
+      }
+    },
+    
+    "optional_components": {
+      "CHATBOT_INCLUDE": {
+        "type": "html",
+        "default": "",
+        "description": "HTML del chatbot si el cliente lo solicitó",
+        "ai_extraction": "Si eligió chatbot: <div id='chatbot'></div>"
+      },
+      "CHATBOT_SCRIPT": {
+        "type": "html",
+        "default": "",
+        "description": "Script del chatbot",
+        "ai_extraction": "Si chatbot = sí: <script src='../componentes-globales/chatbot/chatbot-script.js'></script>"
+      }
+    },
+    
+    "auth_features": {
+      "note": "Estas características están hardcodeadas en el template y no requieren variables",
+      "features_list": [
+        "Sistema de login/registro con validación",
+        "LocalStorage para persistencia de sesión",
+        "Perfil de usuario editable (nombre, teléfono, dirección)",
+        "Historial completo de pedidos con estados",
+        "Avatar con iniciales generadas automáticamente",
+        "Dropdown menu responsive",
+        "Modales para login, registro, perfil y pedidos",
+        "Cierre de sesión con confirmación",
+        "Notificaciones visuales de acciones",
+        "Pedidos guardados automáticamente si hay sesión"
+      ]
+    }
+  },
+  
+  "gpt4o_vision_prompt": {
+    "system_role": "Eres un experto en e-commerce premium. Analiza las imágenes y genera datos para una tienda con sistema de cuentas de usuario.",
+    
+    "user_prompt": "Analiza estas fotos de productos y extrae información para una tienda online premium con sistema de usuarios:\n\n1. Identifica el tipo de tienda y público objetivo\n2. Detecta los 3 colores principales (hex)\n3. Identifica hasta 6 productos visibles\n4. Para cada producto: nombre, descripción premium, categoría\n5. Sugiere 3 categorías principales\n6. Genera título hero que incentive crear cuenta (ej: 'Tu Tienda Personal de [Tipo]')\n7. Genera subtítulo que mencione beneficios de registrarse\n8. Genera mensaje promocional para incentivar registro\n9. Sugiere emoji de logo\n10. Genera meta description SEO mencionando 'cuenta personal' o 'seguimiento de pedidos'\n\nTen en cuenta que este e-commerce tiene registro de usuarios, así que el copy debe incentivar la creación de cuenta mencionando beneficios como:\n- Seguimiento de pedidos\n- Historial de compras\n- Ofertas exclusivas para miembros\n- Gestión de direcciones de envío\n\nFormato de respuesta JSON igual al del Template 2, pero con copy orientado a membresía.",
+    
+    "key_differences_from_template_2": [
+      "El copy debe incentivar crear cuenta",
+      "Mencionar beneficios de tener perfil",
+      "Hero title puede incluir 'Tu tienda personal'",
+      "Promo banner debe invitar a registrarse",
+      "SEO keywords incluyen 'cuenta personal', 'historial pedidos'"
+    ]
+  },
+  
+  "automation_notes": {
+    "make_com_integration": "Este template usa la misma lógica de reemplazo que Template 2, solo añade funcionalidad frontend.",
+    "no_backend_required": "IMPORTANTE: Este sistema de autenticación es 100% frontend usando LocalStorage. No requiere backend, PHP ni base de datos.",
+    "data_persistence": "Los datos se guardan en el navegador del cliente. Si borra el cache, pierde su cuenta.",
+    "limitation": "Las cuentas NO están sincronizadas entre dispositivos. Es una solución simple para tiendas pequeñas.",
+    "upgrade_path": "Para tiendas grandes, este template sirve como base y luego se puede migrar a backend real (Firebase, Supabase, etc.)",
+    "estimated_operations": "~27-30 operaciones en Make.com (igual que Template 2, la autenticación es solo frontend)"
+  },
+  
+  "pricing_recommendation": {
+    "suggested_price": "$600-800 USD",
+    "justification": [
+      "Incluye todas las features del Template 2 ($300-500)",
+      "Sistema de autenticación completo",
+      "Gestión de usuarios",
+      "Historial de pedidos",
+      "Perfil editable",
+      "Mayor valor percibido por el cliente",
+      "Ideal para tiendas que buscan fidelización"
+    ],
+    "ideal_clients": [
+      "Tiendas con clientes recurrentes",
+      "Negocios que quieren base de datos de clientes",
+      "E-commerce medianos/grandes",
+      "Tiendas con programa de beneficios/descuentos",
+      "Negocios que ofrecen servicios post-venta"
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "component_name": "Footer Modular",
+  "description": "Footer con múltiples columnas y redes sociales",
+  "version": "1.0.0",
+  
+  "variables": {
+    "BRAND_NAME": {
+      "type": "text",
+      "description": "Nombre de la marca (usado en copyright)",
+      "default": "MI NEGOCIO",
+      "required": true
+    },
+    "CURRENT_YEAR": {
+      "type": "number",
+      "description": "Año actual para copyright",
+      "default": "2024",
+      "required": true,
+      "auto_generate": "new Date().getFullYear()"
+    },
+    "COPYRIGHT_TEXT": {
+      "type": "text",
+      "description": "Texto adicional de copyright",
+      "default": "Todos los derechos reservados",
+      "required": false
+    },
+    
+    "COLUMN_1_TITLE": {
+      "type": "text",
+      "description": "Título de la primera columna",
+      "default": "Información",
+      "required": true,
+      "ai_suggestion": "Sugerir según tipo de negocio"
+    },
+    "COLUMN_1_LINKS": {
+      "type": "array_html",
+      "description": "Links de la primera columna",
+      "default": [
+        "<li><a href=\"#\">Sobre Nosotros</a></li>",
+        "<li><a href=\"#\">Contacto</a></li>",
+        "<li><a href=\"#\">Ubicación</a></li>",
+        "<li><a href=\"#\">Trabaja con Nosotros</a></li>"
+      ],
+      "required": true
+    },
+    
+    "COLUMN_2_TITLE": {
+      "type": "text",
+      "description": "Título de la segunda columna",
+      "default": "Ayuda",
+      "required": true
+    },
+    "COLUMN_2_LINKS": {
+      "type": "array_html",
+      "description": "Links de la segunda columna",
+      "default": [
+        "<li><a href=\"#\">Preguntas Frecuentes</a></li>",
+        "<li><a href=\"#\">Cómo Comprar</a></li>",
+        "<li><a href=\"#\">Envíos y Devoluciones</a></li>",
+        "<li><a href=\"#\">Métodos de Pago</a></li>"
+      ],
+      "required": true
+    },
+    
+    "COLUMN_3_TITLE": {
+      "type": "text",
+      "description": "Título de la tercera columna",
+      "default": "Legal",
+      "required": true
+    },
+    "COLUMN_3_LINKS": {
+      "type": "array_html",
+      "description": "Links de la tercera columna",
+      "default": [
+        "<li><a href=\"#\">Términos y Condiciones</a></li>",
+        "<li><a href=\"#\">Política de Privacidad</a></li>",
+        "<li><a href=\"#\">Política de Cookies</a></li>",
+        "<li><a href=\"#\">Garantías</a></li>"
+      ],
+      "required": true
+    },
+    
+    "OPTIONAL_COLUMN_4": {
+      "type": "html",
+      "description": "Cuarta columna opcional (newsletter, contacto, etc)",
+      "default": "",
+      "required": false
+    },
+    
+    "SOCIAL_LINKS": {
+      "type": "array_html",
+      "description": "Enlaces a redes sociales",
+      "default": [
+        "<a href=\"#\" class=\"social-link\" title=\"Facebook\">FB</a>",
+        "<a href=\"#\" class=\"social-link\" title=\"Instagram\">IG</a>",
+        "<a href=\"#\" class=\"social-link\" title=\"Twitter\">TW</a>",
+        "<a href=\"#\" class=\"social-link\" title=\"YouTube\">YT</a>"
+      ],
+      "required": false,
+      "note": "El cliente debe proporcionar URLs reales de sus redes sociales"
+    }
+  },
+  
+  "css_variables": {
+    "footer-bg": {
+      "type": "color",
+      "description": "Color de fondo del footer",
+      "default": "#1a1a2e",
+      "required": false
+    },
+    "footer-text": {
+      "type": "color",
+      "description": "Color del texto",
+      "default": "#e0e0e0",
+      "required": false
+    }
+  },
+  
+  "files_required": [
+    "footer.html",
+    "footer-styles.css"
+  ],
+  
+  "customization_options": {
+    "layouts": [
+      "3-column",
+      "4-column",
+      "2-column"
+    ],
+    "themes": [
+      "dark",
+      "light",
+      "colored"
+    ]
+  }
+}

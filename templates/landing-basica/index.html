@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{PAGE_TITLE}}</title>
+    <meta name="description" content="{{PAGE_DESCRIPTION}}">
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Estilos -->
+    <link rel="stylesheet" href="../../componentes-globales/header/header-styles.css">
+    <link rel="stylesheet" href="../../componentes-globales/footer/footer-styles.css">
+    <link rel="stylesheet" href="../../componentes-globales/chatbot/chatbot-styles.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <!-- HEADER (Componente reutilizable) -->
+    {{INCLUDE:header}}
+    
+    <!-- HERO SECTION -->
+    <section class="hero-landing">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <img src="{{HERO_IMAGE}}" alt="Hero" class="hero-bg-image">
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">{{HERO_BADGE}}</div>
+                <h1 class="hero-title">{{HERO_TITLE}}</h1>
+                <p class="hero-subtitle">{{HERO_SUBTITLE}}</p>
+                
+                <div class="hero-buttons">
+                    <button class="btn btn-primary" onclick="{{CTA_PRIMARY_ACTION}}">
+                        {{CTA_PRIMARY_TEXT}}
+                    </button>
+                    <button class="btn btn-secondary" onclick="{{CTA_SECONDARY_ACTION}}">
+                        {{CTA_SECONDARY_TEXT}}
+                    </button>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="trust-badges">
+                    {{TRUST_BADGES}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CARACTERÍSTICAS / BENEFICIOS -->
+    <section class="features-section">
+        <div class="container">
+            <h2 class="section-title">{{FEATURES_TITLE}}</h2>
+            <p class="section-subtitle">{{FEATURES_SUBTITLE}}</p>
+            
+            <div class="features-grid">
+                {{FEATURE_CARDS}}
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS / VALOR -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="{{ABOUT_IMAGE}}" alt="Sobre nosotros">
+                </div>
+                <div class="about-content">
+                    <h2>{{ABOUT_TITLE}}</h2>
+                    <p>{{ABOUT_DESCRIPTION}}</p>
+                    
+                    <ul class="about-list">
+                        {{ABOUT_LIST_ITEMS}}
+                    </ul>
+                    
+                    <button class="btn btn-primary" onclick="{{ABOUT_CTA_ACTION}}">
+                        {{ABOUT_CTA_TEXT}}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>{{CTA_FINAL_TITLE}}</h2>
+                <p>{{CTA_FINAL_SUBTITLE}}</p>
+                <button class="btn btn-large" onclick="{{CTA_FINAL_ACTION}}">
+                    {{CTA_FINAL_TEXT}}
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER (Componente reutilizable) -->
+    {{INCLUDE:footer}}
+    
+    <!-- CHATBOT (Componente reutilizable - Opcional) -->
+    {{OPTIONAL:chatbot}}
+
+    <!-- Scripts -->
+    <script src="../../componentes-globales/header/header-script.js"></script>
+    <script src="../../componentes-globales/chatbot/chatbot-script.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

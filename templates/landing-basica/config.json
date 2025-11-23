@@ -1,0 +1,324 @@
+{
+  "template_name": "Landing Page Básica",
+  "template_id": "landing-basica-v1",
+  "description": "Landing page profesional para servicios, productos o eventos",
+  "version": "1.0.0",
+  "category": "landing",
+  "difficulty": "basic",
+  
+  "recommended_for": [
+    "Servicios profesionales (abogados, médicos, consultores)",
+    "Eventos y conferencias",
+    "Lanzamientos de productos",
+    "Captación de leads",
+    "Portfolios profesionales",
+    "Campañas de marketing"
+  ],
+  
+  "pages": {
+    "index.html": {
+      "description": "Página principal única (one-page)",
+      "sections": ["hero", "features", "about", "cta", "footer"]
+    }
+  },
+  
+  "variables": {
+    "PAGE_TITLE": {
+      "type": "text",
+      "description": "Título de la página (aparece en navegador)",
+      "default": "Bienvenido a Mi Negocio",
+      "required": true,
+      "max_length": 60,
+      "ai_generation": "GPT-4o crea título SEO-friendly basado en foto + formulario",
+      "prompt_example": "Genera un título atractivo para una página de [TIPO_NEGOCIO] detectado en la imagen"
+    },
+    
+    "PAGE_DESCRIPTION": {
+      "type": "text",
+      "description": "Meta descripción para SEO",
+      "default": "Descripción de mi negocio",
+      "required": true,
+      "max_length": 160,
+      "ai_generation": "GPT-4o genera descripción SEO optimizada"
+    },
+    
+    "HERO_IMAGE": {
+      "type": "image_url",
+      "description": "Imagen de fondo del hero",
+      "default": "https://images.unsplash.com/photo-1497366216548-37526070297c",
+      "required": true,
+      "source": "uploaded_by_client",
+      "ai_processing": "GPT-4o Vision analiza y sugiere mejor recorte/filtro"
+    },
+    
+    "HERO_BADGE": {
+      "type": "text",
+      "description": "Badge pequeño arriba del título",
+      "default": "✨ Confianza y calidad",
+      "required": false,
+      "max_length": 50,
+      "ai_generation": "GPT-4o sugiere badge según tipo de negocio",
+      "examples": ["🏆 +10 años de experiencia", "🔥 Oferta limitada", "⭐ #1 en ventas"]
+    },
+    
+    "HERO_TITLE": {
+      "type": "text",
+      "description": "Título principal del hero (H1)",
+      "default": "TRANSFORMA TU NEGOCIO CON NOSOTROS",
+      "required": true,
+      "max_length": 80,
+      "ai_generation": "GPT-4o genera título persuasivo basado en análisis de imagen",
+      "prompt": "Analiza la imagen del negocio y genera un título impactante en mayúsculas que resalte el valor principal. Máximo 80 caracteres."
+    },
+    
+    "HERO_SUBTITLE": {
+      "type": "text",
+      "description": "Subtítulo descriptivo",
+      "default": "Soluciones profesionales para hacer crecer tu empresa",
+      "required": true,
+      "max_length": 150,
+      "ai_generation": "GPT-4o genera subtítulo complementario",
+      "prompt": "Genera un subtítulo de 20-30 palabras que complemente el título y explique el beneficio principal"
+    },
+    
+    "CTA_PRIMARY_TEXT": {
+      "type": "text",
+      "description": "Texto del botón principal",
+      "default": "Comenzar Ahora",
+      "required": true,
+      "max_length": 30,
+      "ai_generation": "GPT-4o sugiere CTA según contexto"
+    },
+    
+    "CTA_PRIMARY_ACTION": {
+      "type": "javascript",
+      "description": "Acción del botón principal",
+      "default": "window.location.href='#contacto'",
+      "required": true,
+      "options": ["scroll to contact", "open form", "external link"]
+    },
+    
+    "CTA_SECONDARY_TEXT": {
+      "type": "text",
+      "description": "Texto del botón secundario",
+      "default": "Ver Más Información",
+      "required": false,
+      "max_length": 30
+    },
+    
+    "CTA_SECONDARY_ACTION": {
+      "type": "javascript",
+      "description": "Acción del botón secundario",
+      "default": "window.location.href='#sobre-nosotros'",
+      "required": false
+    },
+    
+    "TRUST_BADGES": {
+      "type": "array_html",
+      "description": "Badges de confianza debajo de botones",
+      "default": [
+        "<div class=\"trust-badge\">✓ Garantía 30 días</div>",
+        "<div class=\"trust-badge\">✓ Pago seguro</div>",
+        "<div class=\"trust-badge\">✓ Soporte 24/7</div>"
+      ],
+      "required": false,
+      "ai_generation": "GPT-4o sugiere badges relevantes según industria"
+    },
+    
+    "FEATURES_TITLE": {
+      "type": "text",
+      "description": "Título de sección características",
+      "default": "¿Por Qué Elegirnos?",
+      "required": true,
+      "max_length": 60
+    },
+    
+    "FEATURES_SUBTITLE": {
+      "type": "text",
+      "description": "Subtítulo de características",
+      "default": "Ofrecemos lo mejor para tu éxito",
+      "required": false,
+      "max_length": 100
+    },
+    
+    "FEATURE_CARDS": {
+      "type": "array_html",
+      "description": "Tarjetas de características (3-6 items)",
+      "default": [
+        "<div class=\"feature-card\">",
+        "  <div class=\"feature-icon\">⚡</div>",
+        "  <h3>Rápido</h3>",
+        "  <p>Resultados en tiempo récord</p>",
+        "</div>",
+        "<div class=\"feature-card\">",
+        "  <div class=\"feature-icon\">💎</div>",
+        "  <h3>Calidad</h3>",
+        "  <p>Los mejores estándares del mercado</p>",
+        "</div>",
+        "<div class=\"feature-card\">",
+        "  <div class=\"feature-icon\">🎯</div>",
+        "  <h3>Preciso</h3>",
+        "  <p>Soluciones a medida para ti</p>",
+        "</div>"
+      ],
+      "required": true,
+      "min_items": 3,
+      "max_items": 6,
+      "ai_generation": "GPT-4o detecta servicios/productos en imagen y genera cards relevantes"
+    },
+    
+    "ABOUT_IMAGE": {
+      "type": "image_url",
+      "description": "Imagen de sección 'Sobre nosotros'",
+      "default": "https://images.unsplash.com/photo-1522071820081-009f0129c71c",
+      "required": true,
+      "source": "uploaded_by_client_or_stock"
+    },
+    
+    "ABOUT_TITLE": {
+      "type": "text",
+      "description": "Título de sección sobre nosotros",
+      "default": "Sobre Nosotros",
+      "required": true,
+      "max_length": 60
+    },
+    
+    "ABOUT_DESCRIPTION": {
+      "type": "text",
+      "description": "Descripción del negocio",
+      "default": "Somos una empresa dedicada a ofrecer soluciones de calidad...",
+      "required": true,
+      "max_length": 500,
+      "ai_generation": "GPT-4o genera descripción persuasiva del negocio basada en análisis visual",
+      "prompt": "Analiza la imagen del negocio y genera una descripción convincente de 60-80 palabras que explique quiénes son, qué hacen y por qué son la mejor opción"
+    },
+    
+    "ABOUT_LIST_ITEMS": {
+      "type": "array_html",
+      "description": "Lista de puntos destacados",
+      "default": [
+        "<li>+10 años de experiencia</li>",
+        "<li>+500 clientes satisfechos</li>",
+        "<li>Garantía de calidad</li>",
+        "<li>Equipo profesional</li>"
+      ],
+      "required": true,
+      "min_items": 3,
+      "max_items": 6
+    },
+    
+    "ABOUT_CTA_TEXT": {
+      "type": "text",
+      "description": "Texto del botón en sección about",
+      "default": "Conocer Más",
+      "required": false
+    },
+    
+    "ABOUT_CTA_ACTION": {
+      "type": "javascript",
+      "description": "Acción del botón about",
+      "default": "window.location.href='#contacto'",
+      "required": false
+    },
+    
+    "CTA_FINAL_TITLE": {
+      "type": "text",
+      "description": "Título de CTA final",
+      "default": "¿Listo Para Comenzar?",
+      "required": true,
+      "max_length": 60
+    },
+    
+    "CTA_FINAL_SUBTITLE": {
+      "type": "text",
+      "description": "Subtítulo de CTA final",
+      "default": "Contáctanos hoy y recibe una consulta gratuita",
+      "required": true,
+      "max_length": 100
+    },
+    
+    "CTA_FINAL_TEXT": {
+      "type": "text",
+      "description": "Texto botón CTA final",
+      "default": "Contactar Ahora",
+      "required": true
+    },
+    
+    "CTA_FINAL_ACTION": {
+      "type": "javascript",
+      "description": "Acción CTA final",
+      "default": "window.location.href='#contacto'",
+      "required": true
+    }
+  },
+  
+  "css_variables": {
+    "brand-primary": {
+      "type": "color",
+      "description": "Color primario de marca",
+      "default": "#667eea",
+      "required": true,
+      "ai_extraction": "GPT-4o Vision extrae color dominante de imagen",
+      "extraction_method": "analizar_paleta_colores"
+    },
+    "brand-secondary": {
+      "type": "color",
+      "description": "Color secundario de marca",
+      "default": "#764ba2",
+      "required": true,
+      "ai_extraction": "GPT-4o Vision extrae segundo color dominante"
+    }
+  },
+  
+  "components_included": {
+    "header": true,
+    "footer": true,
+    "chatbot": false,
+    "auth": false,
+    "ecommerce": false
+  },
+  
+  "gpt4o_vision_prompt": {
+    "system": "Eres un experto en branding y diseño web. Analiza la imagen del negocio proporcionada y extrae información clave para generar una landing page profesional.",
+    
+    "user_prompt_template": "Analiza esta imagen de un negocio/local y proporciona la siguiente información en formato JSON:\n\n1. tipo_negocio: Identifica el tipo de negocio (ej: restaurante, gimnasio, tienda, consultorio, etc)\n2. colores_principales: Array con 2-3 colores hex dominantes en la imagen\n3. ambiente: Describe el ambiente (moderno, clásico, minimalista, elegante, casual)\n4. titulo_hero: Genera un título impactante en mayúsculas (max 80 caracteres)\n5. subtitulo_hero: Genera subtítulo descriptivo (20-30 palabras)\n6. descripcion_about: Descripción del negocio (60-80 palabras)\n7. caracteristicas: Array de 3-6 características/beneficios principales\n8. trust_badges: Array de 3 elementos que generen confianza\n9. cta_sugerido: Texto sugerido para call-to-action principal\n10. emoji_logo: Sugiere un emoji apropiado para el logo\n\nFormato de respuesta: JSON puro, sin markdown.",
+    
+    "response_format": {
+      "tipo_negocio": "string",
+      "colores_principales": ["#hex1", "#hex2", "#hex3"],
+      "ambiente": "string",
+      "titulo_hero": "string",
+      "subtitulo_hero": "string",
+      "descripcion_about": "string",
+      "caracteristicas": [
+        {"icon": "emoji", "titulo": "string", "descripcion": "string"}
+      ],
+      "trust_badges": ["string", "string", "string"],
+      "cta_sugerido": "string",
+      "emoji_logo": "emoji"
+    }
+  },
+  
+  "make_com_workflow": {
+    "step_1": "Cliente completa formulario (nombre negocio, email, teléfono, tipo de sitio)",
+    "step_2": "Cliente sube 1-3 fotos del negocio/local/producto",
+    "step_3": "Webhook Make.com recibe datos + imágenes",
+    "step_4": "Make.com envía imagen principal a GPT-4o Vision con prompt",
+    "step_5": "GPT-4o Vision retorna JSON con análisis completo",
+    "step_6": "Make.com mapea datos del JSON a variables del template",
+    "step_7": "Make.com reemplaza {{VARIABLES}} en archivos HTML/CSS",
+    "step_8": "Make.com actualiza colores CSS en :root",
+    "step_9": "Make.com sube archivos a Hostinger vía FTP",
+    "step_10": "Make.com envía email al cliente con URL de la web generada"
+  },
+  
+  "customization_time": "5-10 minutos (automatizado)",
+  "estimated_cost_per_generation": "$0.50 - $1.00 USD (costos API GPT-4o Vision)",
+  
+  "files_structure": {
+    "index.html": "Página principal",
+    "styles.css": "Estilos personalizados",
+    "script.js": "JavaScript (opcional)",
+    "config.json": "Este archivo de configuración"
+  }
+}

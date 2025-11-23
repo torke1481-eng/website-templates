@@ -1,0 +1,55 @@
+<!-- HEADER MODERNO MODULAR -->
+<header class="header-modern" id="mainHeader">
+    <div class="container">
+        <div class="header-content-modern">
+            <!-- Logo moderno -->
+            <div class="logo-modern">
+                <a href="index.html">
+                    <div class="logo-icon">{{BRAND_EMOJI}}</div>
+                    <div class="logo-text">
+                        <span class="logo-main">{{BRAND_NAME}}</span>
+                        <span class="logo-sub">{{BRAND_TAGLINE}}</span>
+                    </div>
+                </a>
+            </div>
+            
+            <!-- Navegación principal -->
+            <nav class="nav-modern">
+                {{NAV_ITEMS}}
+            </nav>
+            
+            <!-- Acciones del header -->
+            <div class="header-actions-modern">
+                <button class="action-btn search-btn-modern" onclick="toggleSearch()">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+                
+                {{OPTIONAL_USER_BTN}}
+                {{OPTIONAL_CART_BTN}}
+            </div>
+
+            <!-- Botón menú móvil -->
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </div>
+
+    <!-- Barra de búsqueda expandible -->
+    <div class="search-overlay" id="searchOverlay">
+        <div class="search-container">
+            <input type="text" placeholder="{{SEARCH_PLACEHOLDER}}" class="search-input-modern">
+            <button class="search-close" onclick="toggleSearch()">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </div>
+</header>

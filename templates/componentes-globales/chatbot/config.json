@@ -1,0 +1,116 @@
+{
+  "component_name": "Chatbot Flotante",
+  "description": "Chatbot interactivo con FAQs y respuestas automáticas",
+  "version": "1.0.0",
+  
+  "variables": {
+    "CHATBOT_TITLE": {
+      "type": "text",
+      "description": "Título del header del chatbot",
+      "default": "¿EN QUÉ PUEDO AYUDARTE?",
+      "required": true,
+      "max_length": 50
+    },
+    "WELCOME_MESSAGE": {
+      "type": "text",
+      "description": "Mensaje de bienvenida inicial",
+      "default": "¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?",
+      "required": true,
+      "max_length": 200,
+      "ai_suggestion": "GPT-4o puede personalizar según tipo de negocio"
+    },
+    "INPUT_PLACEHOLDER": {
+      "type": "text",
+      "description": "Placeholder del input de mensaje",
+      "default": "Escribe tu pregunta aquí...",
+      "required": false
+    },
+    "SCHEDULE_TITLE": {
+      "type": "text",
+      "description": "Título de horario de atención",
+      "default": "Horario atención:",
+      "required": false
+    },
+    "SCHEDULE_HOURS": {
+      "type": "text",
+      "description": "Horarios de atención",
+      "default": "Lun-Vie 9-18hs",
+      "required": false,
+      "note": "El cliente debe proporcionar sus horarios reales"
+    },
+    "FAQ_ITEMS": {
+      "type": "array_html",
+      "description": "Items de preguntas frecuentes",
+      "default": [
+        "<div class=\"faq-item\" data-faq=\"producto\">",
+        "  <div class=\"faq-question\">",
+        "    <span class=\"faq-icon\">❓</span>",
+        "    <span>¿Qué productos ofrecen?</span>",
+        "  </div>",
+        "  <div class=\"faq-answer\">",
+        "    <p>Ofrecemos una amplia variedad de productos de calidad.</p>",
+        "  </div>",
+        "</div>",
+        "<div class=\"faq-item\" data-faq=\"envio\">",
+        "  <div class=\"faq-question\">",
+        "    <span class=\"faq-icon\">❓</span>",
+        "    <span>¿Cómo funcionan los envíos?</span>",
+        "  </div>",
+        "  <div class=\"faq-answer\">",
+        "    <p>Hacemos envíos a todo el país en 24-48hs.</p>",
+        "  </div>",
+        "</div>",
+        "<div class=\"faq-item\" data-faq=\"pago\">",
+        "  <div class=\"faq-question\">",
+        "    <span class=\"faq-icon\">❓</span>",
+        "    <span>¿Qué métodos de pago aceptan?</span>",
+        "  </div>",
+        "  <div class=\"faq-answer\">",
+        "    <p>Aceptamos tarjetas, transferencia y efectivo.</p>",
+        "  </div>",
+        "</div>"
+      ],
+      "required": true,
+      "ai_suggestion": "GPT-4o debe generar FAQs relevantes según tipo de negocio"
+    }
+  },
+  
+  "auto_responses": {
+    "description": "Respuestas automáticas del chatbot (pueden ser personalizadas por IA)",
+    "format": "JSON key-value pairs",
+    "example": {
+      "hola": "¡Hola! ¿En qué puedo ayudarte?",
+      "precio": "Nuestros precios varían según el producto",
+      "envío": "Hacemos envíos a todo el país",
+      "gracias": "¡De nada! ¿Algo más?"
+    },
+    "ai_generation": "GPT-4o puede crear respuestas personalizadas según análisis del negocio"
+  },
+  
+  "files_required": [
+    "chatbot.html",
+    "chatbot-styles.css",
+    "chatbot-script.js"
+  ],
+  
+  "features": {
+    "faq_expandable": true,
+    "auto_responses": true,
+    "typing_indicator": false,
+    "file_upload": false,
+    "emoji_support": true,
+    "notification_dot": true
+  },
+  
+  "customization_options": {
+    "position": ["bottom-right", "bottom-left"],
+    "theme": ["gradient", "solid", "custom"],
+    "size": ["small", "medium", "large"]
+  },
+  
+  "integration_notes": [
+    "El chatbot puede integrar con APIs de chat en vivo",
+    "Las respuestas automáticas son básicas, se puede conectar con GPT para respuestas avanzadas",
+    "Los FAQs deben ser personalizados según el tipo de negocio detectado por la IA"
+  ]
+}

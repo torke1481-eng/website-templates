@@ -1,0 +1,390 @@
+{
+  "template_info": {
+    "name": "E-commerce Completo",
+    "version": "1.0.0",
+    "description": "Template de tienda online con carrito de compras, catálogo de productos, filtros por categoría y checkout integrado",
+    "ideal_for": [
+      "Tiendas de ropa",
+      "Tiendas de tecnología",
+      "Productos artesanales",
+      "Alimentos y bebidas",
+      "Accesorios y complementos"
+    ],
+    "features": [
+      "Carrito de compras funcional",
+      "Filtros por categoría",
+      "Ordenamiento de productos",
+      "Búsqueda de productos",
+      "Checkout vía WhatsApp/Email",
+      "Persistencia de carrito (LocalStorage)",
+      "Responsive design",
+      "Componentes modulares (header, footer, chatbot)"
+    ]
+  },
+  
+  "variables": {
+    "branding": {
+      "BRAND_NAME": {
+        "type": "string",
+        "default": "Mi Tienda",
+        "description": "Nombre de la tienda",
+        "ai_extraction": "Extraer del nombre del negocio proporcionado por el cliente"
+      },
+      "LOGO_EMOJI": {
+        "type": "emoji",
+        "default": "🛍️",
+        "description": "Emoji o ícono representativo",
+        "ai_extraction": "Sugerir emoji relevante al tipo de productos. Ejemplos: 👕 ropa, 💻 tecnología, 🍰 alimentos, 💎 joyería"
+      },
+      "STORE_TAGLINE": {
+        "type": "string",
+        "default": "Tu tienda online",
+        "description": "Eslogan corto de la tienda",
+        "ai_extraction": "Generar basado en el tipo de productos y descripción del negocio"
+      }
+    },
+    
+    "colors": {
+      "COLOR_PRIMARY": {
+        "type": "color_hex",
+        "default": "#667eea",
+        "description": "Color principal de la marca",
+        "ai_extraction": "Extraer del análisis de imagen con GPT-4o Vision. Color dominante en fotos del negocio/productos"
+      },
+      "COLOR_SECONDARY": {
+        "type": "color_hex",
+        "default": "#764ba2",
+        "description": "Color secundario complementario",
+        "ai_extraction": "Segundo color dominante o complementario del color primario"
+      },
+      "COLOR_ACCENT": {
+        "type": "color_hex",
+        "default": "#f093fb",
+        "description": "Color de acento para destacar elementos",
+        "ai_extraction": "Tercer color o variante más clara del primario"
+      }
+    },
+    
+    "hero_section": {
+      "HERO_TITLE": {
+        "type": "string",
+        "default": "Descubre Productos Increíbles",
+        "description": "Título principal del hero",
+        "ai_extraction": "Generar título persuasivo basado en: tipo de productos + propuesta de valor. Máximo 8 palabras"
+      },
+      "HERO_SUBTITLE": {
+        "type": "string",
+        "default": "Encuentra todo lo que necesitas en un solo lugar",
+        "description": "Subtítulo descriptivo",
+        "ai_extraction": "Complementar el título con beneficio clave o descripción atractiva"
+      }
+    },
+    
+    "categories": {
+      "CATEGORY_1_ID": {
+        "type": "string",
+        "default": "cat1",
+        "description": "ID de categoría 1",
+        "ai_extraction": "Generar ID único basado en el nombre de categoría (sin espacios, lowercase)"
+      },
+      "CATEGORY_1_NAME": {
+        "type": "string",
+        "default": "Categoría 1",
+        "description": "Nombre de categoría 1",
+        "ai_extraction": "Identificar del análisis de imagen y descripción. Ejemplos: Remeras, Celulares, Pasteles, Anillos"
+      },
+      "CATEGORY_1_ICON": {
+        "type": "emoji",
+        "default": "📦",
+        "description": "Ícono de categoría 1",
+        "ai_extraction": "Emoji representativo de la categoría"
+      },
+      "CATEGORY_2_ID": {
+        "type": "string",
+        "default": "cat2",
+        "description": "ID de categoría 2"
+      },
+      "CATEGORY_2_NAME": {
+        "type": "string",
+        "default": "Categoría 2",
+        "description": "Nombre de categoría 2"
+      },
+      "CATEGORY_2_ICON": {
+        "type": "emoji",
+        "default": "📦",
+        "description": "Ícono de categoría 2"
+      },
+      "CATEGORY_3_ID": {
+        "type": "string",
+        "default": "cat3",
+        "description": "ID de categoría 3"
+      },
+      "CATEGORY_3_NAME": {
+        "type": "string",
+        "default": "Categoría 3",
+        "description": "Nombre de categoría 3"
+      },
+      "CATEGORY_3_ICON": {
+        "type": "emoji",
+        "default": "📦",
+        "description": "Ícono de categoría 3"
+      }
+    },
+    
+    "products": {
+      "note": "Se pueden generar hasta 12 productos. Aquí muestro 6 como ejemplo. GPT-4o Vision identificará productos de las fotos",
+      
+      "PRODUCT_1_NAME": {
+        "type": "string",
+        "default": "Producto 1",
+        "description": "Nombre del producto 1",
+        "ai_extraction": "Identificar productos visibles en las fotos. Si son genéricos (ej: remera), añadir descriptor (ej: Remera Urbana Negra)"
+      },
+      "PRODUCT_1_DESCRIPTION": {
+        "type": "string",
+        "default": "Descripción del producto",
+        "description": "Descripción breve del producto",
+        "ai_extraction": "Generar descripción atractiva de 1-2 líneas basada en características visuales"
+      },
+      "PRODUCT_1_PRICE": {
+        "type": "number",
+        "default": 0,
+        "description": "Precio del producto (sin símbolo $)",
+        "ai_extraction": "Si el cliente no proporciona precios, usar valor placeholder como 99.99. Instrucción: 'Contactar al cliente para actualizar precios'"
+      },
+      "PRODUCT_1_IMAGE": {
+        "type": "url",
+        "default": "https://via.placeholder.com/300",
+        "description": "URL de la imagen del producto",
+        "ai_extraction": "Usar las fotos subidas por el cliente. Recortar/optimizar si es necesario"
+      },
+      "PRODUCT_1_CATEGORY": {
+        "type": "string",
+        "default": "cat1",
+        "description": "ID de categoría a la que pertenece",
+        "ai_extraction": "Asignar a la categoría correspondiente"
+      },
+      "PRODUCT_1_BADGE": {
+        "type": "string",
+        "default": "",
+        "description": "Badge opcional (Nuevo, -20%, Destacado)",
+        "ai_extraction": "Dejar vacío o sugerir '⭐ Destacado' para productos principales"
+      },
+      
+      "PRODUCT_2_NAME": {"type": "string", "default": "Producto 2"},
+      "PRODUCT_2_DESCRIPTION": {"type": "string", "default": "Descripción del producto"},
+      "PRODUCT_2_PRICE": {"type": "number", "default": 0},
+      "PRODUCT_2_IMAGE": {"type": "url", "default": "https://via.placeholder.com/300"},
+      "PRODUCT_2_CATEGORY": {"type": "string", "default": "cat1"},
+      "PRODUCT_2_BADGE": {"type": "string", "default": ""},
+      
+      "PRODUCT_3_NAME": {"type": "string", "default": "Producto 3"},
+      "PRODUCT_3_DESCRIPTION": {"type": "string", "default": "Descripción del producto"},
+      "PRODUCT_3_PRICE": {"type": "number", "default": 0},
+      "PRODUCT_3_IMAGE": {"type": "url", "default": "https://via.placeholder.com/300"},
+      "PRODUCT_3_CATEGORY": {"type": "string", "default": "cat2"},
+      "PRODUCT_3_BADGE": {"type": "string", "default": ""},
+      
+      "PRODUCT_4_NAME": {"type": "string", "default": "Producto 4"},
+      "PRODUCT_4_DESCRIPTION": {"type": "string", "default": "Descripción del producto"},
+      "PRODUCT_4_PRICE": {"type": "number", "default": 0},
+      "PRODUCT_4_IMAGE": {"type": "url", "default": "https://via.placeholder.com/300"},
+      "PRODUCT_4_CATEGORY": {"type": "string", "default": "cat2"},
+      "PRODUCT_4_BADGE": {"type": "string", "default": ""},
+      
+      "PRODUCT_5_NAME": {"type": "string", "default": "Producto 5"},
+      "PRODUCT_5_DESCRIPTION": {"type": "string", "default": "Descripción del producto"},
+      "PRODUCT_5_PRICE": {"type": "number", "default": 0},
+      "PRODUCT_5_IMAGE": {"type": "url", "default": "https://via.placeholder.com/300"},
+      "PRODUCT_5_CATEGORY": {"type": "string", "default": "cat3"},
+      "PRODUCT_5_BADGE": {"type": "string", "default": ""},
+      
+      "PRODUCT_6_NAME": {"type": "string", "default": "Producto 6"},
+      "PRODUCT_6_DESCRIPTION": {"type": "string", "default": "Descripción del producto"},
+      "PRODUCT_6_PRICE": {"type": "number", "default": 0},
+      "PRODUCT_6_IMAGE": {"type": "url", "default": "https://via.placeholder.com/300"},
+      "PRODUCT_6_CATEGORY": {"type": "string", "default": "cat3"},
+      "PRODUCT_6_BADGE": {"type": "string", "default": ""}
+    },
+    
+    "promo_banner": {
+      "PROMO_TITLE": {
+        "type": "string",
+        "default": "Ofertas Especiales",
+        "description": "Título del banner promocional",
+        "ai_extraction": "Generar call-to-action persuasivo"
+      },
+      "PROMO_DESCRIPTION": {
+        "type": "string",
+        "default": "Descubre nuestras promociones exclusivas",
+        "description": "Descripción de la promoción"
+      },
+      "PROMO_CTA": {
+        "type": "string",
+        "default": "Ver Productos",
+        "description": "Texto del botón"
+      }
+    },
+    
+    "benefits": {
+      "BENEFIT_1_TITLE": {
+        "type": "string",
+        "default": "Envío Gratis",
+        "description": "Título del beneficio 1",
+        "ai_extraction": "Adaptar según el tipo de negocio. Ejemplos: Envío gratis, Entrega rápida, Envío nacional"
+      },
+      "BENEFIT_1_DESCRIPTION": {
+        "type": "string",
+        "default": "En compras mayores a $5000",
+        "description": "Descripción del beneficio"
+      },
+      "BENEFIT_2_TITLE": {
+        "type": "string",
+        "default": "Pago Seguro",
+        "description": "Título del beneficio 2"
+      },
+      "BENEFIT_2_DESCRIPTION": {
+        "type": "string",
+        "default": "Múltiples medios de pago",
+        "description": "Descripción"
+      },
+      "BENEFIT_3_TITLE": {
+        "type": "string",
+        "default": "Compra Segura",
+        "description": "Título del beneficio 3"
+      },
+      "BENEFIT_3_DESCRIPTION": {
+        "type": "string",
+        "default": "Tus datos protegidos",
+        "description": "Descripción"
+      },
+      "BENEFIT_4_TITLE": {
+        "type": "string",
+        "default": "Atención 24/7",
+        "description": "Título del beneficio 4"
+      },
+      "BENEFIT_4_DESCRIPTION": {
+        "type": "string",
+        "default": "Estamos para ayudarte",
+        "description": "Descripción"
+      }
+    },
+    
+    "contact": {
+      "CONTACT_EMAIL": {
+        "type": "email",
+        "default": "info@tienda.com",
+        "description": "Email de contacto",
+        "ai_extraction": "Usar el email proporcionado por el cliente en el formulario"
+      },
+      "CONTACT_PHONE": {
+        "type": "phone",
+        "default": "+54 9 11 1234-5678",
+        "description": "Teléfono de contacto",
+        "ai_extraction": "Usar el teléfono del formulario"
+      },
+      "CONTACT_ADDRESS": {
+        "type": "string",
+        "default": "Dirección de la tienda",
+        "description": "Dirección física (opcional)",
+        "ai_extraction": "Usar dirección del formulario si fue proporcionada"
+      },
+      "WHATSAPP_NUMBER": {
+        "type": "string",
+        "default": "5491112345678",
+        "description": "Número de WhatsApp (solo números, con código país)",
+        "ai_extraction": "Convertir el teléfono del formulario a formato WhatsApp (sin +, sin espacios, sin guiones)"
+      },
+      "SCHEDULE": {
+        "type": "string",
+        "default": "Lun-Vie: 9-18hs",
+        "description": "Horario de atención",
+        "ai_extraction": "Usar horario del formulario si fue proporcionado"
+      }
+    },
+    
+    "social_media": {
+      "INSTAGRAM_URL": {
+        "type": "url",
+        "default": "https://instagram.com/tienda",
+        "description": "URL de Instagram",
+        "ai_extraction": "Construir desde el username: https://instagram.com/{username}"
+      },
+      "FACEBOOK_URL": {
+        "type": "url",
+        "default": "https://facebook.com/tienda",
+        "description": "URL de Facebook",
+        "ai_extraction": "Construir desde el nombre de página"
+      }
+    },
+    
+    "seo": {
+      "META_DESCRIPTION": {
+        "type": "string",
+        "default": "Tienda online con los mejores productos",
+        "description": "Meta description para SEO (150-160 caracteres)",
+        "ai_extraction": "Generar descripción SEO optimizada mencionando: tipo de productos + ubicación + beneficio principal"
+      },
+      "KEYWORDS": {
+        "type": "string",
+        "default": "tienda, productos, comprar online",
+        "description": "Keywords separadas por comas",
+        "ai_extraction": "Generar 5-8 keywords relevantes basadas en productos y categorías"
+      }
+    },
+    
+    "footer": {
+      "FOOTER_DESCRIPTION": {
+        "type": "string",
+        "default": "Tu tienda online de confianza",
+        "description": "Descripción breve en el footer",
+        "ai_extraction": "Resumen del negocio en 1 línea"
+      }
+    },
+    
+    "optional_components": {
+      "CHATBOT_INCLUDE": {
+        "type": "html",
+        "default": "",
+        "description": "HTML del chatbot si el cliente lo solicitó",
+        "ai_extraction": "Si en el formulario eligió 'Sí, incluir chatbot', insertar: <div id='chatbot'></div> y cargar componente"
+      },
+      "CHATBOT_SCRIPT": {
+        "type": "html",
+        "default": "",
+        "description": "Script del chatbot",
+        "ai_extraction": "Si chatbot = sí, insertar: <script src='../componentes-globales/chatbot/chatbot-script.js'></script>"
+      }
+    }
+  },
+  
+  "gpt4o_vision_prompt": {
+    "system_role": "Eres un experto en e-commerce y diseño web. Analiza las imágenes de productos y genera datos optimizados para una tienda online.",
+    
+    "user_prompt": "Analiza estas fotos de productos y extrae la siguiente información en formato JSON:\n\n1. Identifica el tipo de tienda (ropa, tecnología, alimentos, etc.)\n2. Detecta los 3 colores principales de la marca/productos (en formato hex)\n3. Identifica hasta 6 productos visibles en las fotos\n4. Para cada producto: nombre descriptivo, breve descripción, categoría\n5. Sugiere 3 categorías principales para organizar los productos\n6. Genera un título persuasivo para el hero (máximo 8 palabras)\n7. Genera un subtítulo complementario\n8. Sugiere un emoji representativo para el logo\n9. Genera meta description SEO (150-160 caracteres)\n10. Genera 6-8 keywords relevantes\n\nFormato de respuesta:\n```json\n{\n  \"tipo_tienda\": \"ropa\",\n  \"colores_principales\": [\"#E74C3C\", \"#2C3E50\", \"#ECF0F1\"],\n  \"emoji_logo\": \"👕\",\n  \"titulo_hero\": \"Moda Urbana de Alta Calidad\",\n  \"subtitulo_hero\": \"Encuentra tu estilo único con nuestra colección exclusiva\",\n  \"categorias\": [\n    {\"id\": \"remeras\", \"nombre\": \"Remeras\", \"icono\": \"👕\"},\n    {\"id\": \"pantalones\", \"nombre\": \"Pantalones\", \"icono\": \"👖\"},\n    {\"id\": \"accesorios\", \"nombre\": \"Accesorios\", \"icono\": \"🎒\"}\n  ],\n  \"productos\": [\n    {\n      \"nombre\": \"Remera Básica Negra\",\n      \"descripcion\": \"Remera de algodón 100% con corte moderno y ajuste perfecto\",\n      \"categoria\": \"remeras\",\n      \"imagen_index\": 0,\n      \"badge\": \"⭐ Destacado\"\n    }\n  ],\n  \"meta_description\": \"Tienda de ropa urbana en Buenos Aires. Remeras, pantalones y accesorios de alta calidad. Envío gratis en compras mayores a $5000.\",\n  \"keywords\": \"ropa urbana, remeras, pantalones, moda argentina, tienda online, envío gratis\"\n}\n```\n\nDatos del cliente:\n- Nombre del negocio: {{NOMBRE_NEGOCIO}}\n- Descripción: {{DESCRIPCION_NEGOCIO}}\n- Ciudad: {{CIUDAD}}\n\nAnaliza las imágenes y genera el JSON optimizado.",
+    
+    "examples_by_business_type": {
+      "tienda_ropa": {
+        "input": "Fotos de ropa colgada, maniquíes con remeras y pantalones",
+        "output_keys": ["colores_principales extraídos de las prendas", "productos: remeras, pantalones, buzos", "categorías: remeras, pantalones, accesorios"]
+      },
+      "tienda_tecnologia": {
+        "input": "Fotos de celulares, laptops, auriculares",
+        "output_keys": ["colores: negro, gris, azul metálico", "productos: smartphones, laptops, audio", "categorías: celulares, computación, audio"]
+      },
+      "panaderia_online": {
+        "input": "Fotos de panes, tortas, pasteles",
+        "output_keys": ["colores: marrón, dorado, crema", "productos: pan artesanal, tortas, pasteles", "categorías: panadería, pastelería, postres"]
+      }
+    }
+  },
+  
+  "automation_notes": {
+    "make_com_integration": "Este template requiere procesamiento de múltiples imágenes con GPT-4o Vision para identificar productos. Cada imagen puede contener 1-3 productos.",
+    "image_processing": "Analizar las 1-3 fotos subidas por el cliente. GPT-4o debe identificar productos individuales y generar datos para cada uno.",
+    "price_handling": "Los precios NO se pueden extraer de imágenes. Usar valor placeholder (ej: 99.99) e incluir nota al cliente para que actualice precios.",
+    "product_images": "Usar las fotos subidas como imágenes de productos. Idealmente recortar/optimizar cada producto individual.",
+    "category_generation": "GPT-4o debe agrupar productos en categorías lógicas basándose en lo que ve en las fotos.",
+    "estimated_operations": "~25-30 operaciones en Make.com por sitio generado (análisis de imágenes múltiples + reemplazos + FTP)"
+  }
+}

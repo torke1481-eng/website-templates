@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="{{META_DESCRIPTION}}">
+    <meta name="keywords" content="{{KEYWORDS}}">
+    <title>{{BRAND_NAME}} - {{STORE_TAGLINE}}</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Componentes Globales -->
+    <link rel="stylesheet" href="../componentes-globales/header/header-styles.css">
+    <link rel="stylesheet" href="../componentes-globales/footer/footer-styles.css">
+    <link rel="stylesheet" href="../componentes-globales/chatbot/chatbot-styles.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <span class="logo-icon">{{LOGO_EMOJI}}</span>
+                    <span class="logo-text">{{BRAND_NAME}}</span>
+                </div>
+                <nav class="nav">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#productos">Productos</a>
+                    <a href="#categorias">Categorías</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+                <div class="header-actions">
+                    <button class="search-btn" onclick="toggleSearch()">🔍</button>
+                    <button class="cart-btn" onclick="toggleCart()">
+                        🛒 <span class="cart-count">0</span>
+                    </button>
+                </div>
+                <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>{{HERO_TITLE}}</h1>
+                <p class="hero-subtitle">{{HERO_SUBTITLE}}</p>
+                <div class="hero-actions">
+                    <a href="#productos" class="btn btn-primary">Ver Productos</a>
+                    <a href="#categorias" class="btn btn-secondary">Categorías</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CATEGORÍAS -->
+    <section id="categorias" class="categories">
+        <div class="container">
+            <h2 class="section-title">Categorías</h2>
+            <div class="categories-grid">
+                <button class="category-card active" onclick="filterCategory('all')">
+                    <span class="category-icon">🏷️</span>
+                    <span class="category-name">Todos</span>
+                </button>
+                <button class="category-card" onclick="filterCategory('{{CATEGORY_1_ID}}')">
+                    <span class="category-icon">{{CATEGORY_1_ICON}}</span>
+                    <span class="category-name">{{CATEGORY_1_NAME}}</span>
+                </button>
+                <button class="category-card" onclick="filterCategory('{{CATEGORY_2_ID}}')">
+                    <span class="category-icon">{{CATEGORY_2_ICON}}</span>
+                    <span class="category-name">{{CATEGORY_2_NAME}}</span>
+                </button>
+                <button class="category-card" onclick="filterCategory('{{CATEGORY_3_ID}}')">
+                    <span class="category-icon">{{CATEGORY_3_ICON}}</span>
+                    <span class="category-name">{{CATEGORY_3_NAME}}</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCTOS -->
+    <section id="productos" class="products">
+        <div class="container">
+            <div class="products-header">
+                <h2 class="section-title">Nuestros Productos</h2>
+                <div class="products-filters">
+                    <select id="sortFilter" onchange="sortProducts(this.value)">
+                        <option value="default">Ordenar por</option>
+                        <option value="price-asc">Precio: Menor a Mayor</option>
+                        <option value="price-desc">Precio: Mayor a Menor</option>
+                        <option value="name">Nombre A-Z</option>
+                    </select>
+                </div>
+            </div>
+            <div class="products-grid" id="productsGrid">
+                <!-- Los productos se generarán dinámicamente desde el config.json -->
+                <!-- Producto de ejemplo (será reemplazado) -->
+                <div class="product-card" data-category="{{PRODUCT_1_CATEGORY}}" data-price="{{PRODUCT_1_PRICE}}">
+                    <div class="product-image">
+                        <img src="{{PRODUCT_1_IMAGE}}" alt="{{PRODUCT_1_NAME}}">
+                        <div class="product-badge">{{PRODUCT_1_BADGE}}</div>
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">{{PRODUCT_1_NAME}}</h3>
+                        <p class="product-description">{{PRODUCT_1_DESCRIPTION}}</p>
+                        <div class="product-footer">
+                            <span class="product-price">${{PRODUCT_1_PRICE}}</span>
+                            <button class="btn-add-cart" onclick="addToCart(1)">Agregar 🛒</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- BANNER PROMOCIONAL -->
+    <section class="promo-banner">
+        <div class="container">
+            <div class="promo-content">
+                <h2>{{PROMO_TITLE}}</h2>
+                <p>{{PROMO_DESCRIPTION}}</p>
+                <a href="#productos" class="btn btn-white">{{PROMO_CTA}}</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- BENEFICIOS -->
+    <section class="benefits">
+        <div class="container">
+            <div class="benefits-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">🚚</div>
+                    <h3>{{BENEFIT_1_TITLE}}</h3>
+                    <p>{{BENEFIT_1_DESCRIPTION}}</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💳</div>
+                    <h3>{{BENEFIT_2_TITLE}}</h3>
+                    <p>{{BENEFIT_2_DESCRIPTION}}</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🔒</div>
+                    <h3>{{BENEFIT_3_TITLE}}</h3>
+                    <p>{{BENEFIT_3_DESCRIPTION}}</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">📞</div>
+                    <h3>{{BENEFIT_4_TITLE}}</h3>
+                    <p>{{BENEFIT_4_DESCRIPTION}}</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>{{BRAND_NAME}}</h3>
+                    <p>{{FOOTER_DESCRIPTION}}</p>
+                    <div class="social-links">
+                        <a href="{{INSTAGRAM_URL}}" target="_blank">📷 Instagram</a>
+                        <a href="{{FACEBOOK_URL}}" target="_blank">👥 Facebook</a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Contacto</h4>
+                    <p>📧 {{CONTACT_EMAIL}}</p>
+                    <p>📱 {{CONTACT_PHONE}}</p>
+                    <p>📍 {{CONTACT_ADDRESS}}</p>
+                </div>
+                <div class="footer-column">
+                    <h4>Horarios</h4>
+                    <p>{{SCHEDULE}}</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 {{BRAND_NAME}}. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- CARRITO FLOTANTE -->
+    <div class="cart-sidebar" id="cartSidebar">
+        <div class="cart-header">
+            <h3>🛒 Mi Carrito</h3>
+            <button class="close-btn" onclick="toggleCart()">✕</button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <p class="empty-cart">Tu carrito está vacío</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span class="total-amount">$0</span>
+            </div>
+            <button class="btn btn-primary btn-block" onclick="checkout()">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <!-- CHATBOT (Opcional) -->
+    {{CHATBOT_INCLUDE}}
+
+    <!-- Scripts -->
+    <script src="script.js"></script>
+    <script src="../componentes-globales/header/header-script.js"></script>
+    {{CHATBOT_SCRIPT}}
+</body>
+</html>

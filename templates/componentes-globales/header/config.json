@@ -1,0 +1,123 @@
+{
+  "component_name": "Header Moderno",
+  "description": "Header sticky con navegación, búsqueda y carrito de compras",
+  "version": "1.0.0",
+  
+  "variables": {
+    "BRAND_NAME": {
+      "type": "text",
+      "description": "Nombre de la marca/negocio",
+      "default": "MI NEGOCIO",
+      "required": true,
+      "max_length": 30
+    },
+    "BRAND_TAGLINE": {
+      "type": "text",
+      "description": "Subtítulo o tagline debajo del logo",
+      "default": "Tu Tienda Online",
+      "required": false,
+      "max_length": 50
+    },
+    "BRAND_EMOJI": {
+      "type": "emoji",
+      "description": "Emoji/ícono del logo (puede ser generado por IA según tipo de negocio)",
+      "default": "🏪",
+      "required": true,
+      "ai_suggestion": "GPT-4o debe sugerir emoji según tipo de negocio detectado en imagen"
+    },
+    "SEARCH_PLACEHOLDER": {
+      "type": "text",
+      "description": "Texto placeholder en barra de búsqueda",
+      "default": "Busca productos, categorías...",
+      "required": false,
+      "max_length": 60
+    },
+    "NAV_ITEMS": {
+      "type": "array_html",
+      "description": "Items de navegación principal (HTML)",
+      "default": [
+        "<a href=\"index.html\" class=\"nav-link-modern\">Inicio</a>",
+        "<a href=\"productos.html\" class=\"nav-link-modern\">Productos</a>",
+        "<a href=\"sobre-nosotros.html\" class=\"nav-link-modern\">Sobre Nosotros</a>",
+        "<a href=\"contacto.html\" class=\"nav-link-modern\">Contacto</a>"
+      ],
+      "required": true,
+      "ai_suggestion": "Generar items según tipo de negocio"
+    },
+    "OPTIONAL_USER_BTN": {
+      "type": "html",
+      "description": "Botón de perfil de usuario (opcional)",
+      "default": "<button class=\"action-btn\" onclick=\"window.location.href='perfil.html'\">\n  <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\">\n    <path d=\"M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2\"></path>\n    <circle cx=\"12\" cy=\"7\" r=\"4\"></circle>\n  </svg>\n</button>",
+      "required": false,
+      "show_if": "has_user_accounts"
+    },
+    "OPTIONAL_CART_BTN": {
+      "type": "html",
+      "description": "Botón de carrito de compras (opcional)",
+      "default": "<button class=\"action-btn cart-btn-modern\" onclick=\"window.location.href='carrito.html'\">\n  <svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\">\n    <circle cx=\"9\" cy=\"21\" r=\"1\"></circle>\n    <circle cx=\"20\" cy=\"21\" r=\"1\"></circle>\n    <path d=\"M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6\"></path>\n  </svg>\n  <span class=\"cart-badge-modern\">0</span>\n</button>",
+      "required": false,
+      "show_if": "is_ecommerce"
+    }
+  },
+  
+  "css_variables": {
+    "brand-primary": {
+      "type": "color",
+      "description": "Color primario de la marca",
+      "default": "#667eea",
+      "required": true,
+      "ai_extraction": "Extraer del análisis de imagen con GPT-4o Vision"
+    },
+    "brand-secondary": {
+      "type": "color",
+      "description": "Color secundario de la marca",
+      "default": "#764ba2",
+      "required": true,
+      "ai_extraction": "Extraer del análisis de imagen con GPT-4o Vision"
+    },
+    "brand-dark": {
+      "type": "color",
+      "description": "Color oscuro (top bar)",
+      "default": "#1a1a2e",
+      "required": false
+    },
+    "brand-accent": {
+      "type": "color",
+      "description": "Color de acento",
+      "default": "#16213e",
+      "required": false
+    }
+  },
+  
+  "files_required": [
+    "header.html",
+    "header-styles.css",
+    "header-script.js"
+  ],
+  
+  "dependencies": {
+    "fonts": [
+      "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    ],
+    "external_scripts": []
+  },
+  
+  "features": {
+    "sticky_header": true,
+    "search_bar": true,
+    "mobile_menu": true,
+    "cart_integration": true,
+    "user_profile": true,
+    "mega_menu": false
+  },
+  
+  "integration_notes": [
+    "Para usar este componente en Make.com:",
+    "1. GPT-4o Vision analiza la imagen del negocio",
+    "2. Extrae colores primarios y secundarios (hex)",
+    "3. Sugiere emoji apropiado según tipo de negocio",
+    "4. Reemplaza todas las variables {{VARIABLE}} en header.html",
+    "5. Reemplaza variables CSS en :root de header-styles.css",
+    "6. Copia archivos al directorio del proyecto generado"
+  ]
+}

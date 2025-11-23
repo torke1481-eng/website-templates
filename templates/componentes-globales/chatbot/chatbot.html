@@ -1,0 +1,63 @@
+<!-- CHATBOT FLOTANTE MODULAR -->
+<div class="chatbot-container">
+    <!-- BOTÓN FLOTANTE -->
+    <button class="chatbot-toggle" id="chatbotToggle">
+        <span class="chat-icon">💬</span>
+        <span class="notification-dot"></span>
+    </button>
+
+    <!-- VENTANA DEL CHATBOT -->
+    <div class="chatbot-window" id="chatbotWindow">
+        <!-- HEADER -->
+        <div class="chatbot-header">
+            <div class="header-content">
+                <h3>{{CHATBOT_TITLE}}</h3>
+                <button class="close-btn" id="closeChatbot">✕</button>
+            </div>
+        </div>
+
+        <!-- BODY -->
+        <div class="chatbot-body">
+            <!-- MENSAJE DE BIENVENIDA -->
+            <div class="message bot-message">
+                <div class="message-content">
+                    {{WELCOME_MESSAGE}}
+                </div>
+            </div>
+
+            <!-- SECCIÓN DE FAQS -->
+            <div class="faq-section">
+                <h4>PREGUNTAS FRECUENTES:</h4>
+                <div class="faq-list">
+                    {{FAQ_ITEMS}}
+                </div>
+            </div>
+
+            <!-- SECCIÓN DE INPUT -->
+            <div class="input-section">
+                <h4>O ESCRIBE TU PREGUNTA:</h4>
+                <div class="input-container">
+                    <input type="text" 
+                           id="chatInput" 
+                           placeholder="{{INPUT_PLACEHOLDER}}" 
+                           maxlength="200">
+                    <button class="send-btn" id="sendMessage">
+                        <span>ENVIAR</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- MENSAJES DINÁMICOS -->
+            <div class="messages-container" id="messagesContainer"></div>
+
+            <!-- HORARIO DE ATENCIÓN -->
+            <div class="schedule-info">
+                <div class="schedule-icon">🕐</div>
+                <div class="schedule-text">
+                    <strong>{{SCHEDULE_TITLE}}</strong><br>
+                    {{SCHEDULE_HOURS}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
