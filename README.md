@@ -48,7 +48,7 @@ Sistema automatizado enterprise-grade para generación y gestión de landing pag
 │   │   ├── verify-domain.php
 │   │   └── cleanup-old.php
 │   │
-│   ├── templates/            # Templates base
+│   ├── templates/            # Website Generator System
 │   │   ├── landing-pro/
 │   │   ├── landing-basica/
 │   │   └── componentes-globales/
