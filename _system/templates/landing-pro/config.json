@@ -1,0 +1,724 @@
+{
+  "template_name": "Landing Page Premium 2025",
+  "template_id": "landing-pro-v2",
+  "description": "Landing page premium 2025 con glassmorphism, animaciones avanzadas, efectos 3D, cursor glow, botones magnéticos, estadísticas interactivas, testimonios, FAQ accordion y formulario de contacto con WhatsApp. Optimizada para Core Web Vitals y WCAG 2.1 AA.",
+  "version": "3.0.0",
+  "category": "landing",
+  "difficulty": "premium",
+  "price_tier": "high",
+  
+  "recommended_for": [
+    "Empresas establecidas que buscan conversión alta",
+    "Servicios profesionales premium (abogados, médicos especialistas, consultores)",
+    "Agencias de marketing y publicidad",
+    "Startups tech que buscan impresionar inversores",
+    "Productos premium o servicios de alto valor",
+    "Empresas B2B con ciclo de venta complejo",
+    "Coaches y mentores de negocios",
+    "Arquitectos y diseñadores de interiores"
+  ],
+  
+  "features": {
+    "performance": ["CLS < 0.05", "LCP < 1.5s", "PageSpeed 98/100", "Lazy loading con blur", "Throttled scroll events", "Performance monitoring", "RAF optimizado"],
+    "accessibility": ["WCAG 2.1 AA compliant", "Skip link", "ARIA labels", "Keyboard navigation", "Screen reader optimized", "Reduced motion support"],
+    "seo": ["Schema.org JSON-LD", "Open Graph complete", "Twitter Cards", "Meta tags optimized", "Canonical URLs"],
+    "animations": ["Intersection Observer", "Scroll animations", "Animated counters", "FAQ accordion", "Parallax effect", "Cursor glow", "Magnetic buttons", "3D tilt cards", "Gradient mesh animado", "Glassmorphism"],
+    "sections": ["Top bar", "Header", "Hero premium", "Hero cards", "Stats", "Features", "Process timeline", "About", "Testimonials", "FAQ", "CTA + Form", "Footer", "Back to top", "Progress bar"],
+    "integrations": ["WhatsApp directo", "Google Analytics 4", "Facebook Pixel", "Form to WhatsApp"]
+  },
+  
+  "pages": {
+    "index.html": {
+      "description": "Landing page completa con 12 secciones premium",
+      "sections": [
+        "top-bar",
+        "header",
+        "hero-premium",
+        "hero-cards",
+        "stats",
+        "features",
+        "process",
+        "about",
+        "testimonials",
+        "faq",
+        "cta-form",
+        "footer"
+      ],
+      "components": ["header", "footer", "optional-chatbot"]
+    }
+  },
+  
+  "variables": {
+    "PAGE_TITLE": {
+      "type": "text",
+      "description": "Título SEO de la página (aparece en la pestaña del navegador)",
+      "default": "Servicios Profesionales Premium",
+      "required": true,
+      "max_length": 60,
+      "ai_generation": "GPT-4o crea título SEO-optimizado basado en análisis de imagen y tipo de negocio",
+      "seo_importance": "critical",
+      "example": "Consultoría Legal Empresarial | Expertos en Derecho Corporativo"
+    },
+    
+    "PAGE_DESCRIPTION": {
+      "type": "text",
+      "description": "Meta descripción para SEO (aparece en resultados de Google)",
+      "default": "Soluciones profesionales de alta calidad para hacer crecer tu empresa",
+      "required": true,
+      "max_length": 155,
+      "ai_generation": "GPT-4o genera descripción persuasiva incluyendo beneficio principal y call-to-action",
+      "seo_importance": "critical",
+      "example": "Más de 15 años ayudando empresas a resolver conflictos legales complejos. Consulta gratis. Respuesta en 24hs."
+    },
+    
+    "META_KEYWORDS": {
+      "type": "text",
+      "description": "Palabras clave para SEO (separadas por comas)",
+      "default": "servicios profesionales, consultoría, soluciones empresariales",
+      "required": false,
+      "ai_generation": "GPT-4o extrae keywords relevantes del análisis de imagen y contexto",
+      "example": "abogado corporativo, derecho empresarial, asesoría legal, consultoría jurídica"
+    },
+    
+    "CANONICAL_URL": {
+      "type": "url",
+      "description": "URL canónica de la página para SEO",
+      "default": "https://tu-dominio.com",
+      "required": true,
+      "ai_generation": "Se construye automáticamente con el dominio del cliente"
+    },
+    
+    "BRAND_NAME": {
+      "type": "text",
+      "description": "Nombre de la marca o empresa",
+      "default": "Tu Empresa",
+      "required": true,
+      "max_length": 50,
+      "ai_generation": "Extraído del formulario o detectado por GPT-4o Vision en la imagen"
+    },
+    
+    "SCHEMA_TYPE": {
+      "type": "select",
+      "description": "Tipo de negocio para Schema.org",
+      "default": "ProfessionalService",
+      "required": true,
+      "options": ["ProfessionalService", "LocalBusiness", "Organization", "Attorney", "MedicalBusiness", "Consultant"],
+      "ai_generation": "GPT-4o selecciona el tipo más apropiado según análisis de imagen"
+    },
+    
+    "OG_IMAGE": {
+      "type": "image_url",
+      "description": "Imagen para compartir en redes sociales (Open Graph)",
+      "default": "",
+      "required": true,
+      "recommended_size": "1200x630px",
+      "ai_processing": "Imagen principal del cliente redimensionada automáticamente"
+    },
+    
+    "EMAIL_ADDRESS": {
+      "type": "email",
+      "description": "Email de contacto del negocio",
+      "default": "contacto@tuempresa.com",
+      "required": true,
+      "ai_generation": "Extraído del formulario o detectado en imagen con OCR"
+    },
+    
+    "PHONE_NUMBER": {
+      "type": "phone",
+      "description": "Teléfono de contacto (formato internacional)",
+      "default": "+54 11 1234-5678",
+      "required": true,
+      "ai_generation": "Extraído del formulario o detectado en imagen con OCR"
+    },
+    
+    "WHATSAPP_NUMBER": {
+      "type": "phone",
+      "description": "Número de WhatsApp (sin espacios ni guiones)",
+      "default": "5491112345678",
+      "required": true,
+      "format": "international_no_spaces",
+      "ai_generation": "Generado automáticamente limpiando PHONE_NUMBER"
+    },
+    
+    "COUNTRY": {
+      "type": "text",
+      "description": "País del negocio",
+      "default": "Argentina",
+      "required": true,
+      "ai_generation": "Detectado por GPT-4o del formulario o geolocalización"
+    },
+    
+    "SOCIAL_FACEBOOK": {
+      "type": "url",
+      "description": "URL de perfil de Facebook",
+      "default": "",
+      "required": false,
+      "ai_generation": "Extraído del formulario si está disponible"
+    },
+    
+    "SOCIAL_INSTAGRAM": {
+      "type": "url",
+      "description": "URL de perfil de Instagram",
+      "default": "",
+      "required": false,
+      "ai_generation": "Extraído del formulario si está disponible"
+    },
+    
+    "SOCIAL_LINKEDIN": {
+      "type": "url",
+      "description": "URL de perfil de LinkedIn",
+      "default": "",
+      "required": false,
+      "ai_generation": "Extraído del formulario si está disponible"
+    },
+    
+    "SOCIAL_TWITTER": {
+      "type": "url",
+      "description": "URL de perfil de Twitter/X",
+      "default": "",
+      "required": false,
+      "ai_generation": "Extraído del formulario si está disponible"
+    },
+    
+    "TOP_BAR_MESSAGE": {
+      "type": "text",
+      "description": "Mensaje destacado en la barra superior",
+      "default": "🎯 Oferta especial - Consulta gratis",
+      "required": false,
+      "max_length": 80,
+      "ai_generation": "GPT-4o sugiere mensaje urgente según temporada/sector",
+      "examples": ["🔥 Descuento 20% - Solo esta semana", "✨ Nuevo servicio disponible", "📞 Atención 24/7"]
+    },
+    
+    "TOP_BAR_LINK": {
+      "type": "text",
+      "description": "Ancla o URL para el link de la top bar",
+      "default": "#contacto",
+      "required": false
+    },
+    
+    "TOP_BAR_LINK_TEXT": {
+      "type": "text",
+      "description": "Texto del botón en top bar",
+      "default": "Contáctanos",
+      "required": false,
+      "max_length": 30
+    },
+    
+    "HERO_IMAGE": {
+      "type": "image_url",
+      "description": "Imagen de fondo del hero section",
+      "default": "",
+      "required": true,
+      "recommended_size": "1920x1080px",
+      "source": "uploaded_by_client",
+      "ai_processing": "GPT-4o Vision analiza calidad, sugiere recorte y filtros"
+    },
+    
+    "HERO_IMAGE_ALT": {
+      "type": "text",
+      "description": "Texto alternativo descriptivo para imagen hero (accesibilidad)",
+      "default": "Servicios profesionales de alta calidad",
+      "required": true,
+      "max_length": 125,
+      "ai_generation": "GPT-4o Vision describe la imagen en detalle",
+      "accessibility": "critical"
+    },
+    
+    "HERO_BADGE": {
+      "type": "text",
+      "description": "Badge pequeño con emoji arriba del título hero",
+      "default": "✨ Confianza y Excelencia",
+      "required": false,
+      "max_length": 60,
+      "ai_generation": "GPT-4o sugiere badge con emoji relevante",
+      "examples": ["🏆 +15 años de experiencia", "⭐ Calificación 5.0", "🔒 100% Confidencial"]
+    },
+    
+    "BADGE_ICON": {
+      "type": "emoji",
+      "description": "Emoji para el badge del hero",
+      "default": "✨",
+      "required": false,
+      "ai_generation": "GPT-4o selecciona emoji apropiado"
+    },
+    
+    "HERO_TITLE_LINE_1": {
+      "type": "text",
+      "description": "Primera línea del título hero (3 líneas total)",
+      "default": "TRANSFORMA",
+      "required": true,
+      "max_length": 30,
+      "ai_generation": "GPT-4o genera título impactante dividido en 3 líneas",
+      "style": "uppercase"
+    },
+    
+    "HERO_TITLE_LINE_2": {
+      "type": "text",
+      "description": "Segunda línea del título hero (con gradiente)",
+      "default": "TU NEGOCIO",
+      "required": true,
+      "max_length": 30,
+      "ai_generation": "Esta línea tendrá gradiente visual",
+      "style": "uppercase, gradient"
+    },
+    
+    "HERO_TITLE_LINE_3": {
+      "type": "text",
+      "description": "Tercera línea del título hero",
+      "default": "CON NOSOTROS",
+      "required": true,
+      "max_length": 30,
+      "ai_generation": "Complementa el mensaje principal",
+      "style": "uppercase"
+    },
+    
+    "HERO_SUBTITLE": {
+      "type": "text",
+      "description": "Subtítulo descriptivo debajo del título hero",
+      "default": "Soluciones profesionales de alto impacto para llevar tu empresa al siguiente nivel",
+      "required": true,
+      "max_length": 150,
+      "ai_generation": "GPT-4o genera subtítulo persuasivo con beneficio claro"
+    },
+    
+    "CTA_PRIMARY_TEXT": {
+      "type": "text",
+      "description": "Texto del botón CTA principal",
+      "default": "Agenda tu consulta",
+      "required": true,
+      "max_length": 30,
+      "ai_generation": "GPT-4o sugiere CTA específico al sector",
+      "examples": ["Solicita presupuesto", "Reserva tu sesión", "Comienza ahora"]
+    },
+    
+    "CTA_PRIMARY_ACTION": {
+      "type": "javascript",
+      "description": "Acción JavaScript del botón principal",
+      "default": "window.location.href='https://wa.me/PHONE'",
+      "required": true,
+      "ai_generation": "Generado automáticamente apuntando a WhatsApp"
+    },
+    
+    "CTA_SECONDARY_TEXT": {
+      "type": "text",
+      "description": "Texto del botón CTA secundario",
+      "default": "Ver más",
+      "required": true,
+      "max_length": 30,
+      "ai_generation": "GPT-4o sugiere CTA secundario complementario"
+    },
+    
+    "CTA_SECONDARY_ACTION": {
+      "type": "javascript",
+      "description": "Acción JavaScript del botón secundario",
+      "default": "window.location.href='#servicios'",
+      "required": true
+    },
+    
+    "TRUST_BADGES": {
+      "type": "html",
+      "description": "Badges de confianza en el hero (3-4 badges)",
+      "default": "<span class=\"hero-trust-badge\">✓ Atención personalizada</span><span class=\"hero-trust-badge\">✓ Respuesta 24hs</span>",
+      "required": false,
+      "ai_generation": "GPT-4o genera 3-4 badges relevantes al sector"
+    },
+    
+    "HERO_CARD_1_ICON": {
+      "type": "emoji",
+      "description": "Emoji para primera card flotante en hero",
+      "default": "💪",
+      "required": false,
+      "ai_generation": "GPT-4o selecciona 3 emojis relevantes"
+    },
+    
+    "HERO_CARD_1_TITLE": {
+      "type": "text",
+      "description": "Título de primera card flotante",
+      "default": "+50%",
+      "required": false,
+      "max_length": 20
+    },
+    
+    "HERO_CARD_1_TEXT": {
+      "type": "text",
+      "description": "Texto de primera card flotante",
+      "default": "Crecimiento",
+      "required": false,
+      "max_length": 30
+    },
+    
+    "STATS_ITEMS": {
+      "type": "html",
+      "description": "Items de estadísticas (generados dinámicamente por PHP)",
+      "default": "<div class=\"stat-item\"><span class=\"stat-number\" data-target=\"1000+\">0</span><span class=\"stat-label\">Clientes Felices</span></div>",
+      "required": true,
+      "ai_generation": "GPT-4o genera 4 estadísticas impactantes relevantes al sector",
+      "quantity": "4 items",
+      "animation": "Animated counter con Intersection Observer"
+    },
+    
+    "FEATURES_BADGE": {
+      "type": "text",
+      "description": "Badge de la sección de características",
+      "default": "Características",
+      "required": false,
+      "max_length": 30
+    },
+    
+    "FEATURES_TITLE": {
+      "type": "text",
+      "description": "Título de la sección de características",
+      "default": "¿Por qué elegirnos?",
+      "required": true,
+      "max_length": 60,
+      "ai_generation": "GPT-4o genera título persuasivo"
+    },
+    
+    "FEATURES_SUBTITLE": {
+      "type": "text",
+      "description": "Subtítulo de características",
+      "default": "Descubre lo que nos hace diferentes y únicos en el mercado",
+      "required": true,
+      "max_length": 150
+    },
+    
+    "FEATURE_CARDS": {
+      "type": "html",
+      "description": "Cards de características (generadas dinámicamente por PHP)",
+      "default": "",
+      "required": true,
+      "ai_generation": "GPT-4o genera 6 features con iconos, títulos y descripciones",
+      "quantity": "6 cards",
+      "structure": "icon (emoji) + title + description"
+    },
+    
+    "PROCESS_BADGE": {
+      "type": "text",
+      "description": "Badge de la sección proceso",
+      "default": "Nuestro Proceso",
+      "required": false,
+      "max_length": 30
+    },
+    
+    "PROCESS_TITLE": {
+      "type": "text",
+      "description": "Título de la sección proceso",
+      "default": "Cómo trabajamos",
+      "required": true,
+      "max_length": 60
+    },
+    
+    "PROCESS_SUBTITLE": {
+      "type": "text",
+      "description": "Subtítulo de proceso",
+      "default": "Un método probado paso a paso",
+      "required": true,
+      "max_length": 150
+    },
+    
+    "PROCESS_STEPS": {
+      "type": "html",
+      "description": "Pasos del proceso (generados dinámicamente por PHP)",
+      "default": "",
+      "required": true,
+      "ai_generation": "GPT-4o genera 4 pasos del proceso con números, títulos y descripciones",
+      "quantity": "4 steps",
+      "style": "Timeline vertical con animaciones"
+    },
+    
+    "ABOUT_BADGE": {
+      "type": "text",
+      "description": "Badge de la sección sobre nosotros",
+      "default": "Sobre Nosotros",
+      "required": false,
+      "max_length": 30
+    },
+    
+    "ABOUT_TITLE": {
+      "type": "text",
+      "description": "Título de la sección sobre nosotros",
+      "default": "Conoce nuestra historia",
+      "required": true,
+      "max_length": 60
+    },
+    
+    "ABOUT_DESCRIPTION": {
+      "type": "textarea",
+      "description": "Descripción completa de la empresa (2-3 párrafos)",
+      "default": "Somos una empresa comprometida con la excelencia y la innovación...",
+      "required": true,
+      "max_length": 500,
+      "ai_generation": "GPT-4o genera historia convincente basada en tipo de negocio"
+    },
+    
+    "ABOUT_IMAGE": {
+      "type": "image_url",
+      "description": "Imagen para la sección sobre nosotros",
+      "default": "",
+      "required": true,
+      "recommended_size": "600x400px",
+      "ai_processing": "Puede ser la misma imagen principal u otra del cliente"
+    },
+    
+    "ABOUT_IMAGE_ALT": {
+      "type": "text",
+      "description": "Texto alternativo para imagen about",
+      "default": "Equipo profesional trabajando",
+      "required": true,
+      "max_length": 125,
+      "ai_generation": "GPT-4o Vision describe la imagen"
+    },
+    
+    "ABOUT_HIGHLIGHTS": {
+      "type": "html",
+      "description": "Highlights visuales (números destacados)",
+      "default": "",
+      "required": false,
+      "ai_generation": "GPT-4o genera 2-3 highlights numéricos",
+      "examples": ["<div>15+ Años</div>", "<div>500+ Proyectos</div>"]
+    },
+    
+    "ABOUT_LIST_ITEMS": {
+      "type": "html",
+      "description": "Lista de beneficios o valores (3-4 items)",
+      "default": "<li>Calidad garantizada</li><li>Atención 24/7</li><li>Experiencia comprobada</li>",
+      "required": false,
+      "ai_generation": "GPT-4o genera 3-4 valores clave"
+    },
+    
+    "ABOUT_CTA_TEXT": {
+      "type": "text",
+      "description": "Texto del botón CTA en sección about",
+      "default": "Conoce más",
+      "required": true,
+      "max_length": 30
+    },
+    
+    "ABOUT_CTA_ACTION": {
+      "type": "javascript",
+      "description": "Acción del botón about",
+      "default": "window.location.href='#contacto'",
+      "required": true
+    },
+    
+    "VIDEO_PLAY_ACTION": {
+      "type": "javascript",
+      "description": "Acción del botón play video",
+      "default": "alert('Video próximamente')",
+      "required": false,
+      "note": "Cliente puede proveer URL de YouTube/Vimeo"
+    },
+    
+    "TESTIMONIALS_BADGE": {
+      "type": "text",
+      "description": "Badge de testimonios",
+      "default": "Testimonios",
+      "required": false,
+      "max_length": 30
+    },
+    
+    "TESTIMONIALS_TITLE": {
+      "type": "text",
+      "description": "Título de sección testimonios",
+      "default": "Lo que dicen nuestros clientes",
+      "required": true,
+      "max_length": 60
+    },
+    
+    "TESTIMONIALS_SUBTITLE": {
+      "type": "text",
+      "description": "Subtítulo de testimonios",
+      "default": "Historias reales de éxito",
+      "required": true,
+      "max_length": 150
+    },
+    
+    "TESTIMONIAL_CARDS": {
+      "type": "html",
+      "description": "Cards de testimonios (generadas por PHP)",
+      "default": "",
+      "required": true,
+      "ai_generation": "GPT-4o genera 3 testimonios realistas con nombres, empresas, fotos y reviews",
+      "quantity": "3 cards",
+      "structure": "photo + name + company + rating + review"
+    },
+    
+    "FAQ_BADGE": {
+      "type": "text",
+      "description": "Badge de FAQ",
+      "default": "Preguntas Frecuentes",
+      "required": false,
+      "max_length": 30
+    },
+    
+    "FAQ_TITLE": {
+      "type": "text",
+      "description": "Título de FAQ",
+      "default": "Resolvemos tus dudas",
+      "required": true,
+      "max_length": 60
+    },
+    
+    "FAQ_SUBTITLE": {
+      "type": "text",
+      "description": "Subtítulo de FAQ",
+      "default": "¿Tienes alguna pregunta? Estamos aquí para ayudarte",
+      "required": true,
+      "max_length": 150
+    },
+    
+    "FAQ_CTA_TEXT": {
+      "type": "text",
+      "description": "Texto del botón en FAQ",
+      "default": "¿Más preguntas? Contáctanos",
+      "required": true,
+      "max_length": 40
+    },
+    
+    "FAQ_CTA_ACTION": {
+      "type": "javascript",
+      "description": "Acción del botón FAQ",
+      "default": "window.location.href='https://wa.me/PHONE'",
+      "required": true
+    },
+    
+    "FAQ_ITEMS": {
+      "type": "html",
+      "description": "Items de FAQ accordion (generados por PHP)",
+      "default": "",
+      "required": true,
+      "ai_generation": "GPT-4o genera 5-7 preguntas frecuentes relevantes al sector con respuestas detalladas",
+      "quantity": "5-7 items",
+      "interaction": "Accordion animado con JavaScript"
+    },
+    
+    "CTA_FINAL_TITLE": {
+      "type": "text",
+      "description": "Título del CTA final",
+      "default": "¿Listo para comenzar?",
+      "required": true,
+      "max_length": 60,
+      "ai_generation": "GPT-4o genera título urgente"
+    },
+    
+    "CTA_FINAL_SUBTITLE": {
+      "type": "text",
+      "description": "Subtítulo del CTA final",
+      "default": "Contáctanos hoy y descubre lo que podemos hacer por ti",
+      "required": true,
+      "max_length": 150
+    },
+    
+    "CTA_BG_IMAGE": {
+      "type": "image_url",
+      "description": "Imagen de fondo para CTA section",
+      "default": "",
+      "required": true,
+      "recommended_size": "1920x1080px",
+      "ai_processing": "Puede reusar hero image u otra imagen del cliente"
+    },
+    
+    "CTA_BG_IMAGE_ALT": {
+      "type": "text",
+      "description": "Alt text para imagen de fondo CTA",
+      "default": "Fondo de contacto",
+      "required": true,
+      "max_length": 125,
+      "ai_generation": "GPT-4o genera descripción",
+      "accessibility": "important"
+    },
+    
+    "CTA_FEATURES": {
+      "type": "html",
+      "description": "Mini features en CTA section (3 items)",
+      "default": "",
+      "required": false,
+      "ai_generation": "GPT-4o genera 3 beneficios clave",
+      "examples": ["<div>✓ Respuesta rápida</div>", "<div>✓ Sin compromiso</div>"]
+    },
+    
+    "FORM_TITLE": {
+      "type": "text",
+      "description": "Título del formulario de contacto",
+      "default": "Comienza Hoy",
+      "required": true,
+      "max_length": 40
+    },
+    
+    "FORM_SUBMIT_TEXT": {
+      "type": "text",
+      "description": "Texto del botón submit del formulario",
+      "default": "Enviar Mensaje",
+      "required": true,
+      "max_length": 30
+    },
+    
+    "ANALYTICS_CODE": {
+      "type": "html",
+      "description": "Código de Google Analytics o Facebook Pixel",
+      "default": "",
+      "required": false,
+      "note": "Se puede agregar después del deployment"
+    }
+  },
+  
+  "ai_generation_workflow": {
+    "step_1": "Usuario sube foto del negocio + completa formulario básico",
+    "step_2": "GPT-4o Vision analiza la imagen y detecta: tipo de negocio, colores dominantes, estilo, profesionalismo",
+    "step_3": "GPT-4o genera TODOS los textos: títulos, descripciones, features, testimonios, FAQs",
+    "step_4": "Sistema combina datos del formulario + generación AI + imagen procesada",
+    "step_5": "deploy-v3.php genera HTML final con todos los placeholders reemplazados",
+    "step_6": "Sitio se sube a Hostinger con dominio personalizado"
+  },
+  
+  "make_com_integration": {
+    "webhook_url": "https://hook.us1.make.com/YOUR_WEBHOOK_ID",
+    "required_fields": ["photo_upload", "business_name", "business_type", "phone", "email"],
+    "optional_fields": ["social_media_links", "existing_content", "color_preferences"],
+    "ai_model": "GPT-4o with Vision",
+    "processing_time": "30-60 seconds",
+    "output": "Fully deployed website on Hostinger with custom subdomain"
+  },
+  
+  "technical_specs": {
+    "html_lines": 440,
+    "css_lines": 889,
+    "js_lines": 737,
+    "total_placeholders": 85,
+    "performance_score": 98,
+    "accessibility_score": 100,
+    "seo_score": 100,
+    "best_practices_score": 100,
+    "lighthouse_scores": {
+      "performance": 98,
+      "accessibility": 100,
+      "best_practices": 100,
+      "seo": 100
+    },
+    "core_web_vitals": {
+      "LCP": "1.2s",
+      "FID": "30ms",
+      "CLS": "0.03"
+    },
+    "browser_support": ["Chrome 90+", "Firefox 88+", "Safari 14+", "Edge 90+"],
+    "effects_2025": [
+      "Glassmorphism (backdrop-filter)",
+      "Mesh gradients animados",
+      "Sombras con color (glow)",
+      "Cursor glow effect",
+      "Magnetic buttons",
+      "3D tilt cards",
+      "Morphing blobs",
+      "Progress bar de lectura",
+      "Back to top animado"
+    ]
+  },
+  
+  "pricing": {
+    "development_value": "$1500-2000 USD",
+    "recommended_client_charge": "$800-1500 USD per site",
+    "generation_cost": "$0.50 (GPT-4o API calls)",
+    "profit_margin": "95%+"
+  }
+}

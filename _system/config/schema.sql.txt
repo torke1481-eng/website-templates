@@ -1,0 +1,346 @@
+-- ============================================
+-- SCHEMA DATABASE - Reemplazo de JSON files
+-- ============================================
+-- 
+-- INSTRUCCIONES:
+-- 1. Ir a cPanel → phpMyAdmin
+-- 2. Seleccionar/crear database: u253890393_webs
+-- 3. Copiar y pegar este SQL completo
+-- 4. Ejecutar
+-- 5. Configurar credenciales en db.php
+--
+-- ============================================
+
+-- Tabla principal de websites
+CREATE TABLE IF NOT EXISTS `websites` (
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `domain` VARCHAR(255) NOT NULL,
+  `business_name` VARCHAR(255) NOT NULL,
+  `template` VARCHAR(50) NOT NULL DEFAULT 'landing-pro',
+  `status` ENUM('generating', 'staging', 'approved', 'live', 'rejected', 'failed') 
+    NOT NULL DEFAULT 'generating',
+  `staging_url` VARCHAR(500) DEFAULT NULL COMMENT 'URL de preview en staging',
+  `production_url` VARCHAR(500) DEFAULT NULL COMMENT 'URL de producción',
+  `config` JSON DEFAULT NULL COMMENT 'Toda la configuración del negocio',
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `approved_at` TIMESTAMP NULL DEFAULT NULL,
+  `published_at` TIMESTAMP NULL DEFAULT NULL COMMENT 'Cuando se publicó en producción',
+  `deployed_at` TIMESTAMP NULL DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  UNIQUE KEY `idx_domain` (`domain`),
+  KEY `idx_status` (`status`),
+  KEY `idx_created` (`created_at`),
+  KEY `idx_template` (`template`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Tabla de logs de generación
+CREATE TABLE IF NOT EXISTS `generation_logs` (
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `website_id` INT(11) UNSIGNED DEFAULT NULL,
+  `step` VARCHAR(50) NOT NULL COMMENT 'prospector, generation, validation, deploy, etc',
+  `status` ENUM('started', 'completed', 'failed') NOT NULL,
+  `duration_ms` INT(11) DEFAULT NULL COMMENT 'Duración en milisegundos',
+  `cost_usd` DECIMAL(10,4) DEFAULT NULL COMMENT 'Costo en USD de APIs',
+  `error` TEXT DEFAULT NULL,
+  `metadata` JSON DEFAULT NULL COMMENT 'Datos adicionales del paso',
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_website` (`website_id`),
+  KEY `idx_step` (`step`),
+  KEY `idx_status` (`status`),
+  KEY `idx_created` (`created_at`),
+  CONSTRAINT `fk_generation_website` 
+    FOREIGN KEY (`website_id`) 
+    REFERENCES `websites` (`id`) 
+    ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Tabla de analytics (métricas de webs live)
+CREATE TABLE IF NOT EXISTS `analytics` (
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `website_id` INT(11) UNSIGNED NOT NULL,
+  `metric` VARCHAR(50) NOT NULL COMMENT 'pageviews, conversions, bounce_rate, etc',
+  `value` DECIMAL(10,2) NOT NULL,
+  `date` DATE NOT NULL,
+  `metadata` JSON DEFAULT NULL,
+  PRIMARY KEY (`id`),
+  KEY `idx_website` (`website_id`),
+  KEY `idx_metric` (`metric`),
+  KEY `idx_date` (`date`),
+  UNIQUE KEY `idx_unique_metric` (`website_id`, `metric`, `date`),
+  CONSTRAINT `fk_analytics_website` 
+    FOREIGN KEY (`website_id`) 
+    REFERENCES `websites` (`id`) 
+    ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- Tabla de aprobaciones/rechazos (audit trail)
+CREATE TABLE IF NOT EXISTS `approvals` (
+  `id` INT(11) UNSIGNED NOT NULL AUTO_INCREMENT,
+  `website_id` INT(11) UNSIGNED NOT NULL,
+  `action` ENUM('approved', 'rejected', 'revision') NOT NULL,
+  `reason` TEXT DEFAULT NULL COMMENT 'Razón si es rechazado',
+  `approved_by` VARCHAR(100) DEFAULT NULL COMMENT 'Email de quien aprobó',
+  `created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`id`),
+  KEY `idx_website` (`website_id`),
+  KEY `idx_action` (`action`),
+  KEY `idx_created` (`created_at`),
+  CONSTRAINT `fk_approvals_website` 
+    FOREIGN KEY (`website_id`) 
+    REFERENCES `websites` (`id`) 
+    ON DELETE CASCADE
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- ============================================
+-- DATOS DE EJEMPLO (opcional, para testing)
+-- ============================================
+
+-- Insertar website de ejemplo
+INSERT INTO `websites` (
+  `domain`, 
+  `business_name`, 
+  `template`, 
+  `status`, 
+  `config`
+) VALUES (
+  'ejemplo-fitness.com',
+  'Gimnasio FitPro',
+  'landing-pro',
+  'staging',
+  JSON_OBJECT(
+    'industry', 'fitness',
+    'colors', JSON_ARRAY('#ff6b00', '#1a1a1a', '#ffffff'),
+    'phone', '+593987654321',
+    'email', 'info@ejemplo-fitness.com',
+    'preview_url', 'https://otavafitness.com/staging/ejemplo-fitness/'
+  )
+);
+
+-- ============================================
+-- VISTAS ÚTILES
+-- ============================================
+
+-- Vista de resumen de websites
+CREATE OR REPLACE VIEW `v_websites_summary` AS
+SELECT 
+  w.id,
+  w.domain,
+  w.business_name,
+  w.template,
+  w.status,
+  w.created_at,
+  w.approved_at,
+  w.deployed_at,
+  TIMESTAMPDIFF(SECOND, w.created_at, w.approved_at) as approval_time_seconds,
+  (SELECT COUNT(*) FROM generation_logs gl WHERE gl.website_id = w.id) as log_count,
+  (SELECT SUM(cost_usd) FROM generation_logs gl WHERE gl.website_id = w.id) as total_cost,
+  JSON_EXTRACT(w.config, '$.industry') as industry,
+  JSON_EXTRACT(w.config, '$.preview_url') as preview_url
+FROM websites w;
+
+-- Vista de performance de generación
+CREATE OR REPLACE VIEW `v_generation_performance` AS
+SELECT 
+  gl.step,
+  COUNT(*) as total_executions,
+  AVG(gl.duration_ms) as avg_duration_ms,
+  MIN(gl.duration_ms) as min_duration_ms,
+  MAX(gl.duration_ms) as max_duration_ms,
+  SUM(gl.cost_usd) as total_cost_usd,
+  AVG(gl.cost_usd) as avg_cost_usd,
+  SUM(CASE WHEN gl.status = 'failed' THEN 1 ELSE 0 END) as failed_count,
+  (SUM(CASE WHEN gl.status = 'failed' THEN 1 ELSE 0 END) / COUNT(*) * 100) as failure_rate_percent
+FROM generation_logs gl
+GROUP BY gl.step;
+
+-- Vista de analytics diario
+CREATE OR REPLACE VIEW `v_daily_stats` AS
+SELECT 
+  DATE(created_at) as date,
+  COUNT(*) as websites_created,
+  SUM(CASE WHEN status = 'live' THEN 1 ELSE 0 END) as live_count,
+  SUM(CASE WHEN status = 'staging' THEN 1 ELSE 0 END) as pending_count,
+  SUM(CASE WHEN status = 'rejected' THEN 1 ELSE 0 END) as rejected_count,
+  SUM(CASE WHEN status = 'failed' THEN 1 ELSE 0 END) as failed_count
+FROM websites
+GROUP BY DATE(created_at)
+ORDER BY date DESC;
+
+-- ============================================
+-- STORED PROCEDURES ÚTILES
+-- ============================================
+
+DELIMITER $$
+
+-- Procedimiento para marcar website como aprobado
+CREATE PROCEDURE `sp_approve_website`(
+  IN p_website_id INT,
+  IN p_approved_by VARCHAR(100)
+)
+BEGIN
+  DECLARE EXIT HANDLER FOR SQLEXCEPTION
+  BEGIN
+    ROLLBACK;
+    RESIGNAL;
+  END;
+  
+  START TRANSACTION;
+  
+  -- Actualizar status
+  UPDATE websites 
+  SET 
+    status = 'approved',
+    approved_at = NOW()
+  WHERE id = p_website_id;
+  
+  -- Registrar aprobación
+  INSERT INTO approvals (website_id, action, approved_by)
+  VALUES (p_website_id, 'approved', p_approved_by);
+  
+  COMMIT;
+END$$
+
+-- Procedimiento para marcar website como rechazado
+CREATE PROCEDURE `sp_reject_website`(
+  IN p_website_id INT,
+  IN p_reason TEXT,
+  IN p_rejected_by VARCHAR(100)
+)
+BEGIN
+  DECLARE EXIT HANDLER FOR SQLEXCEPTION
+  BEGIN
+    ROLLBACK;
+    RESIGNAL;
+  END;
+  
+  START TRANSACTION;
+  
+  -- Actualizar status
+  UPDATE websites 
+  SET status = 'rejected'
+  WHERE id = p_website_id;
+  
+  -- Registrar rechazo
+  INSERT INTO approvals (website_id, action, reason, approved_by)
+  VALUES (p_website_id, 'rejected', p_reason, p_rejected_by);
+  
+  COMMIT;
+END$$
+
+-- Procedimiento para limpiar staging antiguos
+CREATE PROCEDURE `sp_cleanup_old_staging`(
+  IN p_days_old INT
+)
+BEGIN
+  -- Solo eliminar websites en staging que tengan más de X días
+  DELETE FROM websites 
+  WHERE 
+    status = 'staging' 
+    AND created_at < DATE_SUB(NOW(), INTERVAL p_days_old DAY);
+    
+  -- Retornar cuántos se eliminaron
+  SELECT ROW_COUNT() as deleted_count;
+END$$
+
+DELIMITER ;
+
+-- ============================================
+-- TRIGGERS ÚTILES
+-- ============================================
+
+-- Trigger para log automático cuando cambia status
+DELIMITER $$
+
+CREATE TRIGGER `tr_website_status_change` 
+AFTER UPDATE ON `websites`
+FOR EACH ROW
+BEGIN
+  IF OLD.status != NEW.status THEN
+    INSERT INTO generation_logs (website_id, step, status, metadata)
+    VALUES (
+      NEW.id,
+      CONCAT('status_change_', NEW.status),
+      'completed',
+      JSON_OBJECT(
+        'old_status', OLD.status,
+        'new_status', NEW.status
+      )
+    );
+  END IF;
+END$$
+
+DELIMITER ;
+
+-- ============================================
+-- ÍNDICES ADICIONALES PARA PERFORMANCE
+-- ============================================
+
+-- Índice compuesto para queries comunes
+CREATE INDEX `idx_status_created` ON `websites` (`status`, `created_at` DESC);
+
+-- Índice para búsquedas por nombre de negocio
+CREATE INDEX `idx_business_name` ON `websites` (`business_name`(50));
+
+-- Índice para análisis de costos
+CREATE INDEX `idx_logs_cost` ON `generation_logs` (`website_id`, `cost_usd`);
+
+-- ============================================
+-- GRANTS (Configurar permisos usuario)
+-- ============================================
+
+-- IMPORTANTE: Ejecutar esto con usuario root/admin
+-- Reemplazar 'u253890393_admin' con tu usuario real
+
+-- GRANT SELECT, INSERT, UPDATE, DELETE ON u253890393_webs.* 
+-- TO 'u253890393_admin'@'localhost';
+
+-- FLUSH PRIVILEGES;
+
+-- ============================================
+-- VERIFICACIÓN
+-- ============================================
+
+-- Verificar que todo se creó correctamente
+SELECT 
+  'Tablas creadas' as check_type,
+  COUNT(*) as count
+FROM information_schema.tables 
+WHERE table_schema = DATABASE()
+  AND table_name IN ('websites', 'generation_logs', 'analytics', 'approvals');
+
+-- Debe retornar count = 4
+
+SELECT 
+  'Vistas creadas' as check_type,
+  COUNT(*) as count
+FROM information_schema.views 
+WHERE table_schema = DATABASE();
+
+-- Debe retornar count = 3
+
+SELECT 
+  'Stored procedures creados' as check_type,
+  COUNT(*) as count
+FROM information_schema.routines 
+WHERE routine_schema = DATABASE()
+  AND routine_type = 'PROCEDURE';
+
+-- Debe retornar count = 3
+
+-- ============================================
+-- MANTENIMIENTO
+-- ============================================
+
+-- Ejecutar periódicamente para limpiar staging antiguos
+-- CALL sp_cleanup_old_staging(7);  -- Eliminar staging >7 días
+
+-- Optimizar tablas periódicamente
+-- OPTIMIZE TABLE websites;
+-- OPTIMIZE TABLE generation_logs;
+-- OPTIMIZE TABLE analytics;
+
+-- ============================================
+-- FIN
+-- ============================================

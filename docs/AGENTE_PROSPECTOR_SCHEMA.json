@@ -1,0 +1,447 @@
+{
+  "metadata": {
+    "version": "1.0",
+    "timestamp": "2025-11-25T12:00:00Z",
+    "agent_version": "prospector-v2",
+    "scan_duration_seconds": 45
+  },
+  
+  "negocio": {
+    "nombre_comercial": "Gimnasio FitPro CrossFit",
+    "nombre_legal": "FitPro Gym S.A.",
+    "categoria_principal": "Gimnasio",
+    "categoria_secundaria": "CrossFit / Entrenamiento Funcional",
+    "industria_codigo": "fitness-gym",
+    
+    "ubicacion": {
+      "direccion_completa": "Av. República del Salvador N34-45 y Suecia",
+      "ciudad": "Quito",
+      "provincia": "Pichincha",
+      "pais": "Ecuador",
+      "zona": "Norte",
+      "barrio": "La Carolina",
+      "coordenadas": {
+        "lat": -0.1807,
+        "lng": -78.4678
+      },
+      "accesibilidad": "Cerca de parada de metrobus, estacionamiento limitado"
+    },
+    
+    "contacto": {
+      "telefono_principal": "+593987654321",
+      "telefono_secundario": "+593987654322",
+      "email": "info@fitpro.com.ec",
+      "whatsapp": "+593987654321",
+      "website_actual": "https://fitpro.com.ec",
+      "redes_sociales": {
+        "instagram": "@fitpro_quito",
+        "instagram_followers": 8500,
+        "facebook": "FitProQuito",
+        "facebook_likes": 12000,
+        "tiktok": "@fitproquito",
+        "youtube": null
+      }
+    },
+    
+    "operacion": {
+      "horarios": "Lunes a Viernes 5:30am - 10:00pm, Sábados 7:00am - 2:00pm, Domingos 8:00am - 12:00pm",
+      "anos_operacion": 6,
+      "ano_fundacion": 2018,
+      "propietario_visible": "Carlos Pérez (Fundador)",
+      "numero_empleados_estimado": "8-12",
+      "capacidad_estimada": "300 miembros activos"
+    }
+  },
+  
+  "analisis_visual": {
+    "fotos_analizadas": 24,
+    "gpt4o_vision_analysis": {
+      "descripcion_ambiente": "Gimnasio moderno estilo industrial con techos altos, iluminación LED dramática, paredes de ladrillo expuesto y piso de goma negro. Equipamiento profesional marca Rogue y Eleiko predominante. Área principal espaciosa con 6 estaciones CrossFit, zona de levantamiento olímpico separada, área de boxeo con sacos y ring. Ambiente serio, profesional, orientado a resultados.",
+      
+      "colores_dominantes": [
+        {"hex": "#1a1a1a", "nombre": "Negro mate", "porcentaje": 40, "uso": "Paredes, piso, equipamiento"},
+        {"hex": "#ff6b00", "nombre": "Naranja vibrante", "porcentaje": 25, "uso": "Branding, señalética, acentos"},
+        {"hex": "#ffffff", "nombre": "Blanco", "porcentaje": 20, "uso": "Techo, lettering, highlights"},
+        {"hex": "#c0c0c0", "nombre": "Gris acero", "porcentaje": 15, "uso": "Equipamiento metálico"}
+      ],
+      
+      "estilo_visual": "Industrial moderno fitness, minimalista, profesional",
+      "mood": "Energético, intenso, motivador, sin lujos, resultados-driven",
+      "target_visual_inferido": "Adultos 25-45 años, fitness serios, atletas intermedios-avanzados",
+      
+      "equipamiento_visible": [
+        "Racks Rogue Monster Lite (6 estaciones)",
+        "Barras olímpicas Eleiko",
+        "Bumper plates calibradas",
+        "Kettlebells 8-32kg",
+        "Concept2 Rowers (8 unidades)",
+        "Assault bikes (6 unidades)",
+        "Pull-up bars profesionales",
+        "Plyo boxes madera",
+        "Battle ropes",
+        "Sleds de arrastre",
+        "Ring de boxeo 4x4m",
+        "Sacos de boxeo (6)"
+      ],
+      
+      "diferenciadores_visuales": [
+        "Equipamiento top tier (Rogue/Eleiko, no genérico)",
+        "Espacio amplio y organizado (no abarrotado)",
+        "Zona de boxeo completa (único en competencia)",
+        "Iluminación profesional de gimnasio",
+        "Branding consistente y profesional",
+        "Sistema de sonido visible de alta gama"
+      ],
+      
+      "personas_en_fotos": {
+        "demografia": "70% hombres 25-40, 30% mujeres 25-35",
+        "nivel_fitness": "Intermedio a avanzado predominante",
+        "vestimenta": "Deportiva funcional, no fashion gym",
+        "expresiones": "Enfocadas, serias, trabajo intenso"
+      },
+      
+      "calidad_fotografica": {
+        "nivel": "Profesional",
+        "lighting": "Excelente, natural + LED estratégico",
+        "composicion": "Bien enmarcado, muestra amplitud",
+        "resolution": "Alta calidad 4K",
+        "autenticidad": "100% real, no stock photos"
+      }
+    }
+  },
+  
+  "analisis_resenas": {
+    "google_reviews": {
+      "rating_promedio": 4.7,
+      "total_resenas": 142,
+      "distribucion": {
+        "5_estrellas": 98,
+        "4_estrellas": 32,
+        "3_estrellas": 8,
+        "2_estrellas": 3,
+        "1_estrella": 1
+      },
+      "crecimiento_mensual": "+8 reseñas/mes último trimestre"
+    },
+    
+    "sentiment_analysis": {
+      "sentiment_general": "Muy positivo (87%)",
+      "tono_predominante": "Agradecido, motivado, resultados visibles",
+      
+      "keywords_positivas_frecuencia": [
+        {"keyword": "entrenadores profesionales", "menciones": 67, "sentiment": 0.92},
+        {"keyword": "resultados reales", "menciones": 54, "sentiment": 0.95},
+        {"keyword": "ambiente motivador", "menciones": 48, "sentiment": 0.89},
+        {"keyword": "comunidad", "menciones": 43, "sentiment": 0.88},
+        {"keyword": "equipamiento excelente", "menciones": 38, "sentiment": 0.91},
+        {"keyword": "nutricionista incluido", "menciones": 32, "sentiment": 0.94},
+        {"keyword": "clases personalizadas", "menciones": 29, "sentiment": 0.90},
+        {"keyword": "limpieza", "menciones": 24, "sentiment": 0.87}
+      ],
+      
+      "keywords_negativas_frecuencia": [
+        {"keyword": "estacionamiento limitado", "menciones": 12, "sentiment": -0.45},
+        {"keyword": "horarios llenos", "menciones": 8, "sentiment": -0.38},
+        {"keyword": "precio", "menciones": 5, "sentiment": -0.25},
+        {"keyword": "cupos limitados", "menciones": 4, "sentiment": -0.30}
+      ]
+    },
+    
+    "testimonios_destacados": [
+      {
+        "texto_original": "Después de 4 meses en FitPro bajé 15kg y gané músculo que nunca pensé posible. Los coaches Carlos y Ana son increíbles, cada clase es personalizada aunque seamos grupo. El plan nutricional que incluyen fue game changer. Mejor inversión de mi vida.",
+        "autor": "María L.",
+        "rating": 5,
+        "fecha": "2024-10-15",
+        "verificado": true,
+        "impacto_score": 9.5,
+        "usabilidad_web": "Excelente para testimonios, menciona resultados + beneficios + tiempo"
+      },
+      {
+        "texto_original": "Probé 5 gyms en Quito y este es el único serio. Nada de poses ni selfies, aquí vienes a trabajar duro. Equipamiento nivel competencia, entrenadores certificados CrossFit L2, y el grupo de WhatsApp te mantiene motivado. Si buscas resultados de verdad, este es el lugar.",
+        "autor": "Roberto M.",
+        "rating": 5,
+        "fecha": "2024-11-02",
+        "verificado": true,
+        "impacto_score": 9.2,
+        "usabilidad_web": "Perfecto para diferenciación, contrasta con competencia"
+      },
+      {
+        "texto_original": "Llegué sin condición física, con sobrepeso y dudas. El programa Fundamentals de 4 semanas me enseñó todo desde cero. Ahora 7 meses después estoy en las clases avanzadas y mi vida cambió completamente. La comunidad te apoya siempre.",
+        "autor": "Andrea C.",
+        "rating": 5,
+        "fecha": "2024-09-20",
+        "verificado": true,
+        "impacto_score": 8.8,
+        "usabilidad_web": "Ideal para objeción 'no tengo experiencia', muestra transformación"
+      }
+    ],
+    
+    "unique_selling_points_identificados": [
+      "Entrenadores certificados CrossFit L2 (mencionado 23 veces)",
+      "Nutricionista incluido en membresía (mencionado 32 veces)",
+      "App de seguimiento de progreso personalizada (mencionado 18 veces)",
+      "Comunidad fuerte / grupo WhatsApp activo (mencionado 43 veces)",
+      "Programa Fundamentals para principiantes (mencionado 15 veces)",
+      "Equipamiento profesional Rogue/Eleiko (mencionado 38 veces)",
+      "Limpieza y mantenimiento constante (mencionado 24 veces)"
+    ],
+    
+    "objeciones_comunes": [
+      {
+        "objecion": "Es muy caro",
+        "frecuencia": 5,
+        "respuesta_sugerida": "Incluye nutricionista + app + coaching personalizado. Dividido por día son $2.50, menos que un café."
+      },
+      {
+        "objecion": "No tengo experiencia en CrossFit",
+        "frecuencia": 12,
+        "respuesta_sugerida": "Programa Fundamentals de 4 semanas diseñado para principiantes absolutos. 15+ testimonios de personas sin experiencia previa."
+      },
+      {
+        "objecion": "Está muy lleno en mi horario",
+        "frecuencia": 8,
+        "respuesta_sugerida": "10 horarios diarios diferentes. Sistema de reserva online asegura tu cupo. Ampliando capacidad en enero 2025."
+      }
+    ]
+  },
+  
+  "analisis_competencia": {
+    "competidores_identificados": 5,
+    "radio_busqueda_km": 3,
+    
+    "competidores_principales": [
+      {
+        "nombre": "PowerGym Norte",
+        "rating": 4.2,
+        "reviews": 89,
+        "precio_aprox": "$45/mes",
+        "fortalezas": ["Ubicación central", "Precio bajo", "Horario 24/7"],
+        "debilidades": ["Equipamiento básico", "No CrossFit", "Web desactualizada 2019", "Fotos de baja calidad"],
+        "gap_oportunidad": "No especializado, genérico"
+      },
+      {
+        "nombre": "Fitness Zone",
+        "rating": 4.1,
+        "reviews": 134,
+        "precio_aprox": "$50/mes",
+        "fortalezas": ["Grande", "Piscina", "Spa"],
+        "debilidades": ["Muy comercial", "Clases masivas", "No personalización", "Sin nutricionista"],
+        "gap_oportunidad": "Enfoque cantidad sobre calidad"
+      }
+    ],
+    
+    "analisis_comparativo": {
+      "rango_precios_mercado": "$40-$80/mes",
+      "precio_promedio": "$52/mes",
+      "fitpro_posicionamiento": "$75/mes (premium justificado)",
+      
+      "diferenciadores_unicos_fitpro": [
+        "Único certificado CrossFit oficial en zona norte",
+        "Único con nutricionista incluido en membresía",
+        "Mejor equipamiento (Rogue vs genérico)",
+        "Mejor rating (4.7 vs promedio 4.1)",
+        "App propia de seguimiento (otros no tienen)",
+        "Programa estructurado Fundamentals (otros no tienen onboarding)"
+      ],
+      
+      "gaps_mercado_identificados": [
+        "Ningún competidor tiene web moderna responsive",
+        "Ninguno tiene sistema reserva online",
+        "Ninguno ofrece nutrición integrada",
+        "Fotografía amateur vs nuestra profesional",
+        "No tienen contenido de valor (blogs, tips)"
+      ],
+      
+      "oportunidades": [
+        "Dominar SEO local (competencia débil online)",
+        "Capturar mercado premium (gap en $70-100/mes)",
+        "Contenido educativo CrossFit (nadie lo hace)",
+        "Reservas online (diferenciador inmediato)"
+      ]
+    }
+  },
+  
+  "contenido_generado": {
+    "hero_section": {
+      "headline_opciones": [
+        "Transforma Tu Cuerpo Con Los Mejores Entrenadores CrossFit de Quito",
+        "Resultados Reales en 4 Meses. 142 Clientes Lo Confirman.",
+        "El Único Gimnasio CrossFit Certificado de la Zona Norte"
+      ],
+      "subheadline_opciones": [
+        "Entrenadores certificados L2 + Nutricionista incluido + App de seguimiento. Desde principiantes hasta atletas.",
+        "Equipamiento Rogue profesional. Comunidad de +300 atletas. Resultados garantizados o devolución.",
+        "4.7⭐ en Google. Plan nutricional personalizado incluido. Clase de prueba gratis."
+      ],
+      "cta_principal": "Agenda Tu Clase Gratis",
+      "cta_secundario": "Ver Transformaciones"
+    },
+    
+    "value_propositions": [
+      {
+        "titulo": "Entrenadores Certificados CrossFit L2",
+        "descripcion": "Todos nuestros coaches tienen certificación internacional CrossFit Level 2. No improvisamos, garantizamos técnica perfecta y resultados seguros.",
+        "icon": "award",
+        "proof": "23 menciones en reseñas"
+      },
+      {
+        "titulo": "Nutricionista Incluido Sin Costo Extra",
+        "descripcion": "Plan nutricional personalizado incluido en tu membresía. Ajustamos tu alimentación cada mes según tus resultados.",
+        "icon": "apple",
+        "proof": "32 menciones en reseñas, diferenciador único"
+      },
+      {
+        "titulo": "App de Seguimiento Personalizada",
+        "descripcion": "Registra tus PRs, ve tu progreso en gráficas, recibe el WOD del día, reserva tus clases. Todo en una app.",
+        "icon": "smartphone",
+        "proof": "18 menciones positivas"
+      },
+      {
+        "titulo": "Comunidad Motivadora de +300 Atletas",
+        "descripcion": "Grupo WhatsApp activo, eventos mensuales, competencias internas. Aquí no entrenas solo, entrenas con familia.",
+        "icon": "users",
+        "proof": "43 menciones 'comunidad'"
+      }
+    ],
+    
+    "servicios_detallados": [
+      {
+        "nombre": "CrossFit Fundamentals",
+        "descripcion_corta": "Programa de 4 semanas para principiantes absolutos",
+        "descripcion_larga": "Aprende todos los movimientos básicos con técnica perfecta. Clases reducidas (max 8 personas) con coach dedicado. Garantizamos que terminas listo para clases regulares o devolución 100% del dinero.",
+        "duracion": "4 semanas, 3 clases/semana",
+        "precio": "$60/mes",
+        "incluye": ["12 clases", "Evaluación inicial", "Plan nutricional básico", "Acceso app"],
+        "ideal_para": "Personas sin experiencia en CrossFit o que llevan años sin entrenar",
+        "testimonios_relacionados": 3
+      },
+      {
+        "nombre": "CrossFit Regular",
+        "descripcion_corta": "Membresía ilimitada con todo incluido",
+        "descripcion_larga": "Acceso ilimitado a todas las clases CrossFit. Incluye plan nutricional personalizado actualizado mensualmente, app de seguimiento, grupo WhatsApp, eventos mensuales.",
+        "duracion": "Mensual sin permanencia",
+        "precio": "$75/mes",
+        "incluye": ["Clases ilimitadas", "Nutricionista incluido", "App premium", "Eventos mensuales", "Grupo WhatsApp"],
+        "ideal_para": "Personas con experiencia en CrossFit o que terminaron Fundamentals",
+        "testimonios_relacionados": 18
+      },
+      {
+        "nombre": "Personal Training 1-on-1",
+        "descripcion_corta": "Entrenamiento completamente personalizado",
+        "descripcion_larga": "Coach certificado L2 dedicado 100% a ti. Diseñamos programa específico para tus objetivos. Ideal para preparación competencias o necesidades especiales.",
+        "duracion": "Por sesión o paquetes",
+        "precio": "$25/sesión (paquetes desde $200/mes)",
+        "incluye": ["Programa personalizado", "Nutrición específica", "Seguimiento diario", "Acceso gym fuera horarios"],
+        "ideal_para": "Atletas competidores o personas con objetivos muy específicos",
+        "testimonios_relacionados": 5
+      }
+    ],
+    
+    "stats_reales": [
+      {"numero": "142", "label": "Reseñas Google", "source": "Google My Business"},
+      {"numero": "4.7", "label": "Rating Promedio", "source": "Google Reviews"},
+      {"numero": "6", "label": "Años de Experiencia", "source": "Fundado 2018"},
+      {"numero": "15kg", "label": "Promedio Pérdida Peso 4 Meses", "source": "Análisis testimonios"},
+      {"numero": "300+", "label": "Atletas Activos", "source": "Estimado operación"},
+      {"numero": "10", "label": "Horarios Diarios", "source": "Análisis horarios"}
+    ],
+    
+    "faqs_industria_contextualizadas": [
+      {
+        "pregunta": "¿Necesito experiencia previa en CrossFit?",
+        "respuesta": "No. Tenemos el programa Fundamentals diseñado específicamente para personas sin experiencia. En 4 semanas aprendes todos los movimientos básicos con técnica perfecta. Más del 60% de nuestros atletas actuales comenzaron sin experiencia previa.",
+        "categoria": "Principiantes",
+        "basado_en": "12 menciones de objeción en reseñas"
+      },
+      {
+        "pregunta": "¿Qué incluye la membresía?",
+        "respuesta": "Acceso ilimitado a clases, plan nutricional personalizado con seguimiento mensual, app de progreso, grupo WhatsApp de comunidad, eventos mensuales y competencias internas. Todo incluido sin costos ocultos.",
+        "categoria": "Membresía",
+        "basado_en": "USPs más mencionados"
+      },
+      {
+        "pregunta": "¿Cómo funciona el plan nutricional incluido?",
+        "respuesta": "Primera semana: evaluación completa con nuestra nutricionista. Recibes plan personalizado según objetivos. Cada mes ajustamos según resultados. Todo incluido en membresía, sin costo extra.",
+        "categoria": "Nutrición",
+        "basado_en": "32 menciones positivas nutricionista"
+      },
+      {
+        "pregunta": "¿Los horarios están muy llenos?",
+        "respuesta": "Tenemos 10 horarios diferentes al día. Sistema de reserva online te asegura tu cupo. Si tu horario preferido está lleno, tenemos lista de espera y te avisamos cuando hay espacio. También estamos ampliando capacidad en enero 2025.",
+        "categoria": "Logística",
+        "basado_en": "8 menciones 'horarios llenos'"
+      }
+    ]
+  },
+  
+  "seo_keywords": {
+    "keywords_primarias": [
+      {"keyword": "gimnasio crossfit quito", "volumen_mensual": 320, "dificultad": "media", "prioridad": "alta"},
+      {"keyword": "crossfit zona norte quito", "volumen_mensual": 180, "dificultad": "baja", "prioridad": "alta"},
+      {"keyword": "clases crossfit quito", "volumen_mensual": 260, "dificultad": "media", "prioridad": "alta"}
+    ],
+    "keywords_secundarias": [
+      {"keyword": "gimnasio carolina quito", "volumen_mensual": 140, "dificultad": "media", "prioridad": "media"},
+      {"keyword": "entrenamiento funcional quito", "volumen_mensual": 210, "dificultad": "media", "prioridad": "media"},
+      {"keyword": "crossfit certificado quito", "volumen_mensual": 50, "dificultad": "baja", "prioridad": "alta"}
+    ],
+    "keywords_long_tail": [
+      "gimnasio crossfit con nutricionista quito",
+      "clases crossfit principiantes quito",
+      "mejor gimnasio crossfit norte quito"
+    ],
+    "oportunidad_ranking": "Alta - competencia débil en SEO local, webs desactualizadas"
+  },
+  
+  "recomendaciones_diseno": {
+    "paleta_colores": {
+      "primary": "#ff6b00",
+      "secondary": "#1a1a1a",
+      "accent": "#ffffff",
+      "gray": "#c0c0c0",
+      "rationale": "Extraído de análisis visual GPT-4o. Naranja energético del branding actual + negro industrial moderno. Alta visibilidad y profesionalismo."
+    },
+    
+    "tipografia": {
+      "headings": "Bebas Neue Bold (impactante, deportivo, CrossFit aesthetic)",
+      "body": "Montserrat Regular (legible, moderno, profesional)",
+      "rationale": "Combinación probada en industria fitness. Bebas para impacto, Montserrat para lectura fácil."
+    },
+    
+    "estilo_visual": "Fitness industrial moderno, fotografía real de acción, sin stock photos",
+    "mood": "Energético, motivador, profesional, serio, resultados-driven",
+    
+    "secciones_recomendadas_orden": [
+      "Hero con video background (acción CrossFit)",
+      "Stats y credenciales (4.7★, 142 reseñas, +300 atletas)",
+      "Value propositions (4 pilares únicos)",
+      "Transformaciones antes/después (3-4 casos)",
+      "Servicios (Fundamentals, Regular, Personal)",
+      "Coaches con credenciales (fotos + certificaciones)",
+      "Testimonios video/texto (3 destacados)",
+      "Pricing transparente con comparativa",
+      "FAQ (6-8 principales)",
+      "Instagram feed live",
+      "CTA final potente + formulario WhatsApp"
+    ],
+    
+    "elementos_criticos": [
+      "Badge 'CrossFit Affiliate Certificado'",
+      "Trust signals arriba (4.7★, 142 reviews, 6 años)",
+      "WhatsApp floating button sticky",
+      "Reserva online calendario integrado",
+      "Video hero de 15seg mostrando ambiente",
+      "Fotos reales (no stock), alta calidad 4K"
+    ]
+  },
+  
+  "siguiente_pasos_recomendados": [
+    "Revisar y ajustar datos con información interna",
+    "Conseguir 3-4 fotos adicionales transformaciones clientes (antes/después)",
+    "Confirmar precios exactos y promoción actual",
+    "Definir oferta específica para web (ej: 'Primera semana gratis')",
+    "Preparar logo en alta resolución (PNG transparente)",
+    "Confirmar cuenta Instagram para feed integrado"
+  ]
+}

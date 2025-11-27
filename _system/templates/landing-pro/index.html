@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Básico -->
+    <title>{{PAGE_TITLE}}</title>
+    <meta name="description" content="{{PAGE_DESCRIPTION}}">
+    <meta name="keywords" content="{{META_KEYWORDS}}">
+    <meta name="author" content="{{BRAND_NAME}}">
+    <link rel="canonical" href="{{CANONICAL_URL}}">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{CANONICAL_URL}}">
+    <meta property="og:title" content="{{PAGE_TITLE}}">
+    <meta property="og:description" content="{{PAGE_DESCRIPTION}}">
+    <meta property="og:image" content="{{OG_IMAGE}}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:site_name" content="{{BRAND_NAME}}">
+    <meta property="og:locale" content="es_ES">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{CANONICAL_URL}}">
+    <meta name="twitter:title" content="{{PAGE_TITLE}}">
+    <meta name="twitter:description" content="{{PAGE_DESCRIPTION}}">
+    <meta name="twitter:image" content="{{OG_IMAGE}}">
+    
+    <!-- Favicons -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E{{BADGE_ICON}}%3C/text%3E%3C/svg%3E">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    
+    <!-- Performance: Preconnect -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    
+    <!-- Fuentes optimizadas -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" as="style">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Estilos críticos inline -->
+    <style>
+        /* Critical CSS para evitar FOUC */
+        body { margin: 0; font-family: 'Inter', sans-serif; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    </style>
+    
+    <!-- Estilos no críticos (deferred) -->
+    <link rel="stylesheet" href="css/header-styles.css">
+    <link rel="stylesheet" href="css/footer-styles.css">
+    <link rel="stylesheet" href="css/chatbot-styles.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/custom.css">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "{{SCHEMA_TYPE}}",
+        "name": "{{BRAND_NAME}}",
+        "description": "{{PAGE_DESCRIPTION}}",
+        "url": "{{CANONICAL_URL}}",
+        "telephone": "{{PHONE_NUMBER}}",
+        "email": "{{EMAIL_ADDRESS}}",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "{{COUNTRY}}"
+        },
+        "sameAs": [
+            "{{SOCIAL_FACEBOOK}}",
+            "{{SOCIAL_INSTAGRAM}}",
+            "{{SOCIAL_LINKEDIN}}",
+            "{{SOCIAL_TWITTER}}"
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Noscript Warning -->
+    <noscript>
+        <div style="background: #ff6b6b; color: white; padding: 12px; text-align: center; position: fixed; top: 0; left: 0; right: 0; z-index: 99999; font-family: sans-serif;">
+            ⚠️ Para una mejor experiencia, por favor habilita JavaScript en tu navegador.
+        </div>
+    </noscript>
+    
+    <!-- Skip to main content para accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+    
+    <!-- TOP BAR PROMOCIONAL -->
+    <div class="top-bar">
+        <div class="container">
+            <div class="top-bar-content">
+                <div class="top-bar-message">
+                    <span class="top-bar-icon">🎯</span>
+                    <span>{{TOP_BAR_MESSAGE}}</span>
+                </div>
+                <div class="top-bar-actions">
+                    <a href="{{TOP_BAR_LINK}}" class="top-bar-link">{{TOP_BAR_LINK_TEXT}}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER PREMIUM -->
+    {{INCLUDE:header}}
+    
+    <!-- HERO SECTION PREMIUM -->
+    <main id="main-content">
+    <section id="inicio" class="hero-premium">
+        <div class="hero-background">
+            <div class="hero-gradient"></div>
+            <div class="hero-pattern"></div>
+            <img src="{{HERO_IMAGE}}" 
+                 alt="{{HERO_IMAGE_ALT}}" 
+                 class="hero-bg-image"
+                 loading="eager"
+                 decoding="async"
+                 width="1920"
+                 height="1080"
+                 onerror="this.onerror=null; this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%)';">
+        </div>
+        
+        <div class="container">
+            <div class="hero-content-premium">
+                <!-- Badge de confianza -->
+                <div class="hero-badge-modern">
+                    <span class="badge-icon">{{BADGE_ICON}}</span>
+                    <span>{{HERO_BADGE}}</span>
+                </div>
+                
+                <!-- Título impactante -->
+                <h1 class="hero-title-premium">
+                    <span class="hero-title-line">{{HERO_TITLE_LINE_1}}</span>
+                    <span class="hero-title-line hero-title-gradient">{{HERO_TITLE_LINE_2}}</span>
+                    <span class="hero-title-line">{{HERO_TITLE_LINE_3}}</span>
+                </h1>
+                
+                <!-- Subtítulo descriptivo -->
+                <p class="hero-subtitle-premium">{{HERO_SUBTITLE}}</p>
+                
+                <!-- Botones CTA -->
+                <div class="hero-buttons-premium">
+                    <button type="button" class="btn-hero-primary" 
+                            onclick="{{CTA_PRIMARY_ACTION}}" 
+                            aria-label="{{CTA_PRIMARY_TEXT}} - Acción principal">
+                        <span>{{CTA_PRIMARY_TEXT}}</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                    <button type="button" class="btn-hero-secondary" 
+                            onclick="{{CTA_SECONDARY_ACTION}}"
+                            aria-label="{{CTA_SECONDARY_TEXT}} - Ver más información">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polygon points="10 8 16 12 10 16 10 8"></polygon>
+                        </svg>
+                        <span>{{CTA_SECONDARY_TEXT}}</span>
+                    </button>
+                </div>
+
+                <!-- Trust Badges -->
+                <div class="hero-trust-badges">
+                    {{TRUST_BADGES}}
+                </div>
+            </div>
+
+            <!-- Hero Cards Flotantes -->
+            <div class="hero-cards-container">
+                <div class="hero-card hero-card-1">
+                    <div class="hero-card-icon">{{HERO_CARD_1_ICON}}</div>
+                    <h4>{{HERO_CARD_1_TITLE}}</h4>
+                    <p>{{HERO_CARD_1_TEXT}}</p>
+                </div>
+                <div class="hero-card hero-card-2">
+                    <div class="hero-card-icon">{{HERO_CARD_2_ICON}}</div>
+                    <h4>{{HERO_CARD_2_TITLE}}</h4>
+                    <p>{{HERO_CARD_2_TEXT}}</p>
+                </div>
+                <div class="hero-card hero-card-3">
+                    <div class="hero-card-icon">{{HERO_CARD_3_ICON}}</div>
+                    <h4>{{HERO_CARD_3_TITLE}}</h4>
+                    <p>{{HERO_CARD_3_TEXT}}</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator">
+            <div class="scroll-mouse"></div>
+            <span>Descubre más</span>
+        </div>
+    </section>
+
+    <!-- STATS SECTION -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                {{STATS_ITEMS}}
+            </div>
+        </div>
+    </section>
+
+    <!-- CARACTERÍSTICAS / SERVICIOS -->
+    <section id="servicios" class="features-section-pro">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-badge">{{FEATURES_BADGE}}</span>
+                <h2 class="section-title-large">{{FEATURES_TITLE}}</h2>
+                <p class="section-subtitle-large">{{FEATURES_SUBTITLE}}</p>
+            </div>
+            
+            <div class="features-grid-pro">
+                {{FEATURE_CARDS}}
+            </div>
+        </div>
+    </section>
+
+    <!-- PROCESO / TIMELINE -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-badge">{{PROCESS_BADGE}}</span>
+                <h2 class="section-title-large">{{PROCESS_TITLE}}</h2>
+                <p class="section-subtitle-large">{{PROCESS_SUBTITLE}}</p>
+            </div>
+
+            <div class="process-timeline">
+                {{PROCESS_STEPS}}
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT PREMIUM -->
+    <section id="nosotros" class="about-section-pro">
+        <div class="container">
+            <div class="about-grid-pro">
+                <div class="about-content-pro">
+                    <span class="section-badge">{{ABOUT_BADGE}}</span>
+                    <h2 class="section-title">{{ABOUT_TITLE}}</h2>
+                    <p class="about-text-large">{{ABOUT_DESCRIPTION}}</p>
+                    
+                    <div class="about-highlights">
+                        {{ABOUT_HIGHLIGHTS}}
+                    </div>
+
+                    <ul class="about-list-pro">
+                        {{ABOUT_LIST_ITEMS}}
+                    </ul>
+                    
+                    <button type="button" class="btn-primary-large" onclick="{{ABOUT_CTA_ACTION}}">
+                        {{ABOUT_CTA_TEXT}}
+                    </button>
+                </div>
+
+                <div class="about-visual-pro">
+                    <div class="about-image-container">
+                        <img src="{{ABOUT_IMAGE}}" 
+                             alt="{{ABOUT_IMAGE_ALT}}" 
+                             class="about-main-image"
+                             loading="lazy"
+                             decoding="async"
+                             width="600"
+                             height="400">
+                        <div class="about-image-overlay">
+                            <button type="button" class="play-button" 
+                                    onclick="{{VIDEO_PLAY_ACTION}}"
+                                    aria-label="Reproducir video sobre nosotros">
+                                <svg width="40" height="40" viewBox="0 0 24 24" fill="white" aria-hidden="true">
+                                    <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- Elemento decorativo -->
+                    <div class="about-decoration" aria-hidden="true"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+        <div class="container">
+            <div class="section-header-center">
+                <span class="section-badge">{{TESTIMONIALS_BADGE}}</span>
+                <h2 class="section-title-large">{{TESTIMONIALS_TITLE}}</h2>
+                <p class="section-subtitle-large">{{TESTIMONIALS_SUBTITLE}}</p>
+            </div>
+
+            <div class="testimonials-grid">
+                {{TESTIMONIAL_CARDS}}
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ SECTION -->
+    <section class="faq-section">
+        <div class="container">
+            <div class="faq-layout">
+                <div class="faq-header">
+                    <span class="section-badge">{{FAQ_BADGE}}</span>
+                    <h2 class="section-title">{{FAQ_TITLE}}</h2>
+                    <p class="section-text">{{FAQ_SUBTITLE}}</p>
+                    <button type="button" class="btn-secondary" onclick="{{FAQ_CTA_ACTION}}">
+                        {{FAQ_CTA_TEXT}}
+                    </button>
+                </div>
+
+                <div class="faq-list">
+                    {{FAQ_ITEMS}}
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL PREMIUM -->
+    <section id="contacto" class="cta-section-premium">
+        <div class="cta-background">
+            <div class="cta-gradient"></div>
+            <img src="{{CTA_BG_IMAGE}}" 
+                 alt="{{CTA_BG_IMAGE_ALT}}" 
+                 class="cta-bg-image"
+                 width="1920"
+                 height="1080"
+                 loading="lazy">
+        </div>
+
+        <div class="container">
+            <div class="cta-content-premium">
+                <div class="cta-text-content">
+                    <h2 class="cta-title-large">{{CTA_FINAL_TITLE}}</h2>
+                    <p class="cta-subtitle-large">{{CTA_FINAL_SUBTITLE}}</p>
+                    
+                    <div class="cta-features-list">
+                        {{CTA_FEATURES}}
+                    </div>
+                </div>
+
+                <div class="cta-form-container">
+                    <div class="contact-form-card">
+                        <h3>{{FORM_TITLE}}</h3>
+                        <form class="contact-form-premium" id="contactForm" aria-label="Formulario de contacto">
+                            <div class="form-group">
+                                <label for="contact-name" class="sr-only">Nombre completo</label>
+                                <input 
+                                    type="text" 
+                                    id="contact-name"
+                                    name="name"
+                                    placeholder="Tu nombre *" 
+                                    required
+                                    autocomplete="name"
+                                    aria-required="true"
+                                    aria-label="Nombre completo">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-email" class="sr-only">Correo electrónico</label>
+                                <input 
+                                    type="email" 
+                                    id="contact-email"
+                                    name="email"
+                                    placeholder="Tu email *" 
+                                    required
+                                    autocomplete="email"
+                                    aria-required="true"
+                                    aria-label="Correo electrónico">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-phone" class="sr-only">Teléfono</label>
+                                <input 
+                                    type="tel" 
+                                    id="contact-phone"
+                                    name="phone"
+                                    placeholder="Tu teléfono"
+                                    autocomplete="tel"
+                                    aria-label="Número de teléfono">
+                            </div>
+                            <div class="form-group">
+                                <label for="contact-message" class="sr-only">Mensaje</label>
+                                <textarea 
+                                    id="contact-message"
+                                    name="message"
+                                    placeholder="Cuéntanos sobre tu proyecto" 
+                                    rows="4"
+                                    aria-label="Tu mensaje"></textarea>
+                            </div>
+                            <button type="submit" class="btn-form-submit" aria-label="Enviar formulario de contacto">
+                                <span>{{FORM_SUBMIT_TEXT}}</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                                </svg>
+                            </button>
+                        </form>
+
+                        <!-- Métodos de contacto alternativos -->
+                        <div class="contact-methods">
+                            <a href="https://wa.me/{{WHATSAPP_NUMBER}}" class="contact-method-btn whatsapp">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                                </svg>
+                                WhatsApp
+                            </a>
+                            <a href="tel:{{PHONE_NUMBER}}" class="contact-method-btn phone">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                                </svg>
+                                Llamar
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER PREMIUM -->
+    {{INCLUDE:footer}}
+    </main>
+    
+    <!-- CHATBOT OPCIONAL -->
+    {{OPTIONAL:chatbot}}
+
+    <!-- Scripts (deferred para mejor performance) -->
+    <script src="js/header.js" defer></script>
+    <script src="js/main.js" defer></script>
+    <script src="js/chatbot.js" defer></script>
+    
+    <!-- Analytics placeholder -->
+    <!-- {{ANALYTICS_CODE}} -->
+</body>
+</html>

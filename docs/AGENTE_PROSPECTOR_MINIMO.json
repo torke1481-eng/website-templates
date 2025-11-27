@@ -1,0 +1,214 @@
+{
+  "_comentario": "JSON MÍNIMO que el agente prospector DEBE retornar. Campos obligatorios marcados.",
+  
+  "negocio": {
+    "nombre_comercial": "Gimnasio FitPro",
+    "categoria_principal": "Gimnasio",
+    "industria_codigo": "fitness-gym",
+    
+    "ubicacion": {
+      "ciudad": "Quito",
+      "provincia": "Pichincha",
+      "pais": "Ecuador"
+    },
+    
+    "contacto": {
+      "telefono_principal": "+593987654321",
+      "whatsapp": "+593987654321",
+      "email": "",
+      "_nota_email": "OPCIONAL - muchos negocios no tienen email público",
+      "redes_sociales": {
+        "instagram": "@fitpro_quito",
+        "facebook": "FitProQuito"
+      }
+    },
+    
+    "operacion": {
+      "horarios": "Lunes a Viernes 5:30am - 10:00pm, Sábados 7:00am - 2:00pm"
+    }
+  },
+  
+  "analisis_visual": {
+    "descripcion_ambiente": "Gimnasio moderno estilo industrial con techos altos, iluminación LED dramática, paredes de ladrillo expuesto y piso de goma negro. Equipamiento profesional marca Rogue predominante. Ambiente serio, profesional, orientado a resultados.",
+    
+    "colores_dominantes": [
+      {
+        "hex": "#1a1a1a",
+        "nombre": "Negro mate",
+        "uso": "Paredes, piso"
+      },
+      {
+        "hex": "#ff6b00",
+        "nombre": "Naranja vibrante",
+        "uso": "Branding, acentos"
+      },
+      {
+        "hex": "#ffffff",
+        "nombre": "Blanco",
+        "uso": "Techo, lettering"
+      }
+    ],
+    
+    "estilo_visual": "Industrial moderno fitness",
+    "mood": "Energético, intenso, motivador",
+    "target_visual_inferido": "Adultos 25-45 años, fitness serios"
+  },
+  
+  "analisis_resenas": {
+    "google_reviews": {
+      "rating_promedio": 4.7,
+      "total_resenas": 142
+    },
+    
+    "keywords_positivas_frecuencia": [
+      {
+        "keyword": "entrenadores profesionales",
+        "menciones": 67
+      },
+      {
+        "keyword": "resultados reales",
+        "menciones": 54
+      },
+      {
+        "keyword": "ambiente motivador",
+        "menciones": 48
+      },
+      {
+        "keyword": "equipamiento excelente",
+        "menciones": 38
+      },
+      {
+        "keyword": "comunidad",
+        "menciones": 43
+      }
+    ],
+    
+    "testimonios_destacados": [
+      {
+        "texto_original": "Después de 4 meses en FitPro bajé 15kg y gané músculo que nunca pensé posible. Los coaches son increíbles, cada clase es personalizada. Mejor inversión de mi vida.",
+        "autor": "María L.",
+        "rating": 5
+      }
+    ],
+    
+    "unique_selling_points_identificados": [
+      "Entrenadores certificados",
+      "Equipamiento profesional",
+      "Comunidad fuerte",
+      "Resultados comprobados"
+    ]
+  },
+  
+  "analisis_competencia": {
+    "diferenciadores_unicos": [
+      "Mejor rating que competencia (4.7 vs 4.2 promedio)",
+      "Equipamiento marca Rogue (competencia usa genérico)",
+      "Comunidad activa con 300+ miembros"
+    ]
+  },
+  
+  "contenido_generado": {
+    "hero_section": {
+      "headline": "Transforma Tu Cuerpo Con Los Mejores Entrenadores de Quito",
+      "subheadline": "4.7⭐ en Google. 142 clientes satisfechos. Resultados reales en 4 meses.",
+      "cta_principal": "Agenda Tu Clase Gratis",
+      "cta_secundario": "Ver Transformaciones"
+    },
+    
+    "value_propositions": [
+      {
+        "titulo": "Entrenadores Certificados",
+        "descripcion": "Todos nuestros coaches tienen certificación profesional. Garantizamos técnica perfecta y resultados seguros.",
+        "icon": "award"
+      },
+      {
+        "titulo": "Equipamiento Profesional",
+        "descripcion": "Usamos equipamiento marca Rogue y Eleiko. El mismo que usan atletas olímpicos.",
+        "icon": "dumbbell"
+      },
+      {
+        "titulo": "Comunidad Motivadora",
+        "descripcion": "Más de 300 atletas activos. Aquí no entrenas solo, entrenas con familia.",
+        "icon": "users"
+      },
+      {
+        "titulo": "Resultados Comprobados",
+        "descripcion": "142 reseñas con 4.7 estrellas. Nuestros clientes logran sus objetivos.",
+        "icon": "star"
+      }
+    ],
+    
+    "servicios_principales": [
+      {
+        "nombre": "Membresía Regular",
+        "descripcion": "Acceso ilimitado a todas las clases. Entrenamiento grupal con coach certificado.",
+        "desde_precio": "$75/mes"
+      },
+      {
+        "nombre": "Clases para Principiantes",
+        "descripcion": "Programa de 4 semanas diseñado para personas sin experiencia previa.",
+        "desde_precio": "$60/mes"
+      }
+    ],
+    
+    "stats_destacadas": [
+      {
+        "numero": "4.7",
+        "label": "Rating Google"
+      },
+      {
+        "numero": "142",
+        "label": "Reseñas"
+      },
+      {
+        "numero": "300+",
+        "label": "Atletas Activos"
+      },
+      {
+        "numero": "15kg",
+        "label": "Pérdida Promedio en 4 Meses"
+      }
+    ],
+    
+    "faqs_principales": [
+      {
+        "pregunta": "¿Necesito experiencia previa?",
+        "respuesta": "No. Tenemos programa especial para principiantes que te enseña todo desde cero en 4 semanas."
+      },
+      {
+        "pregunta": "¿Qué incluye la membresía?",
+        "respuesta": "Acceso ilimitado a todas las clases, entrenamiento con coach certificado, programa personalizado y seguimiento de progreso."
+      },
+      {
+        "pregunta": "¿Cuánto tiempo hasta ver resultados?",
+        "respuesta": "La mayoría de clientes ven cambios visibles en 4-6 semanas con constancia. Resultados comprobados en 142 reseñas."
+      },
+      {
+        "pregunta": "¿Cuál es el horario?",
+        "respuesta": "Lunes a Viernes 5:30am - 10:00pm, Sábados 7:00am - 2:00pm. Múltiples horarios disponibles cada día."
+      }
+    ]
+  },
+  
+  "seo_keywords": {
+    "keywords_primarias": [
+      "gimnasio quito",
+      "crossfit quito",
+      "entrenamiento funcional quito"
+    ],
+    "keywords_local": [
+      "gimnasio [ciudad]",
+      "[categoria] [ciudad]"
+    ]
+  },
+  
+  "recomendaciones_diseno": {
+    "paleta_colores": {
+      "primary": "#ff6b00",
+      "secondary": "#1a1a1a",
+      "accent": "#ffffff"
+    },
+    "estilo": "Industrial moderno fitness",
+    "mood": "Energético, motivador, profesional"
+  }
+}

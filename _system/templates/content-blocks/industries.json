@@ -1,0 +1,326 @@
+{
+  "industries": {
+    "medico": {
+      "id": "medico",
+      "name": "Médico / Clínica",
+      "personality": "health",
+      "emoji": "🏥",
+      "keywords": ["medico", "doctor", "clinica", "hospital", "salud", "medicina"],
+      "hero": {
+        "titles": [
+          "Tu salud en las mejores manos",
+          "Cuidamos de ti y tu familia",
+          "Atención médica de excelencia",
+          "Profesionales comprometidos con tu bienestar",
+          "La salud que mereces, la atención que necesitas"
+        ],
+        "subtitles": [
+          "Más de {years} años brindando atención médica de calidad con tecnología de vanguardia",
+          "Equipo de especialistas dedicados a tu bienestar integral",
+          "Diagnóstico preciso, tratamiento efectivo, atención humana"
+        ],
+        "badges": [
+          "⭐ +{reviews} pacientes satisfechos",
+          "🏆 {years} años de experiencia",
+          "✓ Profesionales certificados",
+          "🕐 Atención inmediata"
+        ]
+      },
+      "ctas": {
+        "primary": ["Agendar cita", "Solicitar turno", "Consultar ahora", "Pedir cita"],
+        "secondary": ["Ver especialidades", "Conocer equipo", "Ubicación"]
+      },
+      "services_templates": [
+        { "icon": "🩺", "name": "Consulta General", "desc": "Evaluación integral de tu estado de salud" },
+        { "icon": "💉", "name": "Vacunación", "desc": "Programa completo de inmunización" },
+        { "icon": "🔬", "name": "Laboratorio", "desc": "Análisis clínicos con resultados rápidos" },
+        { "icon": "📋", "name": "Chequeo Preventivo", "desc": "Detecta problemas antes de que aparezcan" }
+      ],
+      "trust_badges": [
+        "✓ Profesionales matriculados",
+        "✓ Equipamiento moderno",
+        "✓ Turnos online",
+        "✓ Obras sociales"
+      ],
+      "faq": [
+        { "q": "¿Necesito turno previo?", "a": "Recomendamos agendar turno para garantizar atención inmediata, aunque también atendemos urgencias." },
+        { "q": "¿Qué obras sociales aceptan?", "a": "Trabajamos con las principales obras sociales y prepagas. Consultá disponibilidad." },
+        { "q": "¿Cuál es el horario de atención?", "a": "Atendemos de lunes a viernes de 8 a 20hs y sábados de 9 a 13hs." }
+      ]
+    },
+
+    "veterinaria": {
+      "id": "veterinaria",
+      "name": "Veterinaria",
+      "personality": "health",
+      "emoji": "🐾",
+      "keywords": ["veterinaria", "veterinario", "mascotas", "animales", "perros", "gatos"],
+      "hero": {
+        "titles": [
+          "Cuidamos a quien más quieres",
+          "Tu mascota en las mejores manos",
+          "Amor y profesionalismo para tu compañero",
+          "Salud y bienestar para tu mascota"
+        ],
+        "subtitles": [
+          "Atención veterinaria integral con amor y dedicación",
+          "Profesionales especializados en el cuidado de tu mejor amigo",
+          "Tecnología avanzada al servicio de la salud animal"
+        ],
+        "badges": [
+          "🐕 +{reviews} mascotas atendidas",
+          "🏆 {years} años de experiencia",
+          "✓ Urgencias 24hs",
+          "💚 Trato con amor"
+        ]
+      },
+      "ctas": {
+        "primary": ["Agendar consulta", "Pedir turno", "Urgencias 24hs"],
+        "secondary": ["Ver servicios", "Conocer equipo", "Ubicación"]
+      },
+      "services_templates": [
+        { "icon": "🩺", "name": "Consulta General", "desc": "Evaluación completa de la salud de tu mascota" },
+        { "icon": "💉", "name": "Vacunación", "desc": "Plan de vacunas actualizado y completo" },
+        { "icon": "✂️", "name": "Cirugía", "desc": "Procedimientos quirúrgicos con la mejor tecnología" },
+        { "icon": "🦷", "name": "Odontología", "desc": "Limpieza y cuidado dental profesional" },
+        { "icon": "🛁", "name": "Peluquería", "desc": "Baño, corte y cuidado estético" },
+        { "icon": "🏨", "name": "Internación", "desc": "Cuidados intensivos las 24 horas" }
+      ],
+      "trust_badges": [
+        "✓ Veterinarios matriculados",
+        "✓ Urgencias 24hs",
+        "✓ Quirófano equipado",
+        "✓ Laboratorio propio"
+      ],
+      "faq": [
+        { "q": "¿Atienden urgencias?", "a": "Sí, contamos con servicio de urgencias las 24 horas, los 365 días del año." },
+        { "q": "¿Qué animales atienden?", "a": "Atendemos perros, gatos y animales exóticos. Consultá por tu mascota." },
+        { "q": "¿Tienen servicio a domicilio?", "a": "Sí, ofrecemos consultas a domicilio para casos especiales." }
+      ]
+    },
+
+    "fitness": {
+      "id": "fitness",
+      "name": "Gimnasio / Fitness",
+      "personality": "bold",
+      "emoji": "💪",
+      "keywords": ["gimnasio", "gym", "fitness", "crossfit", "entrenamiento", "musculacion"],
+      "hero": {
+        "titles": [
+          "TRANSFORMA TU CUERPO",
+          "SUPERA TUS LÍMITES",
+          "EL CAMBIO EMPIEZA HOY",
+          "ENTRENA COMO CAMPEÓN"
+        ],
+        "subtitles": [
+          "Equipamiento de última generación y entrenadores certificados",
+          "Más que un gimnasio, una comunidad que te impulsa",
+          "Resultados reales con metodología probada"
+        ],
+        "badges": [
+          "🏋️ +{reviews} miembros activos",
+          "🔥 Resultados garantizados",
+          "⚡ Clases grupales",
+          "💯 Entrenadores top"
+        ]
+      },
+      "ctas": {
+        "primary": ["¡EMPIEZA HOY!", "PRUEBA GRATIS", "¡ÚNETE AHORA!"],
+        "secondary": ["Ver planes", "Horarios", "Instalaciones"]
+      },
+      "services_templates": [
+        { "icon": "🏋️", "name": "Musculación", "desc": "Zona de pesas y máquinas de última generación" },
+        { "icon": "🚴", "name": "Cardio", "desc": "Equipos cardiovasculares para quemar calorías" },
+        { "icon": "🧘", "name": "Clases Grupales", "desc": "Spinning, yoga, funcional y más" },
+        { "icon": "👤", "name": "Personal Training", "desc": "Entrenamiento personalizado 1 a 1" }
+      ],
+      "trust_badges": [
+        "✓ Entrenadores certificados",
+        "✓ Equipamiento premium",
+        "✓ Vestuarios completos",
+        "✓ Estacionamiento"
+      ],
+      "faq": [
+        { "q": "¿Puedo probar antes de inscribirme?", "a": "¡Sí! Ofrecemos una clase de prueba gratuita sin compromiso." },
+        { "q": "¿Cuáles son los horarios?", "a": "Abrimos de lunes a viernes de 6 a 23hs y sábados de 8 a 14hs." },
+        { "q": "¿Incluye clases grupales?", "a": "Todas las membresías incluyen acceso ilimitado a clases grupales." }
+      ]
+    },
+
+    "restaurante": {
+      "id": "restaurante",
+      "name": "Restaurante / Gastronomía",
+      "personality": "friendly",
+      "emoji": "🍽️",
+      "keywords": ["restaurante", "comida", "gastronomia", "cocina", "bar", "cafe"],
+      "hero": {
+        "titles": [
+          "Sabores que enamoran",
+          "Una experiencia para tus sentidos",
+          "Donde cada plato cuenta una historia",
+          "El arte de la buena mesa"
+        ],
+        "subtitles": [
+          "Ingredientes frescos, recetas con pasión, momentos inolvidables",
+          "Cocina de autor en un ambiente único",
+          "Tradición y creatividad en cada bocado"
+        ],
+        "badges": [
+          "⭐ {rating}/5 en Google",
+          "🍳 Chef con {years} años de experiencia",
+          "🌿 Ingredientes frescos",
+          "❤️ Hecho con amor"
+        ]
+      },
+      "ctas": {
+        "primary": ["Reservar mesa", "Ver menú", "Pedir delivery"],
+        "secondary": ["Nuestra historia", "Ubicación", "Eventos"]
+      },
+      "services_templates": [
+        { "icon": "🍽️", "name": "Almuerzo Ejecutivo", "desc": "Menú del día con opciones variadas" },
+        { "icon": "🌙", "name": "Cena", "desc": "Carta completa en ambiente acogedor" },
+        { "icon": "🎉", "name": "Eventos", "desc": "Celebraciones y reuniones privadas" },
+        { "icon": "🛵", "name": "Delivery", "desc": "Tu comida favorita en tu casa" }
+      ],
+      "trust_badges": [
+        "✓ Ingredientes frescos",
+        "✓ Opciones vegetarianas",
+        "✓ WiFi gratis",
+        "✓ Estacionamiento"
+      ],
+      "faq": [
+        { "q": "¿Necesito reservar?", "a": "Recomendamos reservar para fines de semana. Entre semana no es necesario." },
+        { "q": "¿Tienen opciones vegetarianas?", "a": "Sí, contamos con amplia variedad de platos vegetarianos y veganos." },
+        { "q": "¿Hacen delivery?", "a": "Sí, hacemos delivery en un radio de 5km. También podés retirar en local." }
+      ]
+    },
+
+    "legal": {
+      "id": "legal",
+      "name": "Abogado / Estudio Jurídico",
+      "personality": "professional",
+      "emoji": "⚖️",
+      "keywords": ["abogado", "abogados", "legal", "juridico", "derecho", "estudio"],
+      "hero": {
+        "titles": [
+          "Defendemos tus derechos",
+          "Soluciones legales efectivas",
+          "Tu tranquilidad es nuestra prioridad",
+          "Experiencia legal a tu servicio"
+        ],
+        "subtitles": [
+          "Más de {years} años resolviendo casos complejos con éxito",
+          "Asesoramiento legal integral para personas y empresas",
+          "Compromiso, confidencialidad y resultados"
+        ],
+        "badges": [
+          "⚖️ +{cases} casos resueltos",
+          "🏆 {years} años de experiencia",
+          "✓ Primera consulta gratis",
+          "🔒 Confidencialidad total"
+        ]
+      },
+      "ctas": {
+        "primary": ["Consulta gratis", "Agendar reunión", "Contactar ahora"],
+        "secondary": ["Áreas de práctica", "Casos de éxito", "Equipo"]
+      },
+      "services_templates": [
+        { "icon": "📋", "name": "Derecho Civil", "desc": "Contratos, sucesiones, familia" },
+        { "icon": "🏢", "name": "Derecho Comercial", "desc": "Sociedades, contratos comerciales" },
+        { "icon": "👷", "name": "Derecho Laboral", "desc": "Despidos, accidentes, reclamos" },
+        { "icon": "🏠", "name": "Derecho Inmobiliario", "desc": "Compraventa, alquileres, usucapión" }
+      ],
+      "trust_badges": [
+        "✓ Abogados matriculados",
+        "✓ Confidencialidad garantizada",
+        "✓ Honorarios transparentes",
+        "✓ Seguimiento personalizado"
+      ],
+      "faq": [
+        { "q": "¿La primera consulta es gratis?", "a": "Sí, ofrecemos una primera consulta sin cargo para evaluar tu caso." },
+        { "q": "¿Cómo son los honorarios?", "a": "Trabajamos con honorarios fijos o porcentuales según el tipo de caso. Todo se pacta por escrito." },
+        { "q": "¿Atienden casos en todo el país?", "a": "Sí, tenemos corresponsales en todas las provincias para casos federales." }
+      ]
+    },
+
+    "tecnologia": {
+      "id": "tecnologia",
+      "name": "Tecnología / Software",
+      "personality": "tech",
+      "emoji": "💻",
+      "keywords": ["tecnologia", "software", "desarrollo", "app", "web", "sistemas", "programacion"],
+      "hero": {
+        "titles": [
+          "Innovación que transforma",
+          "Soluciones digitales a medida",
+          "Tu visión, nuestra tecnología",
+          "El futuro es ahora"
+        ],
+        "subtitles": [
+          "Desarrollamos software que impulsa tu negocio al siguiente nivel",
+          "Equipo de expertos en las últimas tecnologías",
+          "De la idea al producto, te acompañamos en cada paso"
+        ],
+        "badges": [
+          "🚀 +{projects} proyectos entregados",
+          "⭐ {rating}/5 satisfacción",
+          "👨‍💻 Equipo senior",
+          "🔧 Soporte 24/7"
+        ]
+      },
+      "ctas": {
+        "primary": ["Solicitar demo", "Cotizar proyecto", "Agendar llamada"],
+        "secondary": ["Ver portfolio", "Tecnologías", "Casos de éxito"]
+      },
+      "services_templates": [
+        { "icon": "🌐", "name": "Desarrollo Web", "desc": "Sitios y aplicaciones web modernas" },
+        { "icon": "📱", "name": "Apps Móviles", "desc": "iOS y Android nativas o híbridas" },
+        { "icon": "☁️", "name": "Cloud & DevOps", "desc": "Infraestructura escalable y segura" },
+        { "icon": "🤖", "name": "IA & Automatización", "desc": "Inteligencia artificial aplicada" }
+      ],
+      "trust_badges": [
+        "✓ Metodología ágil",
+        "✓ Código de calidad",
+        "✓ Entrega a tiempo",
+        "✓ Soporte post-lanzamiento"
+      ],
+      "faq": [
+        { "q": "¿Cuánto tiempo toma un proyecto?", "a": "Depende del alcance. Un MVP puede estar listo en 4-8 semanas." },
+        { "q": "¿Qué tecnologías usan?", "a": "Trabajamos con React, Node.js, Python, AWS, y más según las necesidades." },
+        { "q": "¿Ofrecen mantenimiento?", "a": "Sí, todos nuestros proyectos incluyen soporte y mantenimiento." }
+      ]
+    }
+  },
+
+  "fallback": {
+    "id": "general",
+    "name": "Negocio General",
+    "personality": "professional",
+    "emoji": "🏢",
+    "hero": {
+      "titles": [
+        "Soluciones profesionales para tu negocio",
+        "Calidad y compromiso en cada servicio",
+        "Tu éxito es nuestra misión"
+      ],
+      "subtitles": [
+        "Años de experiencia nos respaldan",
+        "Atención personalizada para cada cliente"
+      ],
+      "badges": [
+        "⭐ Clientes satisfechos",
+        "🏆 Experiencia comprobada",
+        "✓ Calidad garantizada"
+      ]
+    },
+    "ctas": {
+      "primary": ["Contactar ahora", "Solicitar información", "Consultar"],
+      "secondary": ["Ver servicios", "Sobre nosotros", "Ubicación"]
+    },
+    "trust_badges": [
+      "✓ Profesionales capacitados",
+      "✓ Atención personalizada",
+      "✓ Precios competitivos"
+    ]
+  }
+}

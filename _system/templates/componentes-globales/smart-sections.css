@@ -1,0 +1,457 @@
+/* ============================================
+   SMART SECTIONS 2025 - CSS
+   Layouts adaptativos según cantidad de contenido
+============================================ */
+
+/* BASE GRID */
+.smart-grid {
+    display: grid;
+    gap: var(--space-lg, 32px);
+    width: 100%;
+}
+
+/* ============================================
+   SERVICES LAYOUTS
+============================================ */
+
+.services-single {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.services-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg, 32px);
+}
+
+.services-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg, 32px);
+}
+
+.services-grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg, 32px);
+}
+
+.services-grid-3-featured {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg, 32px);
+}
+
+.services-grid-3-featured > *:first-child {
+    grid-column: 1 / -1;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.services-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 20px;
+    gap: 24px;
+}
+
+.services-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.services-carousel > * {
+    flex: 0 0 calc(25% - 18px);
+    scroll-snap-align: start;
+}
+
+/* ============================================
+   TESTIMONIALS LAYOUTS
+============================================ */
+
+.testimonial-single {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.testimonial-single .testimonial-card {
+    padding: 40px;
+    font-size: 1.2em;
+}
+
+.testimonials-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg, 32px);
+}
+
+.testimonials-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg, 32px);
+}
+
+.testimonials-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    padding-bottom: 20px;
+    gap: 24px;
+}
+
+.testimonials-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.testimonials-carousel > * {
+    flex: 0 0 calc(33.333% - 16px);
+    scroll-snap-align: start;
+}
+
+/* ============================================
+   FEATURES LAYOUTS
+============================================ */
+
+.features-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg, 32px);
+}
+
+.features-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-lg, 32px);
+}
+
+.features-grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-lg, 32px);
+}
+
+.features-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-md, 24px);
+}
+
+/* ============================================
+   FAQ LAYOUTS
+============================================ */
+
+.faq-accordion {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.faq-tabs {
+    display: block;
+}
+
+.faq-tabs-nav {
+    display: flex;
+    border-bottom: 2px solid var(--border-color, #e0e0e0);
+    margin-bottom: 24px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.faq-tabs-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.faq-tab-btn {
+    padding: 12px 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--text-light, #666);
+    transition: all 0.3s;
+    white-space: nowrap;
+    position: relative;
+}
+
+.faq-tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--brand-primary, #667eea);
+    transform: scaleX(0);
+    transition: transform 0.3s;
+}
+
+.faq-tab-btn.active {
+    color: var(--brand-primary, #667eea);
+}
+
+.faq-tab-btn.active::after {
+    transform: scaleX(1);
+}
+
+.faq-tab-content {
+    display: none;
+}
+
+.faq-tab-content.active {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+/* ============================================
+   GALLERY LAYOUTS
+============================================ */
+
+.gallery-single {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.gallery-single img {
+    width: 100%;
+    border-radius: var(--radius-lg, 16px);
+}
+
+.gallery-grid-2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.gallery-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.gallery-grid-2x2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.gallery-masonry {
+    columns: 3;
+    column-gap: 16px;
+}
+
+.gallery-masonry > * {
+    break-inside: avoid;
+    margin-bottom: 16px;
+}
+
+.gallery-masonry img {
+    width: 100%;
+    border-radius: var(--radius-md, 12px);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.gallery-masonry img:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* ============================================
+   CAROUSEL CONTROLS
+============================================ */
+
+.carousel-wrapper {
+    position: relative;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: space-between;
+    pointer-events: none;
+    padding: 0 10px;
+}
+
+.carousel-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--glass-bg, rgba(255, 255, 255, 0.9));
+    border: 1px solid var(--border-color, #e0e0e0);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: auto;
+    transition: all 0.3s;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    color: var(--text-dark, #1a1a1a);
+}
+
+.carousel-btn:hover {
+    background: var(--brand-primary, #667eea);
+    color: white;
+    border-color: var(--brand-primary, #667eea);
+    transform: scale(1.1);
+}
+
+.carousel-btn:focus-visible {
+    outline: 2px solid var(--brand-primary, #667eea);
+    outline-offset: 2px;
+}
+
+/* Dots indicator */
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+}
+
+.carousel-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--border-color, #e0e0e0);
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.carousel-dot.active {
+    background: var(--brand-primary, #667eea);
+    transform: scale(1.2);
+}
+
+/* ============================================
+   RESPONSIVE
+============================================ */
+
+@media (max-width: 1200px) {
+    .features-grid-4 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .services-carousel > * {
+        flex: 0 0 calc(33.333% - 16px);
+    }
+}
+
+@media (max-width: 992px) {
+    .services-grid-3,
+    .testimonials-grid-3,
+    .features-grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .gallery-masonry {
+        columns: 2;
+    }
+    
+    .services-carousel > *,
+    .testimonials-carousel > * {
+        flex: 0 0 calc(50% - 12px);
+    }
+}
+
+@media (max-width: 768px) {
+    .services-grid-2,
+    .services-grid-3,
+    .services-grid-2x2,
+    .testimonials-grid-2,
+    .testimonials-grid-3,
+    .features-grid-2,
+    .features-grid-3,
+    .features-grid-2x2,
+    .features-grid-4,
+    .gallery-grid-2,
+    .gallery-grid-3,
+    .gallery-grid-2x2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .gallery-masonry {
+        columns: 1;
+    }
+    
+    .services-carousel > *,
+    .testimonials-carousel > * {
+        flex: 0 0 calc(100% - 48px);
+    }
+    
+    .carousel-controls {
+        display: none;
+    }
+    
+    .faq-tabs-nav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 10px;
+    }
+    
+    .faq-tab-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
+
+/* ============================================
+   ANIMATIONS
+============================================ */
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+/* Staggered animations for grid items */
+.smart-grid > *:nth-child(1) { animation-delay: 0.1s; }
+.smart-grid > *:nth-child(2) { animation-delay: 0.2s; }
+.smart-grid > *:nth-child(3) { animation-delay: 0.3s; }
+.smart-grid > *:nth-child(4) { animation-delay: 0.4s; }
+.smart-grid > *:nth-child(5) { animation-delay: 0.5s; }
+.smart-grid > *:nth-child(6) { animation-delay: 0.6s; }
+
+.smart-grid.animate > * {
+    animation: slideUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+/* ============================================
+   REDUCED MOTION
+============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+    .smart-grid > *,
+    .carousel-btn,
+    .faq-tab-btn,
+    .gallery-masonry img {
+        transition: none;
+        animation: none;
+    }
+    
+    .smart-grid.animate > * {
+        opacity: 1;
+    }
+}

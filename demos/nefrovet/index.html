@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- SEO Básico -->
+    <title>Nefrovet | Veterinaria 24hs Urgencias y Nefrología en San Luis</title>
+    <meta name="description" content="Nefrovet - Clínica veterinaria especializada en urgencias 24hs, nefrología e internación en San Luis. Atención profesional y humana para tu mascota. ☎ 0266 496-4482">
+    <meta name="keywords" content="veterinaria san luis, urgencias veterinarias 24 horas, nefrología veterinaria, internación mascotas, clínica veterinaria san luis, nefrovet">
+    <meta name="author" content="Nefrovet">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://nefrovet.com.ar/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://nefrovet.com.ar/">
+    <meta property="og:title" content="Nefrovet | Veterinaria 24hs en San Luis">
+    <meta property="og:description" content="Clínica veterinaria especializada en urgencias 24hs, nefrología e internación. Trato humano y profesional.">
+    <meta property="og:image" content="https://lh3.googleusercontent.com/p/AF1QipPWBjwqKQ5QDy4lHvqoWig9I7RA7OKxhqPdKL4=s1360-w1360-h1020">
+    <meta property="og:locale" content="es_AR">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Nefrovet | Veterinaria 24hs en San Luis">
+    <meta name="twitter:description" content="Urgencias veterinarias 24hs, nefrología e internación. ☎ 0266 496-4482">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+    
+    <!-- Preconnect para performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "VeterinaryCare",
+        "name": "Nefrovet",
+        "description": "Clínica veterinaria especializada en urgencias 24hs, nefrología e internación en San Luis",
+        "url": "https://nefrovet.com.ar",
+        "telephone": "+54-266-496-4482",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "Colón 1310",
+            "addressLocality": "San Luis",
+            "postalCode": "D5700",
+            "addressCountry": "AR"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "-33.3017",
+            "longitude": "-66.3378"
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "00:00",
+            "closes": "23:59"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.2",
+            "reviewCount": "45"
+        },
+        "priceRange": "$$",
+        "image": "https://lh3.googleusercontent.com/p/AF1QipPWBjwqKQ5QDy4lHvqoWig9I7RA7OKxhqPdKL4=s1360-w1360-h1020"
+    }
+    </script>
+    
+    <style>
+        :root{--primary:#E53935;--secondary:#B0BEC5;--accent:#00BFA5;--dark:#212121;--light:#FFFFFF;--gray:#E0E0E0}
+        *{margin:0;padding:0;box-sizing:border-box}
+        body{font-family:'Inter',sans-serif;color:#212121;line-height:1.6}
+        .container{max-width:1200px;margin:0 auto;padding:0 24px}
+        
+        /* Buttons */
+        .btn{padding:16px 32px;border-radius:8px;font-weight:600;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:all .3s;cursor:pointer;border:none;font-size:16px}
+        .btn-primary{background:var(--primary);color:#fff}
+        .btn-primary:hover{background:#C62828;transform:translateY(-2px)}
+        .btn-accent{background:var(--accent);color:#fff}
+        .btn-accent:hover{background:#00897B;transform:translateY(-2px)}
+        .btn-white{background:#fff;color:var(--primary)}
+        .btn-white:hover{background:#f5f5f5}
+        
+        /* Header */
+        .header{position:fixed;top:0;left:0;right:0;background:rgba(255,255,255,.97);backdrop-filter:blur(10px);z-index:1000;padding:12px 0;box-shadow:0 2px 20px rgba(0,0,0,.1)}
+        .header-content{display:flex;justify-content:space-between;align-items:center}
+        .logo{display:flex;align-items:center;gap:12px;text-decoration:none;color:inherit}
+        .logo-icon{font-size:32px}
+        .logo-text{font-weight:800;font-size:22px;color:var(--primary)}
+        .nav{display:flex;gap:32px}
+        .nav a{text-decoration:none;color:#212121;font-weight:500;transition:color .3s}
+        .nav a:hover{color:var(--primary)}
+        .header-badge{background:var(--primary);color:#fff;padding:6px 14px;border-radius:50px;font-size:13px;font-weight:600;display:flex;align-items:center;gap:6px}
+        
+        /* Hero */
+        .hero{min-height:100vh;display:flex;align-items:center;padding:120px 0 80px;background:linear-gradient(135deg,var(--primary) 0%,#C62828 100%);position:relative;overflow:hidden}
+        .hero::before{content:'';position:absolute;top:0;right:0;width:50%;height:100%;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.05)"/></svg>');background-size:300px;opacity:.3}
+        .hero-content{max-width:650px;color:#fff;position:relative;z-index:2}
+        .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.2);padding:10px 20px;border-radius:50px;font-size:14px;margin-bottom:24px;backdrop-filter:blur(10px)}
+        .hero h1{font-size:clamp(36px,5vw,56px);font-weight:900;line-height:1.1;margin-bottom:24px}
+        .hero-subtitle{font-size:20px;opacity:.95;margin-bottom:32px;line-height:1.7}
+        .hero-buttons{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:32px}
+        .hero-trust{display:flex;gap:24px;flex-wrap:wrap;opacity:.9;font-size:14px}
+        .hero-trust span{display:flex;align-items:center;gap:6px}
+        
+        /* Stats */
+        .stats{padding:60px 0;background:var(--dark)}
+        .stats-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:32px;text-align:center}
+        .stat h3{font-size:48px;font-weight:800;color:var(--accent);margin-bottom:8px}
+        .stat p{color:rgba(255,255,255,.8);font-weight:500}
+        
+        /* Sections */
+        .section{padding:80px 0}
+        .section-alt{background:#f8f9fa}
+        .section-header{text-align:center;margin-bottom:50px}
+        .section-badge{display:inline-block;background:rgba(229,57,53,.1);color:var(--primary);padding:8px 20px;border-radius:50px;font-size:14px;font-weight:600;margin-bottom:16px}
+        .section-title{font-size:36px;font-weight:800;margin-bottom:16px;color:var(--dark)}
+        .section-subtitle{font-size:18px;color:#666;max-width:600px;margin:0 auto}
+        
+        /* Services */
+        .services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:24px}
+        .service-card{background:#fff;padding:32px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.08);transition:all .3s;border:2px solid transparent}
+        .service-card:hover{transform:translateY(-8px);border-color:var(--primary);box-shadow:0 12px 40px rgba(229,57,53,.15)}
+        .service-icon{font-size:48px;margin-bottom:16px}
+        .service-card h3{font-size:20px;font-weight:700;margin-bottom:12px;color:var(--dark)}
+        .service-card p{color:#666;line-height:1.7}
+        
+        /* About */
+        .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+        .about-content h2{font-size:36px;font-weight:800;margin-bottom:20px;color:var(--dark)}
+        .about-content>p{color:#666;margin-bottom:24px;font-size:17px;line-height:1.8}
+        .about-list{list-style:none;margin-bottom:32px}
+        .about-list li{padding:14px 0;border-bottom:1px solid #eee;display:flex;align-items:center;gap:12px;font-weight:500}
+        .about-list li::before{content:'✓';background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700}
+        .about-visual{position:relative}
+        .about-img{border-radius:16px;width:100%;box-shadow:0 20px 60px rgba(0,0,0,.15)}
+        .about-badge{position:absolute;bottom:-20px;left:-20px;background:var(--primary);color:#fff;padding:20px 28px;border-radius:12px;font-weight:700;font-size:18px;box-shadow:0 10px 30px rgba(229,57,53,.3)}
+        
+        /* Testimonials */
+        .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:24px}
+        .testimonial{background:#fff;padding:32px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.08);position:relative}
+        .testimonial::before{content:'"';position:absolute;top:20px;right:24px;font-size:80px;color:var(--gray);font-family:Georgia,serif;line-height:1}
+        .testimonial-stars{color:#ffc107;font-size:18px;margin-bottom:16px}
+        .testimonial-text{font-size:16px;line-height:1.8;margin-bottom:20px;color:#444;position:relative;z-index:1}
+        .testimonial-author{display:flex;align-items:center;gap:14px}
+        .testimonial-avatar{width:50px;height:50px;background:linear-gradient(135deg,var(--primary),var(--accent));color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:18px}
+        .testimonial-name{font-weight:700;color:var(--dark)}
+        .testimonial-role{font-size:13px;color:#888}
+        
+        /* CTA */
+        .cta{padding:100px 0;background:linear-gradient(135deg,var(--primary) 0%,#C62828 100%);text-align:center;color:#fff;position:relative;overflow:hidden}
+        .cta::before{content:'';position:absolute;inset:0;background:url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="80" r="60" fill="rgba(255,255,255,0.03)"/></svg>');background-size:400px}
+        .cta h2{font-size:42px;font-weight:800;margin-bottom:16px;position:relative}
+        .cta p{font-size:20px;opacity:.9;margin-bottom:32px;max-width:500px;margin-left:auto;margin-right:auto;position:relative}
+        .cta-buttons{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative}
+        
+        /* Contact */
+        .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px}
+        .contact-form{background:#fff;padding:40px;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.08)}
+        .contact-form h3{font-size:24px;font-weight:700;margin-bottom:24px;color:var(--dark)}
+        .form-group{margin-bottom:20px}
+        .form-group label{display:block;font-weight:600;margin-bottom:8px;color:var(--dark)}
+        .form-group input,.form-group textarea{width:100%;padding:14px 16px;border:2px solid #e0e0e0;border-radius:10px;font-size:15px;transition:border-color .3s}
+        .form-group input:focus,.form-group textarea:focus{outline:none;border-color:var(--primary)}
+        .contact-info h3{font-size:24px;font-weight:700;margin-bottom:24px;color:var(--dark)}
+        .contact-item{display:flex;align-items:flex-start;gap:16px;margin-bottom:24px}
+        .contact-icon{width:50px;height:50px;background:linear-gradient(135deg,var(--primary),#C62828);color:#fff;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+        .contact-item h4{font-weight:600;margin-bottom:4px}
+        .contact-item p{color:#666}
+        .contact-urgency{background:linear-gradient(135deg,var(--primary),#C62828);color:#fff;padding:24px;border-radius:12px;margin-top:32px}
+        .contact-urgency h4{font-size:18px;font-weight:700;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+        .contact-urgency p{opacity:.9}
+        
+        /* Footer */
+        .footer{background:var(--dark);color:#fff;padding:60px 0 24px}
+        .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+        .footer-brand p{opacity:.7;margin-top:16px;line-height:1.7}
+        .footer h4{font-size:16px;font-weight:700;margin-bottom:20px;color:var(--accent)}
+        .footer ul{list-style:none}
+        .footer ul li{margin-bottom:12px}
+        .footer ul a{color:rgba(255,255,255,.7);text-decoration:none;transition:color .3s}
+        .footer ul a:hover{color:#fff}
+        .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;font-size:14px;opacity:.7}
+        .social-links{display:flex;gap:12px}
+        .social-links a{width:40px;height:40px;background:rgba(255,255,255,.1);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;text-decoration:none;transition:background .3s}
+        .social-links a:hover{background:var(--primary)}
+        
+        /* WhatsApp Float */
+        .wa-float{position:fixed;bottom:24px;right:24px;width:64px;height:64px;background:#25d366;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;box-shadow:0 4px 20px rgba(37,211,102,.4);z-index:999;text-decoration:none;transition:transform .3s;animation:pulse 2s infinite}
+        .wa-float:hover{transform:scale(1.1);animation:none}
+        @keyframes pulse{0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)}50%{box-shadow:0 4px 30px rgba(37,211,102,.7)}}
+        
+        /* Process/Timeline */
+        .process-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:32px;counter-reset:step}
+        .process-step{text-align:center;padding:32px 24px;background:#fff;border-radius:16px;box-shadow:0 4px 20px rgba(0,0,0,.06);position:relative}
+        .process-step::before{counter-increment:step;content:counter(step);width:50px;height:50px;background:linear-gradient(135deg,var(--primary),#C62828);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:800;margin:0 auto 20px}
+        .process-step h3{font-size:18px;font-weight:700;margin-bottom:10px;color:var(--dark)}
+        .process-step p{color:#666;font-size:15px}
+        
+        /* FAQ */
+        .faq-grid{display:grid;grid-template-columns:1fr 2fr;gap:50px;align-items:start}
+        .faq-header h2{font-size:32px;font-weight:800;margin-bottom:16px}
+        .faq-header p{color:#666;margin-bottom:24px}
+        .faq-list{display:flex;flex-direction:column;gap:12px}
+        .faq-item{background:#fff;border-radius:12px;box-shadow:0 2px 10px rgba(0,0,0,.06);overflow:hidden}
+        .faq-question{padding:20px 24px;font-weight:600;cursor:pointer;display:flex;justify-content:space-between;align-items:center;transition:background .3s}
+        .faq-question:hover{background:#f8f9fa}
+        .faq-question::after{content:'+';font-size:24px;color:var(--primary);transition:transform .3s}
+        .faq-item.active .faq-question::after{transform:rotate(45deg)}
+        .faq-answer{padding:0 24px;max-height:0;overflow:hidden;transition:all .3s;color:#666;line-height:1.8}
+        .faq-item.active .faq-answer{padding:0 24px 20px;max-height:500px}
+        
+        /* Map */
+        .map-container{border-radius:16px;overflow:hidden;box-shadow:0 4px 20px rgba(0,0,0,.1);margin-top:40px}
+        .map-container iframe{width:100%;height:350px;border:0}
+        
+        /* Animations */
+        .fade-in{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+        .fade-in.visible{opacity:1;transform:translateY(0)}
+        
+        /* Accessibility */
+        .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0}
+        :focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+        
+        /* Mobile Menu */
+        .mobile-menu-btn{display:none;background:none;border:none;font-size:28px;cursor:pointer;padding:8px}
+        
+        /* Responsive */
+        @media(max-width:968px){
+            .faq-grid{grid-template-columns:1fr}
+        }
+        @media(max-width:768px){
+            .nav,.header-badge{display:none}
+            .mobile-menu-btn{display:block}
+            .hero h1{font-size:32px}
+            .about-grid,.contact-grid,.footer-grid{grid-template-columns:1fr}
+            .about-badge{position:static;margin-top:20px;display:inline-block}
+            .hero-buttons{flex-direction:column}
+            .btn{width:100%;justify-content:center}
+            .stats-grid{grid-template-columns:repeat(2,1fr)}
+            .stat h3{font-size:36px}
+        }
+        @media(max-width:480px){
+            .container{padding:0 16px}
+            .section{padding:60px 0}
+            .hero{padding:100px 0 60px}
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipPWBjwqKQ5QDy4lHvqoWig9I7RA7OKxhqPdKL4=s1360-w1360-h1020" alt="Nefrovet" style="height:40px;width:auto;object-fit:contain;">
+                </a>
+                <nav class="nav">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#testimonios">Testimonios</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+                <div class="header-badge">
+                    🚨 Urgencias 24hs
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section id="inicio" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    🏥 Clínica Veterinaria Especializada
+                </div>
+                <h1>Cuidados Intensivos y Nefrología Veterinaria 24/7</h1>
+                <p class="hero-subtitle">En Nefrovet combinamos tecnología avanzada con un trato humano excepcional. Somos especialistas en urgencias, internación y nefrología para tu compañero.</p>
+                <div class="hero-buttons">
+                    <a href="https://wa.me/542664964482?text=Hola,%20necesito%20información%20sobre%20sus%20servicios" class="btn btn-white">
+                        💬 WhatsApp Directo
+                    </a>
+                    <a href="tel:02664964482" class="btn btn-accent">
+                        📞 Llamar Ahora
+                    </a>
+                </div>
+                <div class="hero-trust">
+                    <span>✓ Atención 24 horas</span>
+                    <span>✓ Especialistas en nefrología</span>
+                    <span>✓ Internación monitoreada</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat">
+                    <h3>24/7</h3>
+                    <p>Atención de Urgencias</p>
+                </div>
+                <div class="stat">
+                    <h3>4.2★</h3>
+                    <p>Calificación Google</p>
+                </div>
+                <div class="stat">
+                    <h3>+45</h3>
+                    <p>Reseñas Positivas</p>
+                </div>
+                <div class="stat">
+                    <h3>80%</h3>
+                    <p>Clientes Satisfechos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Servicios -->
+    <section id="servicios" class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Nuestros Servicios</span>
+                <h2 class="section-title">Atención Veterinaria Especializada</h2>
+                <p class="section-subtitle">Contamos con equipamiento de última generación y un equipo de profesionales dedicados al cuidado de tu mascota</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🚨</div>
+                    <h3>Urgencias 24h</h3>
+                    <p>Atención de emergencias las 24 horas, todos los días del año. Estamos siempre disponibles cuando más nos necesitas.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">💉</div>
+                    <h3>Nefrología</h3>
+                    <p>Especialistas en salud renal de mascotas. Diagnóstico y tratamiento de enfermedades renales con tecnología avanzada.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🏥</div>
+                    <h3>Internación</h3>
+                    <p>Cuidados intensivos con monitoreo constante. Tu mascota estará vigilada las 24 horas por nuestro equipo.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">🔬</div>
+                    <h3>Diagnóstico</h3>
+                    <p>Ecografías, radiografías y laboratorio propio. Resultados rápidos para un diagnóstico preciso.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nosotros -->
+    <section id="nosotros" class="section section-alt">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-content">
+                    <span class="section-badge">Sobre Nefrovet</span>
+                    <h2>Profesionalismo con Calidez Humana</h2>
+                    <p>Nefrovet es un referente en San Luis en atención veterinaria de alta complejidad. Nos destacamos por el trato humano y la contención emocional tanto a los animales como a sus dueños.</p>
+                    <p>Nuestro compromiso es brindarte la mejor experiencia posible, combinando tecnología de punta con un equipo de profesionales apasionados por el bienestar animal.</p>
+                    <ul class="about-list">
+                        <li>Trato humano y contención emocional</li>
+                        <li>Capacidad para resolver casos graves y complejos</li>
+                        <li>Resultados clínicos positivos incluso con pronósticos desfavorables</li>
+                        <li>Disponibilidad 24 horas, incluso feriados</li>
+                    </ul>
+                    <a href="https://wa.me/542664964482" class="btn btn-primary">
+                        Conocenos Más →
+                    </a>
+                </div>
+                <div class="about-visual">
+                    <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=600&h=500&fit=crop" alt="Veterinario atendiendo mascota" class="about-img">
+                    <div class="about-badge">
+                        🏥 Atención 24hs
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Proceso -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Cómo Funciona</span>
+                <h2 class="section-title">Tu Primera Visita</h2>
+                <p class="section-subtitle">Un proceso simple y transparente para el cuidado de tu mascota</p>
+            </div>
+            <div class="process-grid">
+                <div class="process-step fade-in">
+                    <h3>Contacto Inicial</h3>
+                    <p>Llamanos o escribinos por WhatsApp. Te atendemos las 24 horas para evaluar la urgencia.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <h3>Evaluación Médica</h3>
+                    <p>Nuestro equipo realiza un diagnóstico completo con tecnología de última generación.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <h3>Plan de Tratamiento</h3>
+                    <p>Te explicamos claramente el diagnóstico, opciones y costos antes de proceder.</p>
+                </div>
+                <div class="process-step fade-in">
+                    <h3>Seguimiento</h3>
+                    <p>Acompañamos la recuperación de tu mascota con controles y comunicación constante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section id="testimonios" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Testimonios</span>
+                <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+                <p class="section-subtitle">4.2★ promedio en Google · Más de 45 reseñas verificadas</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Era la única vete 24hs que podíamos ir y la verdad fue lo mejor que nos pasó... Mi hijo es un gato de casi 6kg... No va a pisar en su vida otra vete que no sea esa."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div>
+                            <div class="testimonial-name">Ailen Wonner</div>
+                            <div class="testimonial-role">Cliente verificado</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Una calidad humana preciosa teniendo en cuenta que atienden animalitos. Nos atendieron de 10 desde el primer contacto vía WhatsApp y estando allí lo mismo."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div>
+                            <div class="testimonial-name">Mariel Rivs</div>
+                            <div class="testimonial-role">Cliente verificado</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Me salvaron a mi gatita Lola!!! El pronóstico no era bueno pero gracias a ellos Lolita está perfecta. ¡Super recomiendo!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">C</div>
+                        <div>
+                            <div class="testimonial-name">Carina Blanco</div>
+                            <div class="testimonial-role">Cliente verificado</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+        <div class="container">
+            <div class="faq-grid">
+                <div class="faq-header">
+                    <span class="section-badge">FAQ</span>
+                    <h2>Preguntas Frecuentes</h2>
+                    <p>Resolvemos tus dudas más comunes sobre nuestros servicios veterinarios.</p>
+                    <a href="https://wa.me/542664964482?text=Hola,%20tengo%20una%20consulta" class="btn btn-primary">
+                        Más Preguntas →
+                    </a>
+                </div>
+                <div class="faq-list">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            ¿Atienden urgencias las 24 horas?
+                        </div>
+                        <div class="faq-answer">
+                            Sí, estamos disponibles las 24 horas del día, los 7 días de la semana, incluyendo feriados. Podés llamarnos o escribirnos por WhatsApp en cualquier momento.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            ¿Qué hago si mi mascota tiene una emergencia?
+                        </div>
+                        <div class="faq-answer">
+                            Llamanos inmediatamente al 0266 496-4482. Te daremos instrucciones mientras llegás a la clínica. No intentes medicar a tu mascota sin consultar primero.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            ¿Cómo funcionan las internaciones?
+                        </div>
+                        <div class="faq-answer">
+                            Las internaciones incluyen monitoreo constante, medicación, alimentación especial y reportes diarios. Te mantenemos informado sobre la evolución de tu mascota en todo momento.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            ¿Qué formas de pago aceptan?
+                        </div>
+                        <div class="faq-answer">
+                            Aceptamos efectivo, débito, crédito y transferencias bancarias. Para tratamientos extensos, podemos coordinar planes de pago. Siempre te damos presupuesto antes de proceder.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="this.parentElement.classList.toggle('active')">
+                            ¿Necesito turno previo?
+                        </div>
+                        <div class="faq-answer">
+                            Para consultas programadas recomendamos sacar turno por WhatsApp. Para urgencias, atendemos sin turno las 24 horas.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="cta">
+        <div class="container">
+            <h2>¿Tu Mascota Necesita Atención?</h2>
+            <p>Estamos disponibles las 24 horas para cuidar de tu compañero. No esperes, contáctanos ahora.</p>
+            <div class="cta-buttons">
+                <a href="https://wa.me/542664964482?text=Hola,%20necesito%20atención%20urgente" class="btn btn-white">
+                    💬 WhatsApp Urgencias
+                </a>
+                <a href="tel:02664964482" class="btn btn-accent">
+                    📞 Llamar: 0266 496-4482
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacto -->
+    <section id="contacto" class="section section-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Contacto</span>
+                <h2 class="section-title">¿Cómo Podemos Ayudarte?</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-form">
+                    <h3>Envíanos un Mensaje</h3>
+                    <form>
+                        <div class="form-group">
+                            <label>Tu Nombre</label>
+                            <input type="text" placeholder="¿Cómo te llamas?" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Teléfono</label>
+                            <input type="tel" placeholder="Tu número de contacto" required>
+                        </div>
+                        <div class="form-group">
+                            <label>¿En qué podemos ayudarte?</label>
+                            <textarea rows="4" placeholder="Cuéntanos sobre tu mascota..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary" style="width:100%">
+                            Enviar Mensaje →
+                        </button>
+                    </form>
+                </div>
+                <div class="contact-info">
+                    <h3>Información de Contacto</h3>
+                    <div class="contact-item">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <h4>Dirección</h4>
+                            <p>Colón 1310, D5700 San Luis, Argentina</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h4>Teléfono</h4>
+                            <p>0266 496-4482</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">💬</div>
+                        <div>
+                            <h4>WhatsApp</h4>
+                            <p>+54 266 496-4482</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">🕐</div>
+                        <div>
+                            <h4>Horario</h4>
+                            <p>Atención 24 horas, todos los días</p>
+                        </div>
+                    </div>
+                    <div class="contact-urgency">
+                        <h4>🚨 ¿Es una Urgencia?</h4>
+                        <p>Llámanos inmediatamente al 0266 496-4482 o envía un WhatsApp. Estamos disponibles las 24 horas.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Mapa -->
+            <div class="map-container">
+                <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3348.8!2d-66.337!3d-33.301!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzPCsDE4JzAzLjYiUyA2NsKwMjAnMTMuMiJX!5e0!3m2!1ses!2sar!4v1700000000000!5m2!1ses!2sar" 
+                    allowfullscreen="" 
+                    loading="lazy" 
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="Ubicación de Nefrovet en San Luis">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <img src="https://lh3.googleusercontent.com/p/AF1QipPWBjwqKQ5QDy4lHvqoWig9I7RA7OKxhqPdKL4=s1360-w1360-h1020" alt="Nefrovet" style="height:45px;width:auto;object-fit:contain;filter:brightness(0) invert(1);">
+                    </div>
+                    <p>Clínica veterinaria especializada en urgencias, nefrología e internación. Cuidamos a tu mascota con profesionalismo y amor.</p>
+                </div>
+                <div>
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#servicios">Urgencias 24h</a></li>
+                        <li><a href="#servicios">Nefrología</a></li>
+                        <li><a href="#servicios">Internación</a></li>
+                        <li><a href="#servicios">Diagnóstico</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contacto Rápido</h4>
+                    <ul>
+                        <li><a href="tel:02664964482">📞 Llamar</a></li>
+                        <li><a href="https://wa.me/542664964482">💬 WhatsApp</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Nefrovet - San Luis, Argentina</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook">📘</a>
+                    <a href="#" title="Instagram">📷</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float -->
+    <a href="https://wa.me/542664964482?text=Hola,%20vi%20su%20página%20web" class="wa-float" title="Contactar por WhatsApp" aria-label="Contactar por WhatsApp">
+        💬
+    </a>
+
+    <!-- JavaScript para animaciones y funcionalidad -->
+    <script>
+        // Scroll reveal animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+            
+            fadeElements.forEach(el => observer.observe(el));
+            
+            // Smooth scroll para navegación
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                });
+            });
+            
+            // Header scroll effect
+            const header = document.querySelector('.header');
+            let lastScroll = 0;
+            
+            window.addEventListener('scroll', () => {
+                const currentScroll = window.pageYOffset;
+                if (currentScroll > 100) {
+                    header.style.boxShadow = '0 4px 30px rgba(0,0,0,.15)';
+                } else {
+                    header.style.boxShadow = '0 2px 20px rgba(0,0,0,.1)';
+                }
+                lastScroll = currentScroll;
+            });
+            
+            // Form submission (demo - redirige a WhatsApp)
+            const form = document.querySelector('.contact-form form');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    const nombre = form.querySelector('input[type="text"]').value;
+                    const telefono = form.querySelector('input[type="tel"]').value;
+                    const mensaje = form.querySelector('textarea').value;
+                    
+                    const whatsappMsg = `Hola, soy ${nombre}. Mi teléfono es ${telefono}. ${mensaje}`;
+                    const whatsappUrl = `https://wa.me/542664964482?text=${encodeURIComponent(whatsappMsg)}`;
+                    
+                    window.open(whatsappUrl, '_blank');
+                });
+            }
+        });
+        
+        // Contador animado para stats
+        function animateCounters() {
+            const stats = document.querySelectorAll('.stat h3');
+            stats.forEach(stat => {
+                const text = stat.textContent;
+                if (text.includes('+') || text.includes('%') || text.includes('★')) {
+                    // Ya tiene formato especial, no animar
+                    return;
+                }
+            });
+        }
+    </script>
+</body>
+</html>

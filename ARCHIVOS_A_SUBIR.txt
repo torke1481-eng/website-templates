@@ -1,0 +1,81 @@
+═══════════════════════════════════════════════════════════
+         ARCHIVOS A SUBIR AL SERVIDOR [FileZilla]
+                 Actualizado: 27 Nov 2025
+═══════════════════════════════════════════════════════════
+
+⚠️  ANTES DE SUBIR:
+    1. Configurar credenciales en db.php
+    2. Configurar API_KEY en deploy-simple.php y api/*.php
+
+═══════════════════════════════════════════════════════════
+                    ARCHIVOS NUEVOS (6)
+═══════════════════════════════════════════════════════════
+
+📤 1. _system/config/db.php
+   → /home/u253890393/domains/otavafitness.com/_system/config/db.php
+   ⚠️ Editar líneas 22-24 con credenciales MySQL
+
+📤 2. _system/config/schema.sql.txt
+   → Ejecutar en phpMyAdmin (no subir)
+
+📤 3. _system/generator/deploy-simple.php [NUEVO]
+   → /home/u253890393/domains/otavafitness.com/_system/generator/deploy-simple.php
+   ⚠️ Editar línea 30: API_KEY
+
+📤 4. _system/api/save-website.php [NUEVO]
+   → /home/u253890393/domains/otavafitness.com/_system/api/save-website.php
+   ⚠️ Editar línea 30: API_KEY
+
+📤 5. _system/api/approve.php [NUEVO]
+   → /home/u253890393/domains/otavafitness.com/_system/api/approve.php
+   ⚠️ Editar línea 18: APPROVAL_SECRET
+
+📤 6. _system/api/list-websites.php [NUEVO]
+   → /home/u253890393/domains/otavafitness.com/_system/api/list-websites.php
+
+📤 7. _system/api/health.php [NUEVO]
+   → /home/u253890393/domains/otavafitness.com/_system/api/health.php
+
+═══════════════════════════════════════════════════════════
+                 CONFIGURACIÓN REQUERIDA
+═══════════════════════════════════════════════════════════
+
+🔐 API KEY (usar la misma en todos):
+   Generar una clave segura, ejemplo:
+   tu-api-key-secreta-2024-xyz123
+
+   Editar en:
+   - deploy-simple.php línea 30
+   - save-website.php línea 30
+   
+🔐 APPROVAL SECRET:
+   Otra clave diferente para approve.php línea 18
+
+═══════════════════════════════════════════════════════════
+                    PASOS EN CPANEL
+═══════════════════════════════════════════════════════════
+
+1. [cPanel] MySQL Databases:
+   - Create Database: webs
+   - Create User: admin (password seguro)
+   - Add User to Database: ALL PRIVILEGES
+   
+2. [cPanel] phpMyAdmin:
+   - Seleccionar: u253890393_webs
+   - Tab "SQL"
+   - Pegar contenido de schema.sql.txt
+   - Click "Go"
+   - Verificar: 4 tablas creadas
+
+═══════════════════════════════════════════════════════════
+                    VERIFICACIÓN
+═══════════════════════════════════════════════════════════
+
+Después de subir, probar:
+
+[Navegador]
+https://otavafitness.com/_system/api/health.php
+
+Debe mostrar: "overall": "healthy"
+
+═══════════════════════════════════════════════════════════

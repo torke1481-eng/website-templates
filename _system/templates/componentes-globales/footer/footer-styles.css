@@ -1,0 +1,334 @@
+/* ============================================
+   FOOTER MODERNO 2025 - VARIABLES CSS
+   Glassmorphism, gradientes y efectos premium
+============================================ */
+
+:root {
+    /* Colores del footer - personalizables */
+    --footer-bg: #0f0f1e;
+    --footer-bg-gradient: linear-gradient(180deg, #1a1a2e 0%, #0f0f1e 100%);
+    --footer-text: #b0b0c0;
+    --footer-heading: #ffffff;
+    --footer-link-hover: var(--brand-primary, #667eea);
+    --footer-border: rgba(255, 255, 255, 0.08);
+    
+    /* 2025: Efectos */
+    --footer-glow: rgba(102, 126, 234, 0.3);
+    --footer-glass: rgba(255, 255, 255, 0.03);
+}
+
+/* 2025: FOOTER CON GRADIENTE Y EFECTOS */
+.footer {
+    background: var(--footer-bg-gradient);
+    color: var(--footer-text);
+    padding: 80px 0 40px;
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
+}
+
+/* 2025: Decoración de fondo */
+.footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--footer-link-hover), transparent);
+    opacity: 0.5;
+}
+
+.footer::after {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, var(--footer-glow) 0%, transparent 70%);
+    opacity: 0.3;
+    pointer-events: none;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 50px;
+    margin-bottom: 50px;
+    position: relative;
+    z-index: 1;
+}
+
+/* 2025: Columnas con efecto glass */
+.footer-column {
+    padding: 24px;
+    background: var(--footer-glass);
+    border-radius: 16px;
+    border: 1px solid var(--footer-border);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.footer-column:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(102, 126, 234, 0.2);
+    transform: translateY(-5px);
+}
+
+.footer-column h4 {
+    color: var(--footer-heading);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    position: relative;
+    padding-bottom: 12px;
+}
+
+.footer-column h4::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--footer-link-hover), transparent);
+    border-radius: 2px;
+}
+
+.footer-column ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-column li {
+    margin-bottom: 14px;
+}
+
+.footer-column a {
+    color: var(--footer-text);
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-column a::before {
+    content: '';
+    width: 0;
+    height: 1px;
+    background: var(--footer-link-hover);
+    transition: width 0.3s;
+}
+
+.footer-column a:hover {
+    color: var(--footer-link-hover);
+    transform: translateX(8px);
+}
+
+.footer-column a:hover::before {
+    width: 12px;
+}
+
+/* 2025: Footer bottom con glass */
+.footer-bottom {
+    border-top: 1px solid var(--footer-border);
+    padding-top: 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 24px;
+    position: relative;
+    z-index: 1;
+}
+
+/* 2025: Social links con efectos */
+.social-links {
+    display: flex;
+    gap: 12px;
+}
+
+.social-link {
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    background: var(--footer-glass);
+    border: 1px solid var(--footer-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--footer-text);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.social-link:hover {
+    background: var(--footer-link-hover);
+    border-color: var(--footer-link-hover);
+    color: #fff;
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 10px 30px var(--footer-glow);
+}
+
+.footer-bottom p {
+    margin: 0;
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* 2025: Newsletter en footer */
+.footer-newsletter {
+    background: var(--footer-glass);
+    border: 1px solid var(--footer-border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-top: 40px;
+}
+
+.footer-newsletter h4 {
+    color: var(--footer-heading);
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.footer-newsletter p {
+    font-size: 14px;
+    margin-bottom: 16px;
+    opacity: 0.8;
+}
+
+.newsletter-form {
+    display: flex;
+    gap: 12px;
+}
+
+.newsletter-input {
+    flex: 1;
+    padding: 14px 20px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid var(--footer-border);
+    border-radius: 50px;
+    color: var(--footer-heading);
+    font-size: 14px;
+    outline: none;
+    transition: all 0.3s;
+}
+
+.newsletter-input::placeholder {
+    color: var(--footer-text);
+    opacity: 0.6;
+}
+
+.newsletter-input:focus {
+    border-color: var(--footer-link-hover);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.newsletter-btn {
+    padding: 14px 28px;
+    background: linear-gradient(135deg, var(--footer-link-hover), #764ba2);
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    white-space: nowrap;
+}
+
+.newsletter-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px var(--footer-glow);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .footer {
+        padding: 40px 0 20px;
+    }
+    
+    .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+    
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .newsletter-form {
+        flex-direction: column;
+    }
+}
+
+/* 2025: Footer brand section */
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.footer-logo {
+    font-size: 32px;
+    filter: drop-shadow(0 4px 8px var(--footer-glow));
+}
+
+.footer-brand-name {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--footer-heading);
+}
+
+.footer-description {
+    font-size: 14px;
+    line-height: 1.7;
+    opacity: 0.8;
+    margin: 0;
+}
+
+/* 2025: Footer contact icons */
+.footer-contact li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-contact a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Accesibilidad */
+.footer a:focus-visible {
+    outline: 2px solid var(--footer-link-hover);
+    outline-offset: 2px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+    .footer-column:hover,
+    .social-link:hover,
+    .footer-column a:hover {
+        transform: none;
+    }
+}

@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nefrovet | Veterinaria 24hs - Nefrología en San Luis</title>
+    <meta name="description" content="Nefrovet - Veterinaria especializada en nefrología y cuidados intensivos en San Luis. Urgencias 24hs, internación, cirugías. Atención con calidad humana.">
+    
+    <!-- Fuentes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🏥</text></svg>">
+    
+    <style>
+        /* ============================================
+           NEFROVET - LANDING BASICA DEMO
+           Generado con template landing-basica
+           Colores extraídos del análisis visual
+        ============================================ */
+        
+        :root {
+            /* COLORES NEFROVET - Del análisis visual */
+            --brand-primary: #E53935;
+            --brand-secondary: #C62828;
+            --accent-color: #00BFA5;
+            --text-dark: #212121;
+            --text-light: #666;
+            --bg-light: #f9f9f9;
+            --white: #ffffff;
+            
+            /* Glassmorphism */
+            --glass-bg: rgba(255, 255, 255, 0.7);
+            --glass-border: rgba(255, 255, 255, 0.3);
+            --glow-primary: rgba(229, 57, 53, 0.4);
+            
+            /* Gradientes */
+            --gradient-primary: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 100%);
+            --gradient-mesh: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-secondary) 50%, #B71C1C 100%);
+            
+            /* Tipografía */
+            --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            
+            /* Transiciones */
+            --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            
+            /* Sombras */
+            --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+            --shadow-md: 0 4px 20px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 40px rgba(0,0,0,0.15);
+            --shadow-glow: 0 10px 40px var(--glow-primary);
+            
+            /* Border radius */
+            --radius-sm: 8px;
+            --radius-md: 16px;
+            --radius-lg: 24px;
+            --radius-full: 9999px;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: var(--font-family);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* HEADER */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            padding: 12px 0;
+            box-shadow: var(--shadow-sm);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 24px;
+        }
+        
+        .logo-nefro { color: var(--text-dark); }
+        .logo-vet { color: var(--brand-primary); }
+        
+        .nav {
+            display: flex;
+            gap: 32px;
+        }
+        
+        .nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: color var(--transition-fast);
+        }
+        
+        .nav a:hover { color: var(--brand-primary); }
+        
+        .header-cta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+        
+        .badge-24h {
+            background: var(--brand-primary);
+            color: white;
+            padding: 6px 14px;
+            border-radius: var(--radius-full);
+            font-size: 12px;
+            font-weight: 700;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        .header-phone {
+            font-weight: 600;
+            color: var(--text-dark);
+            text-decoration: none;
+        }
+        
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        
+        /* HERO */
+        .hero-landing {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero-background {
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+        }
+        
+        .hero-bg-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.15;
+            filter: blur(2px);
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: var(--gradient-mesh);
+            background-size: 400% 400%;
+            animation: gradientShift 15s ease infinite;
+            opacity: 0.97;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .hero-landing .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-content {
+            max-width: 700px;
+            color: var(--white);
+            text-align: center;
+            margin: 0 auto;
+            padding-top: 80px;
+        }
+        
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            padding: 12px 28px;
+            border-radius: var(--radius-full);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 32px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .hero-title {
+            font-size: clamp(36px, 7vw, 64px);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 28px;
+            letter-spacing: -2px;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(16px, 3vw, 20px);
+            line-height: 1.7;
+            opacity: 0.95;
+            margin-bottom: 45px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 50px;
+            flex-wrap: wrap;
+        }
+        
+        /* BOTONES */
+        .btn {
+            padding: 16px 36px;
+            border-radius: var(--radius-full);
+            font-size: 16px;
+            font-weight: 600;
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-smooth);
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+        
+        .btn-primary {
+            background: var(--white);
+            color: var(--brand-primary);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            border: 2px solid rgba(255, 255, 255, 0.25);
+            backdrop-filter: blur(20px);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-4px);
+        }
+        
+        .btn-accent {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .btn-accent:hover {
+            background: #00997A;
+            transform: translateY(-4px);
+        }
+        
+        .btn-large {
+            padding: 20px 44px;
+            font-size: 18px;
+        }
+        
+        .trust-badges {
+            display: flex;
+            gap: 30px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .trust-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        /* SECCIONES */
+        .features-section,
+        .about-section {
+            padding: 100px 0;
+        }
+        
+        .section-title {
+            font-size: clamp(32px, 5vw, 42px);
+            font-weight: 800;
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--text-dark);
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 60px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* FEATURES */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+        
+        .feature-card {
+            text-align: center;
+            padding: 44px 32px;
+            border-radius: var(--radius-lg);
+            background: var(--white);
+            border: 1px solid #eee;
+            transition: all var(--transition-smooth);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-12px);
+            box-shadow: var(--shadow-glow);
+            border-color: rgba(229, 57, 53, 0.3);
+        }
+        
+        .feature-icon {
+            font-size: 52px;
+            margin-bottom: 24px;
+            display: inline-block;
+        }
+        
+        .feature-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: var(--text-dark);
+        }
+        
+        .feature-card p {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+        
+        /* ABOUT */
+        .about-section {
+            background: var(--bg-light);
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .about-content h2 {
+            font-size: 38px;
+            font-weight: 800;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+        }
+        
+        .about-content p {
+            font-size: 16px;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+        
+        .about-list {
+            list-style: none;
+            margin-bottom: 30px;
+        }
+        
+        .about-list li {
+            padding: 12px 0;
+            padding-left: 35px;
+            position: relative;
+            font-size: 16px;
+            color: var(--text-dark);
+            border-bottom: 1px solid #eee;
+        }
+        
+        .about-list li:last-child { border-bottom: none; }
+        
+        .about-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 20px;
+        }
+        
+        /* TESTIMONIOS */
+        .testimonials-section {
+            padding: 100px 0;
+        }
+        
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        
+        .testimonial-card {
+            background: var(--white);
+            padding: 32px;
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-md);
+            transition: all var(--transition-smooth);
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        .testimonial-stars {
+            color: #FFC107;
+            font-size: 18px;
+            margin-bottom: 16px;
+            letter-spacing: 2px;
+        }
+        
+        .testimonial-text {
+            font-size: 15px;
+            color: var(--text-dark);
+            line-height: 1.8;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        
+        .testimonial-avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient-primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .testimonial-name {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+        
+        .testimonial-source {
+            font-size: 13px;
+            color: var(--text-light);
+        }
+        
+        /* CTA */
+        .cta-section {
+            background: var(--gradient-mesh);
+            background-size: 400% 400%;
+            animation: gradientShift 20s ease infinite;
+            padding: 100px 0;
+            text-align: center;
+            color: var(--white);
+        }
+        
+        .cta-content h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 900;
+            margin-bottom: 24px;
+        }
+        
+        .cta-content p {
+            font-size: clamp(16px, 2.5vw, 20px);
+            margin-bottom: 45px;
+            opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* FOOTER */
+        .footer {
+            background: var(--text-dark);
+            color: white;
+            padding: 60px 0 24px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 24px;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+        
+        .footer-description {
+            color: rgba(255,255,255,0.7);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        
+        .footer h4 {
+            font-size: 16px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .footer ul {
+            list-style: none;
+        }
+        
+        .footer ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer ul a {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color var(--transition-fast);
+        }
+        
+        .footer ul a:hover { color: white; }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 14px;
+            color: rgba(255,255,255,0.6);
+        }
+        
+        /* WHATSAPP FLOAT */
+        .wa-float {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 64px;
+            height: 64px;
+            background: #25D366;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            text-decoration: none;
+            box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+            z-index: 999;
+            transition: all var(--transition-smooth);
+        }
+        
+        .wa-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 30px rgba(37, 211, 102, 0.6);
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 992px) {
+            .about-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr 1fr; }
+        }
+        
+        @media (max-width: 768px) {
+            .nav, .header-cta { display: none; }
+            .menu-toggle { display: block; }
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .btn { width: 100%; max-width: 300px; justify-content: center; }
+            .features-grid { grid-template-columns: 1fr; }
+            .testimonials-grid { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .footer-bottom { flex-direction: column; gap: 12px; text-align: center; }
+        }
+        
+        /* ACCESIBILIDAD */
+        .skip-link {
+            position: absolute;
+            top: -40px;
+            left: 0;
+            background: var(--brand-primary);
+            color: white;
+            padding: 12px 20px;
+            text-decoration: none;
+            z-index: 10000;
+            font-weight: 600;
+            border-radius: 0 0 8px 0;
+            transition: top 0.3s;
+        }
+        
+        .skip-link:focus { top: 0; }
+        
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after {
+                animation-duration: 0.01ms !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="#inicio" class="skip-link">Saltar al contenido principal</a>
+    
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <span class="logo-nefro">NEFRO</span><span class="logo-vet">VET</span>
+                </a>
+                <nav class="nav">
+                    <a href="#inicio">Inicio</a>
+                    <a href="#servicios">Servicios</a>
+                    <a href="#nosotros">Nosotros</a>
+                    <a href="#testimonios">Testimonios</a>
+                    <a href="#contacto">Contacto</a>
+                </nav>
+                <div class="header-cta">
+                    <span class="badge-24h">🚨 URGENCIAS 24H</span>
+                    <a href="tel:02664964482" class="header-phone">📞 0266 496-4482</a>
+                </div>
+                <button class="menu-toggle">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section id="inicio" class="hero-landing">
+        <div class="hero-background">
+            <div class="hero-overlay"></div>
+            <img src="https://images.unsplash.com/photo-1628009368231-7bb7cfcb0def?w=1200" alt="Veterinaria Nefrovet" class="hero-bg-image">
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">🏥 Especialistas en Nefrología Veterinaria</div>
+                <h1 class="hero-title">CUIDADOS INTENSIVOS Y NEFROLOGÍA VETERINARIA 24/7</h1>
+                <p class="hero-subtitle">Somos especialistas en casos complejos. Atención de emergencias las 24 horas con calidad humana, tecnología de punta y un equipo comprometido con la salud de tu mascota.</p>
+                
+                <div class="hero-buttons">
+                    <a href="https://wa.me/542664964482?text=Hola,%20necesito%20información%20sobre%20Nefrovet" class="btn btn-primary">
+                        💬 WhatsApp Ahora
+                    </a>
+                    <a href="tel:02664964482" class="btn btn-secondary">
+                        📞 Llamar Urgencias
+                    </a>
+                </div>
+
+                <div class="trust-badges">
+                    <div class="trust-badge">✓ Urgencias 24 horas</div>
+                    <div class="trust-badge">✓ Especialistas en nefrología</div>
+                    <div class="trust-badge">✓ Internación monitoreada</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios" class="features-section">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <p class="section-subtitle">Contamos con equipamiento de última generación y un equipo altamente capacitado</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚨</div>
+                    <h3>Urgencias 24 Horas</h3>
+                    <p>Atención inmediata de emergencias veterinarias todos los días del año, incluyendo feriados.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💉</div>
+                    <h3>Nefrología Veterinaria</h3>
+                    <p>Especialistas en diagnóstico y tratamiento de enfermedades renales en mascotas.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🏥</div>
+                    <h3>Internación y UCI</h3>
+                    <p>Unidad de cuidados intensivos con monitoreo las 24 horas para casos críticos.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔬</div>
+                    <h3>Laboratorio Clínico</h3>
+                    <p>Hemogramas, bioquímica y urianálisis con resultados rápidos para diagnósticos precisos.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOBRE NOSOTROS -->
+    <section id="nosotros" class="about-section">
+        <div class="container">
+            <div class="about-grid">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1576201836106-db1758fd1c97?w=600&h=450&fit=crop" alt="Equipo Nefrovet">
+                </div>
+                <div class="about-content">
+                    <h2>Sobre Nefrovet</h2>
+                    <p>En Nefrovet nos especializamos en lo que otros no pueden resolver. Somos una clínica veterinaria de referencia en San Luis, enfocada en nefrología, cuidados intensivos y emergencias las 24 horas.</p>
+                    <p>Nuestro equipo combina experiencia médica con una profunda vocación de servicio. Entendemos que tu mascota es parte de tu familia.</p>
+                    
+                    <ul class="about-list">
+                        <li>Trato humano y contención emocional</li>
+                        <li>Capacidad para resolver casos graves y complejos</li>
+                        <li>Resultados clínicos positivos incluso con pronósticos desfavorables</li>
+                        <li>Comunicación transparente sobre diagnósticos y tratamientos</li>
+                    </ul>
+                    
+                    <a href="https://wa.me/542664964482?text=Hola,%20quiero%20conocer%20más%20sobre%20Nefrovet" class="btn btn-accent">
+                        Conocenos →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIOS -->
+    <section id="testimonios" class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">Lo Que Dicen Nuestros Clientes</h2>
+            <p class="section-subtitle">Historias reales de familias que confiaron en nosotros</p>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Era la única vete 24hs que podíamos ir y la verdad fue lo mejor que nos pasó... Mi hijo es un gato de casi 6kg... No va a pisar en su vida otra vete que no sea esa."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">A</div>
+                        <div>
+                            <div class="testimonial-name">Ailen Wonner</div>
+                            <div class="testimonial-source">Google Reviews</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Una calidad humana preciosa teniendo en cuenta que atienden animalitos. Nos atendieron de 10 desde el primer contacto vía WhatsApp y estando allí lo mismo."</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">M</div>
+                        <div>
+                            <div class="testimonial-name">Mariel Rivs</div>
+                            <div class="testimonial-source">Google Reviews</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="testimonial-text">"Me salvaron a mi gatita Lola!!! El pronóstico no era bueno pero gracias a ellos y a Dios Lolita está perfecta. ¡Super recomiendo!"</p>
+                    <div class="testimonial-author">
+                        <div class="testimonial-avatar">C</div>
+                        <div>
+                            <div class="testimonial-name">Carina Blanco</div>
+                            <div class="testimonial-source">Google Reviews</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section id="contacto" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>¿Tu Mascota Necesita Atención?</h2>
+                <p>Estamos disponibles las 24 horas para cuidar a tu compañero. No dudes en contactarnos.</p>
+                <div class="cta-buttons">
+                    <a href="https://wa.me/542664964482?text=Hola,%20necesito%20atención%20para%20mi%20mascota" class="btn btn-primary btn-large">
+                        💬 Contactar por WhatsApp
+                    </a>
+                    <a href="tel:02664964482" class="btn btn-secondary btn-large">
+                        📞 Llamar Ahora
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <div class="footer-brand">
+                        <span class="logo-nefro">NEFRO</span><span class="logo-vet" style="color: var(--brand-primary);">VET</span>
+                    </div>
+                    <p class="footer-description">Veterinaria especializada en nefrología y cuidados intensivos. Atención de emergencias las 24 horas en San Luis, Argentina.</p>
+                </div>
+                <div>
+                    <h4>Enlaces</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#testimonios">Testimonios</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Servicios</h4>
+                    <ul>
+                        <li><a href="#servicios">Urgencias 24h</a></li>
+                        <li><a href="#servicios">Nefrología</a></li>
+                        <li><a href="#servicios">Internación</a></li>
+                        <li><a href="#servicios">Laboratorio</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4>Contacto</h4>
+                    <ul>
+                        <li><a href="tel:02664964482">📞 0266 496-4482</a></li>
+                        <li><a href="https://wa.me/542664964482">💬 WhatsApp</a></li>
+                        <li><a href="https://maps.google.com/?q=Colón+1310+San+Luis" target="_blank">📍 Colón 1310, San Luis</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 Nefrovet. Todos los derechos reservados.</p>
+                <p>Veterinaria en San Luis, Argentina</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/542664964482?text=Hola,%20necesito%20información%20sobre%20Nefrovet" class="wa-float" title="Contactar por WhatsApp">💬</a>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Scroll suave para navegación
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('.header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 4px 30px rgba(0,0,0,0.15)';
+            } else {
+                header.style.boxShadow = '0 2px 8px rgba(0,0,0,0.08)';
+            }
+        });
+        
+        // Animación de elementos al scroll
+        const observerOptions = { threshold: 0.1, rootMargin: '0px 0px -50px 0px' };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+        
+        document.querySelectorAll('.feature-card, .testimonial-card, .about-content').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
